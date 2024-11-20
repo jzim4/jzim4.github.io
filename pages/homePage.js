@@ -1,4 +1,5 @@
 import React from 'react';
+import About from './about.js';
 
 function Title() {
   return (
@@ -9,8 +10,10 @@ function Title() {
 }
 
 function IdImg() {
-    return <div id="imgFrame">
-      <div id="bioImg"></div>
+    return <div id="imgRow">
+      <div id="imgFrame">
+        <div id="bioImg"></div>
+      </div>
     </div>
 }
 
@@ -20,15 +23,17 @@ function Bio() {
 
 export default function HomePage() {
     return <>
-        <div id="bioColumn">
+      <div id="homePageContainer">
+        <div id="homeLeftColumn">
           <div id="bioTextContainer">
               <Title/>
               <Bio/>
           </div>
         </div>
-        <div id="imgColumn">
+        <div id="homeRightColumn">
             <IdImg/>
+            <About/>
         </div>
+      </div>
       </>
-        
 }

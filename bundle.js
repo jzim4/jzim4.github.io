@@ -43155,8 +43155,34 @@ exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate :
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports["default"] = About;
+var _react = _interopRequireDefault(require("react"));
+function _interopRequireDefault(e) {
+  return e && e.__esModule ? e : {
+    "default": e
+  };
+}
+function Skills() {
+  return /*#__PURE__*/_react["default"].createElement("ul", null, /*#__PURE__*/_react["default"].createElement("h3", null, "Key Skills"), /*#__PURE__*/_react["default"].createElement("li", null, "GIT, HTML, CSS, JAVASCRIPT, REACT, CONTENTFUL , FIREBASE, PYTHON, R, JAVA, MICROSOFT SUITE, GSUITE"));
+}
+function Interests() {
+  return /*#__PURE__*/_react["default"].createElement("ul", null, /*#__PURE__*/_react["default"].createElement("h3", null, "Interests"), /*#__PURE__*/_react["default"].createElement("li", null, "Puzzles, knitting, crossword, baking, rock climbing, snowboarding, woodworking, soccer, tennis"));
+}
+function About() {
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    id: "aboutRow"
+  }, /*#__PURE__*/_react["default"].createElement("h2", null, "About"), "I'm originally from the suburbs of Philadelphia, and I'm currently a sophomore at Macalester College. I'm studying Computer Science and Psychology, and I have a passion for front-end development.", /*#__PURE__*/_react["default"].createElement(Skills, null), /*#__PURE__*/_react["default"].createElement(Interests, null));
+}
+
+},{"react":15}],21:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports["default"] = HomePage;
 var _react = _interopRequireDefault(require("react"));
+var _about = _interopRequireDefault(require("./about.js"));
 function _interopRequireDefault(e) {
   return e && e.__esModule ? e : {
     "default": e
@@ -43167,10 +43193,12 @@ function Title() {
 }
 function IdImg() {
   return /*#__PURE__*/_react["default"].createElement("div", {
+    id: "imgRow"
+  }, /*#__PURE__*/_react["default"].createElement("div", {
     id: "imgFrame"
   }, /*#__PURE__*/_react["default"].createElement("div", {
     id: "bioImg"
-  }));
+  })));
 }
 function Bio() {
   return /*#__PURE__*/_react["default"].createElement("p", {
@@ -43179,15 +43207,17 @@ function Bio() {
 }
 function HomePage() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
-    id: "bioColumn"
+    id: "homePageContainer"
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    id: "homeLeftColumn"
   }, /*#__PURE__*/_react["default"].createElement("div", {
     id: "bioTextContainer"
   }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement(Bio, null))), /*#__PURE__*/_react["default"].createElement("div", {
-    id: "imgColumn"
-  }, /*#__PURE__*/_react["default"].createElement(IdImg, null)));
+    id: "homeRightColumn"
+  }, /*#__PURE__*/_react["default"].createElement(IdImg, null), /*#__PURE__*/_react["default"].createElement(_about["default"], null))));
 }
 
-},{"react":15}],21:[function(require,module,exports){
+},{"./about.js":20,"react":15}],22:[function(require,module,exports){
 "use strict";
 
 var _homePage = _interopRequireDefault(require("./homePage.js"));
@@ -43208,4 +43238,4 @@ root.render(/*#__PURE__*/_react["default"].createElement(_react["default"].Stric
   element: /*#__PURE__*/_react["default"].createElement(_homePage["default"], null)
 })))));
 
-},{"./homePage.js":20,"react":15,"react-dom/client":5,"react-router-dom":7}]},{},[21]);
+},{"./homePage.js":21,"react":15,"react-dom/client":5,"react-router-dom":7}]},{},[22]);
