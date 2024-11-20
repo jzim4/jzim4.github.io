@@ -43162,7 +43162,6 @@ function _interopRequireDefault(e) {
     "default": e
   };
 }
-function Nav() {}
 function Title() {
   return /*#__PURE__*/_react["default"].createElement("h1", null, "Jonah Zimmer");
 }
@@ -43178,28 +43177,12 @@ function Bio() {
     id: "bioText"
   }, "I'm a self-taught front-end developer, with a passion for building beautiful, usable websites in React.js.");
 }
-function ContactButton() {
-  return /*#__PURE__*/_react["default"].createElement("button", {
-    onclick: "document.getElementById('contact').scrollIntoView()",
-    className: "button",
-    id: "contactButton"
-  }, "Contact Me");
-}
-function RepoButton() {
-  return /*#__PURE__*/_react["default"].createElement("button", {
-    onclick: "document.getElementById('repo').scrollIntoView()",
-    className: "button",
-    id: "repoButton"
-  }, "My Work");
-}
 function HomePage() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
     id: "bioColumn"
   }, /*#__PURE__*/_react["default"].createElement("div", {
     id: "bioTextContainer"
-  }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement(Bio, null), /*#__PURE__*/_react["default"].createElement("div", {
-    id: "homePageButtons"
-  }, /*#__PURE__*/_react["default"].createElement(ContactButton, null), /*#__PURE__*/_react["default"].createElement(RepoButton, null)))), /*#__PURE__*/_react["default"].createElement("div", {
+  }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement(Bio, null))), /*#__PURE__*/_react["default"].createElement("div", {
     id: "imgColumn"
   }, /*#__PURE__*/_react["default"].createElement(IdImg, null)));
 }

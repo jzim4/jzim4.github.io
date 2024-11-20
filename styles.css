@@ -11,15 +11,15 @@ body {
 /* TRANSITIONS */
 @keyframes slideInLeft {
     0% {
-        transform: translateX(-10%);
+        width: 55vw;
     }
     100% {
-        transform: translateX(0);
+        width: 50vw;
     }
 }
 @keyframes slideInRight {
     0% {
-        transform: translateX(10%);
+        transform: translateX(5vw);
     }
     100% {
         transform: translateX(0);
@@ -29,7 +29,8 @@ body {
 /* LANDING PAGE */
 /* text */
 #bioColumn {
-    /* E8D8ED */
+    z-index: 1;
+    animation: 2s slideInLeft ease-out;
     background-color: #fcebff;
     height: 100vh;
     width: 50vw;
@@ -43,27 +44,13 @@ body {
 }
 h1 {
     margin: 0 auto 10px;
-    animation: 2s slideInLeft;
     width: fit-content;
     font-size: 4em;
 }
 #bioText {
-    animation: 2s slideInLeft;
     margin: 0 auto 10px;
     width: 90%;
     font-size: 1.5em;
-}
-/* buttons */
-#homePageButtons {
-    display: flex;
-    justify-content: space-around;
-}
-.button {
-    animation: 2s slideInLeft;
-    background: white;
-    border: #520176ff solid 1px;
-    border-radius: 3px;
-    padding: 5px;
 }
 
 /* profile pic */
@@ -80,7 +67,7 @@ h1 {
 
 #imgFrame {
     margin: 0 auto;
-    animation: 2s slideInRight;
+    animation: 2s slideInRight ease-out;
     width: 600px;
     height: 600px;
     overflow: hidden;
