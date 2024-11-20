@@ -1,0 +1,98 @@
+/* Maroon: #680246ff
+Light Pink: #fcebff
+*/
+
+
+body {
+    margin: 0;
+    color: #680246ff;
+}
+
+/* TRANSITIONS */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-10%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes slideInRight {
+    0% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* LANDING PAGE */
+/* text */
+#bioColumn {
+    /* E8D8ED */
+    background-color: #fcebff;
+    height: 100vh;
+    width: 50vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#bioTextContainer {
+    margin: 0 auto;
+}
+h1 {
+    margin: 0 auto 10px;
+    animation: 2s slideInLeft;
+    width: fit-content;
+    font-size: 4em;
+}
+#bioText {
+    animation: 2s slideInLeft;
+    margin: 0 auto 10px;
+    width: 90%;
+    font-size: 1.5em;
+}
+/* buttons */
+#homePageButtons {
+    display: flex;
+    justify-content: space-around;
+}
+.button {
+    animation: 2s slideInLeft;
+    background: white;
+    border: #520176ff solid 1px;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+/* profile pic */
+#imgColumn {
+    position: fixed;
+    display: flex;
+    width: 50vw;
+    height: 100vh;
+    top: 0;
+    left: 50vw;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#imgFrame {
+    margin: 0 auto;
+    animation: 2s slideInRight;
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+}
+
+#bioImg {
+    background: url('/bioImg.jpeg');
+    background-position: center;
+    background-size: contain;
+    width: 900px;
+    height: 600px;
+    margin-left: -135px;
+    /* margin: -100px -67px;
+    transform: rotate(45deg); */
+}
