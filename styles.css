@@ -6,6 +6,10 @@ body {
     margin: 0;
     color: #680246ff;
 }
+html{
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
 
 /* TRANSITIONS */
 @keyframes slideInLeft {
@@ -20,10 +24,12 @@ body {
 }
 @keyframes slideInRight {
     0% {
-        padding-left: 5vw;
+        margin-left: 5vw;
+        width: 45vw;
     }
     100% {
-        padding-left: 0vw;
+        margin-left: 0;
+        width: 50vw;
     }
 }
 
@@ -37,7 +43,7 @@ body {
     animation: 2s slideInLeft ease-out;
     background-color: #fcebff;
     height: 100vh;
-    width: 100vw;
+    width: 50vw;
     position: sticky;
     top: 0;
     left: 0;
@@ -68,7 +74,7 @@ h1 {
     position: relative;
     display: flex;
     width: 50vw;
-    height: fit-content;
+    height: 200vh;
     flex-direction: column;
     justify-content: space-around;
 }
@@ -76,31 +82,46 @@ h1 {
 #imgRow {
     animation: 2s slideInRight ease-out;
     height: 100vh;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    position: sticky;
+    position: fixed;
     top: 0;
+    background-attachment: fixed;
 }
 #imgFrame {
     margin: 0 auto;
-    width: 600px;
-    height: 600px;
+    max-width: 600px;
+    width: 40vw;
+    height: 40vw;
+    max-height: 600px;
     overflow: hidden;
-}
-#bioImg {
     background: url('/bioImg.jpeg');
     background-position: center;
-    background-size: contain;
-    width: 900px;
-    height: 600px;
-    margin-left: -135px;
+    background-size: cover;
+}
+#placeHolder {
+    height: 100vh;
+    width: 50vw;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 /* about */
 #aboutRow {
+    position: relative;
     width: 50vw;
     height: 100vh;
     z-index: 1;
     background-color: #680246ff;
     color: #fcebff;
+    scroll-snap-stop: always;
+    scroll-snap-align: start;
+    animation: 2s slideInRight ease-out;
+}
+
+/* MY WORK */
+
+#myWorkTitle {
+    height: 100vh;
 }

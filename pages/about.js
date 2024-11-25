@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 function Skills() {
  return <ul><h3>Key Skills</h3>
  <li>GIT, HTML, CSS, JAVASCRIPT, REACT, CONTENTFUL ,

@@ -1,5 +1,6 @@
 import React from 'react';
 import About from './about.js';
+import MyWork from './homePage.js'
 
 function Title() {
   return (
@@ -12,7 +13,6 @@ function Title() {
 function IdImg() {
     return <div id="imgRow">
       <div id="imgFrame">
-        <div id="bioImg"></div>
       </div>
     </div>
 }
@@ -32,8 +32,10 @@ export default function HomePage() {
         </div>
         <div id="homeRightColumn">
             <IdImg/>
+            <div id="placeHolder"></div>
             <About/>
         </div>
       </div>
+      <MyWork/>
       </>
 }

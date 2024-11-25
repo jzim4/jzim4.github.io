@@ -43152,73 +43152,65 @@ exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate :
 },{"process/browser.js":2,"timers":19}],20:[function(require,module,exports){
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = About;
-var _react = _interopRequireDefault(require("react"));
-function _interopRequireDefault(e) {
-  return e && e.__esModule ? e : {
-    "default": e
-  };
-}
-function Skills() {
-  return /*#__PURE__*/_react["default"].createElement("ul", null, /*#__PURE__*/_react["default"].createElement("h3", null, "Key Skills"), /*#__PURE__*/_react["default"].createElement("li", null, "GIT, HTML, CSS, JAVASCRIPT, REACT, CONTENTFUL , FIREBASE, PYTHON, R, JAVA, MICROSOFT SUITE, GSUITE"));
-}
-function Interests() {
-  return /*#__PURE__*/_react["default"].createElement("ul", null, /*#__PURE__*/_react["default"].createElement("h3", null, "Interests"), /*#__PURE__*/_react["default"].createElement("li", null, "Puzzles, knitting, crossword, baking, rock climbing, snowboarding, woodworking, soccer, tennis"));
-}
-function About() {
-  return /*#__PURE__*/_react["default"].createElement("div", {
-    id: "aboutRow"
-  }, /*#__PURE__*/_react["default"].createElement("h2", null, "About"), "I'm originally from the suburbs of Philadelphia, and I'm currently a sophomore at Macalester College. I'm studying Computer Science and Psychology, and I have a passion for front-end development.", /*#__PURE__*/_react["default"].createElement(Skills, null), /*#__PURE__*/_react["default"].createElement(Interests, null));
-}
+function _typeof(o) {
+  "@babel/helpers - typeof";
 
-},{"react":15}],21:[function(require,module,exports){
-"use strict";
-
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
+}
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = HomePage;
-var _react = _interopRequireDefault(require("react"));
-var _about = _interopRequireDefault(require("./about.js"));
-var _homePage = _interopRequireDefault(require("./homePage.js"));
-function _interopRequireDefault(e) {
-  return e && e.__esModule ? e : {
+var _react = _interopRequireWildcard(require("react"));
+function _getRequireWildcardCache(e) {
+  if ("function" != typeof WeakMap) return null;
+  var r = new WeakMap(),
+    t = new WeakMap();
+  return (_getRequireWildcardCache = function _getRequireWildcardCache(e) {
+    return e ? t : r;
+  })(e);
+}
+function _interopRequireWildcard(e, r) {
+  if (!r && e && e.__esModule) return e;
+  if (null === e || "object" != _typeof(e) && "function" != typeof e) return {
     "default": e
   };
+  var t = _getRequireWildcardCache(r);
+  if (t && t.has(e)) return t.get(e);
+  var n = {
+      __proto__: null
+    },
+    a = Object.defineProperty && Object.getOwnPropertyDescriptor;
+  for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) {
+    var i = a ? Object.getOwnPropertyDescriptor(e, u) : null;
+    i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u];
+  }
+  return n["default"] = e, t && t.set(e, n), n;
 }
+function Nav() {}
 function Title() {
-  return /*#__PURE__*/_react["default"].createElement("h1", null, "Jonah Zimmer");
-}
-function IdImg() {
-  return /*#__PURE__*/_react["default"].createElement("div", {
-    id: "imgRow"
-  }, /*#__PURE__*/_react["default"].createElement("div", {
-    id: "imgFrame"
-  }));
+  //   const [isVisible, setIsVisible] = useState(false);
+
+  //   useEffect(() => {
+  //     setIsVisible(true);
+  //   }, []);
+
+  return /*#__PURE__*/_react["default"].createElement("h1", {
+    className: "fadeIn"
+  }, "Jonah Zimmer");
 }
 function Bio() {
-  return /*#__PURE__*/_react["default"].createElement("p", {
-    id: "bioText"
-  }, "I'm a self-taught front-end developer, with a passion for building beautiful, usable websites in React.js.");
+  return /*#__PURE__*/_react["default"].createElement("p", null, "I'm a self-taught front-end developer, with a passion for building beautiful, usable websites in React.js.");
 }
 function HomePage() {
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
-    id: "homePageContainer"
-  }, /*#__PURE__*/_react["default"].createElement("div", {
-    id: "homeLeftColumn"
-  }, /*#__PURE__*/_react["default"].createElement("div", {
-    id: "bioTextContainer"
-  }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement(Bio, null))), /*#__PURE__*/_react["default"].createElement("div", {
-    id: "homeRightColumn"
-  }, /*#__PURE__*/_react["default"].createElement(IdImg, null), /*#__PURE__*/_react["default"].createElement("div", {
-    id: "placeHolder"
-  }), /*#__PURE__*/_react["default"].createElement(_about["default"], null))), /*#__PURE__*/_react["default"].createElement(_homePage["default"], null));
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Nav, null), /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement(Bio, null));
 }
 
-},{"./about.js":20,"./homePage.js":21,"react":15}],22:[function(require,module,exports){
+},{"react":15}],21:[function(require,module,exports){
 "use strict";
 
 var _homePage = _interopRequireDefault(require("./homePage.js"));
@@ -43239,4 +43231,4 @@ root.render(/*#__PURE__*/_react["default"].createElement(_react["default"].Stric
   element: /*#__PURE__*/_react["default"].createElement(_homePage["default"], null)
 })))));
 
-},{"./homePage.js":21,"react":15,"react-dom/client":5,"react-router-dom":7}]},{},[22]);
+},{"./homePage.js":20,"react":15,"react-dom/client":5,"react-router-dom":7}]},{},[21]);
