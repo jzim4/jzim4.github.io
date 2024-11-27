@@ -6,13 +6,14 @@ body {
     margin: 0;
     color: #680246ff;
 }
+
 html{
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     scroll-snap-type: y mandatory;
 }
 
 /* TRANSITIONS */
-@keyframes slideInLeft {
+@keyframes slideInLeftBig {
     0% {
         width: 55vw;
         margin-left: -5vw;
@@ -22,14 +23,14 @@ html{
         margin-left: 0vw;
     }
 }
-@keyframes slideInRight {
+@keyframes slideInRightBig {
     0% {
         margin-left: 5vw;
-        width: 45vw;
+        width: calc(45vw - 60px);
     }
     100% {
         margin-left: 0;
-        width: 50vw;
+        width: calc(50vw - 60px);
     }
 }
 
@@ -40,7 +41,7 @@ html{
 /* left */
 #homeLeftColumn {
     z-index: 1;
-    animation: 2s slideInLeft ease-out;
+    animation: 2s slideInLeftBig ease-out;
     background-color: #fcebff;
     height: 100vh;
     width: 50vw;
@@ -55,18 +56,25 @@ html{
     margin: 0 auto;
 }
 h1 {
-    margin: 0 auto 10px;
-    width: 90%;
+    text-align: right;
+    margin-bottom: 10px;
+    width: 100%;
     font-size: 4em;
-    text-align: center;
 }
 #bioText {
-    margin: 0 auto 10px;
+    text-align: right;
+    margin-bottom: 10px;
     min-width: 40vw;
     width: min-content;
     font-size: 1.5em;
     text-wrap: balance;
-    text-align: center;
+}
+#buttonsContainer {
+    width: fit-content;
+    margin-left: auto;
+}
+button {
+    margin: 5px;
 }
 
 /* right */
@@ -80,9 +88,10 @@ h1 {
 }
 /* pic */
 #imgRow {
-    animation: 2s slideInRight ease-out;
+    animation: 2s slideInRightBig ease-out;
     height: 100vh;
     width: 50vw;
+    z-index: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -109,19 +118,108 @@ h1 {
 }
 /* about */
 #aboutRow {
+    font-size: 1.5em;
     position: relative;
-    width: 50vw;
-    height: 100vh;
+    padding: 30px;
+    width: calc(50vw - 60px);
+    height: calc(100vh - 60px);
     z-index: 1;
-    background-color: #680246ff;
+    background-color: #660268;
     color: #fcebff;
     scroll-snap-stop: always;
     scroll-snap-align: start;
-    animation: 2s slideInRight ease-out;
+    animation: 2s slideInRightBig ease-out;
+}
+#aboutListsContainer {
+    position: relative;
+}
+ul.aboutList {
+    width: 100%;
+    clear: both;
+    list-style-type: none;
+    margin-block-start: 0;
+    padding-inline-start: 0;
+}
+li {
+    border: #fcebff solid 2px;
+    padding: 7px;
+    float: left;
+    margin: 4px;
+
+}
+
+/* small version of full home page */
+@media (max-width: 900px) {
+    #homePageContainer {
+        display: block;
+    }
+    #homeLeftColumn, #homeRightColumn, #aboutRow, div#contactPage {
+        width: 100vw;
+        animation: none;
+    }
 }
 
 /* MY WORK */
-
+#myWorkPage {
+    padding: 20px;
+    position: relative;
+    min-height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    background-color: white;
+    z-index: 1;
+}
 #myWorkTitle {
-    height: 100vh;
+    text-align: center;
+    font-size: 2em;
+    width: 100%;
+    height: fit-content;
+}
+#myWorkContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* individual work */
+.workTitle {
+    text-align: center;
+    margin-bottom: 0;
+    width: 100%;
+    height: fit-content;
+}
+.workContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 10px;
+    font-size: 1.5em;
+}
+.workImg {
+    width: 20%;
+    margin: 3%;
+}
+.workDescr {
+    width: 50%;
+    margin: auto 3%;
+    height: fit-content;
+}
+
+.workContainer:nth-child(even) {
+    background: #680246ff;
+    color: #fcebff;
+}
+.workContainer:nth-child(odd) {
+    background: #fcebff;
+    color: #680246ff;
+}
+
+/* CONTACT */
+#contactPage {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    z-index: 1;
+    background-color: #fcebff;
+    height: calc(100vh - 40px);
+    padding: 20px;
+    width: 50vw;
 }
