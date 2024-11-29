@@ -43289,41 +43289,68 @@ function _interopRequireWildcard(e, r) {
   return n["default"] = e, t && t.set(e, n), n;
 }
 function Animate() {
-  console.log("animate");
-  window.addEventListener('scroll', function () {
-    var element = document.getElementById("bioTextContainer");
-    var pos = window.scrollY;
-    var vh = window.innerHeight;
-    if (pos / vh < 2) {
-      element.classList.add('bioTextContainerHome');
-      element.classList.remove('bioTextContainerNav');
-    } else {
-      element.classList.remove('bioTextContainerHome');
-      element.classList.add('bioTextContainerNav');
-    }
-  });
   (0, _react.useEffect)(function () {
-    var element = document.getElementById('homePageContainer');
-    var scrollTimeline = new ScrollTimeline({
-      source: document.scrollingElement,
-      orientation: "block"
-    });
-    var bodyHeight = document.body.clientHeight;
-    var startOffset = window.innerHeight * 1 / bodyHeight;
-    var endOffset = window.innerHeight * 1.9 / bodyHeight;
-    console.log(startOffset);
-    var animation = element.animate([{
-      opacity: "1",
-      offset: startOffset
-    }, {
-      opacity: "0",
-      offset: endOffset
-    }, {
-      opacity: "0",
-      offset: 1
-    }], {
-      duration: 1,
-      timeline: scrollTimeline
+    var fadePlaceHolder = document.getElementById('fadePlaceHolder');
+    var homePageContainer = document.getElementById('homePageContainer');
+    var bioTextContainer = document.getElementById("bioTextContainer");
+    var myWorkPage = document.getElementById("myWorkPage");
+    var aboutRow = document.getElementById("aboutRow");
+    var faded = false;
+    var lastScrollTop = window.scrollY;
+    var scrollDir = 0;
+    window.addEventListener('scroll', function () {
+      var currentScrollTop = window.scrollY;
+      if (currentScrollTop > lastScrollTop) {
+        scrollDir = 1;
+      } else if (currentScrollTop < lastScrollTop) {
+        scrollDir = -1;
+      }
+      console.log(scrollDir);
+      lastScrollTop = currentScrollTop;
+      var phBox = fadePlaceHolder.getBoundingClientRect();
+      if (phBox.top >= window.innerHeight) {
+        bioTextContainer.classList.add('bioTextContainerHome');
+        bioTextContainer.classList.remove('bioTextContainerNav');
+      } else {
+        bioTextContainer.classList.remove('bioTextContainerHome');
+        bioTextContainer.classList.add('bioTextContainerNav');
+      }
+      var myWorkBox = myWorkPage.getBoundingClientRect();
+      var aboutBox = aboutRow.getBoundingClientRect();
+      if (!faded && phBox.top < window.innerHeight && scrollDir == 1) {
+        faded = true;
+        homePageContainer.animate([{
+          opacity: 1
+        }, {
+          opacity: 0.3,
+          offset: 0.3
+        }, {
+          opacity: 0
+        }], {
+          duration: 600,
+          easing: 'ease-out'
+        });
+        this.setTimeout(function () {
+          console.log("animation end");
+          myWorkPage.scrollIntoView(true);
+        }, 600);
+        homePageContainer.style.opacity = 0;
+      } else if (faded && phBox.top == 0 && scrollDir == -1) {
+        faded = false;
+        aboutRow.scrollIntoView(true);
+        homePageContainer.animate([{
+          opacity: 0
+        }, {
+          opacity: 0.7,
+          offset: 0.3
+        }, {
+          opacity: 1
+        }], {
+          duration: 600,
+          easing: 'ease-out'
+        });
+        homePageContainer.style.opacity = 1;
+      }
     });
   }, []);
 }
@@ -43416,7 +43443,8 @@ function HomePageRight() {
   }, /*#__PURE__*/_react["default"].createElement(IdImg, null), /*#__PURE__*/_react["default"].createElement("div", {
     className: "placeHolder scrollSnapAlways"
   }), /*#__PURE__*/_react["default"].createElement(_about["default"], null), /*#__PURE__*/_react["default"].createElement("div", {
-    className: "placeHolder"
+    id: "fadePlaceHolder",
+    className: "scrollSnapAlways"
   }));
 }
 
@@ -43467,6 +43495,9 @@ function _interopRequireDefault(e) {
   };
 }
 function MySite() {
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_homePage["default"], null), /*#__PURE__*/_react["default"].createElement(_myWork["default"], null), /*#__PURE__*/_react["default"].createElement(_contact["default"], null));
 }
 
@@ -43508,7 +43539,7 @@ function MyWork() {
   var dataList = Object.entries(_myWork["default"]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
     id: "myWorkPage",
-    className: "scrollSnapAlways"
+    className: "scrollSnapNormal"
   }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "myWorkContainer"
   }, dataList.map(function (item) {

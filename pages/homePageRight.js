@@ -23,6 +23,6 @@ export default function HomePageRight() {
             <IdImg/>
             <div className="placeHolder scrollSnapAlways"></div>
             <About/>
-            <div className="placeHolder"></div>
+            <div id="fadePlaceHolder" className="scrollSnapAlways"></div>
         </div>
 }

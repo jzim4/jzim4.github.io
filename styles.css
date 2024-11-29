@@ -9,11 +9,16 @@ body {
 
 html{
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 .scrollSnapAlways {
     scroll-snap-align: start;
     scroll-snap-stop: always;
+}
+.scrollSnapNormal {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
 }
 
 /* TRANSITIONS */
@@ -47,7 +52,6 @@ html{
         background-color: #fcebff;
     }
 }
-
 /* LANDING PAGE */
 #homePageContainer {
     display: flex;
@@ -150,8 +154,12 @@ button {
     height: 100vh;
     width: 50vw;
 }
+#fadePlaceHolder {
+    height: 100vh;
+}
 /* about */
 #aboutRow {
+    overflow-y: scroll;
     font-size: 1.5em;
     position: sticky;
     top: 0;

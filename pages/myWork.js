@@ -18,7 +18,7 @@ function Work({work}) {
 export default function MyWork() {
     let dataList = Object.entries(data);
     return <>
-    <div id="myWorkPage" className="scrollSnapAlways">
+    <div id="myWorkPage" className="scrollSnapNormal">
         <Title/>
         <div id="myWorkContainer">
             {dataList.map((item) => (
