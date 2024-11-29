@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Contact() {
-    return <div id="contactPage">
+    return <div id="contactPage" className="scrollSnapAlways">
     <h2>Get in touch!</h2>
     <p>484-347-7297</p>
     <p>jszimmer545@gmail.com</p>

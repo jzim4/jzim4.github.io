@@ -8,8 +8,12 @@ body {
 }
 
 html{
-    /* overflow-y: scroll; */
     scroll-snap-type: y mandatory;
+}
+
+.scrollSnapAlways {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 /* TRANSITIONS */
@@ -26,21 +30,32 @@ html{
 @keyframes slideInRightBig {
     0% {
         margin-left: 5vw;
-        width: calc(45vw - 60px);
+        width: 45vw;
     }
     100% {
         margin-left: 0;
-        width: calc(50vw - 60px);
+        width: 50vw;
+    }
+}
+@keyframes slideInRightSmall {
+    0% {
+        transform: translateX(5vw);
+        background-color: transparent;
+    }
+    100% {
+        transform: translateX(0);
+        background-color: #fcebff;
     }
 }
 
 /* LANDING PAGE */
 #homePageContainer {
     display: flex;
+    height: 300vh;
 }
 /* left */
 #homeLeftColumn {
-    z-index: 1;
+    z-index: 5;
     animation: 2s slideInLeftBig ease-out;
     background-color: #fcebff;
     height: 100vh;
@@ -53,7 +68,26 @@ html{
     justify-content: space-around;
 }
 #bioTextContainer {
+    background-color: #fcebff;
     margin: 0 auto;
+    position: fixed;
+    display: flex;
+    top: 0;
+    z-index: 5;
+    animation: 2s slideInRightSmall ease-out;
+}
+.bioTextContainerHome {
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    right: 55vw
+}
+.bioTextContainerNav {
+    font-size: 0.5em;
+    flex-direction: row;
+    width: 100vw;
+    height: 50px;
+    left: 0;
 }
 h1 {
     text-align: right;
@@ -71,6 +105,8 @@ h1 {
 }
 #buttonsContainer {
     width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
     margin-left: auto;
 }
 button {
@@ -82,7 +118,7 @@ button {
     position: relative;
     display: flex;
     width: 50vw;
-    height: 200vh;
+    height: 300vh;
     flex-direction: column;
     justify-content: space-around;
 }
@@ -110,24 +146,21 @@ button {
     background-position: center;
     background-size: cover;
 }
-#placeHolder {
+.placeHolder {
     height: 100vh;
     width: 50vw;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
 }
 /* about */
 #aboutRow {
     font-size: 1.5em;
-    position: relative;
+    position: sticky;
+    top: 0;
     padding: 30px;
     width: calc(50vw - 60px);
     height: calc(100vh - 60px);
-    z-index: 1;
+    z-index: 6;
     background-color: #660268;
     color: #fcebff;
-    scroll-snap-stop: always;
-    scroll-snap-align: start;
     animation: 2s slideInRightBig ease-out;
 }
 #aboutListsContainer {
@@ -164,8 +197,6 @@ li {
     padding: 20px;
     position: relative;
     min-height: 100vh;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
     background-color: white;
     z-index: 1;
 }
@@ -215,8 +246,6 @@ li {
 
 /* CONTACT */
 #contactPage {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
     z-index: 1;
     background-color: #fcebff;
     height: calc(100vh - 40px);

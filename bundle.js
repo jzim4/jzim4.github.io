@@ -43212,7 +43212,8 @@ function Interests() {
 }
 function About() {
   return /*#__PURE__*/_react["default"].createElement("div", {
-    id: "aboutRow"
+    id: "aboutRow",
+    className: "scrollSnapAlways"
   }, /*#__PURE__*/_react["default"].createElement("h2", null, "About"), "I'm originally from the suburbs of Philadelphia, and I'm currently a sophomore at Macalester College. I'm studying Computer Science and Psychology, and I have a passion for front-end development.", /*#__PURE__*/_react["default"].createElement("div", {
     id: "aboutListsContainer"
   }, /*#__PURE__*/_react["default"].createElement(Skills, null), /*#__PURE__*/_react["default"].createElement(Interests, null)));
@@ -43233,11 +43234,193 @@ function _interopRequireDefault(e) {
 }
 function Contact() {
   return /*#__PURE__*/_react["default"].createElement("div", {
-    id: "contactPage"
+    id: "contactPage",
+    className: "scrollSnapAlways"
   }, /*#__PURE__*/_react["default"].createElement("h2", null, "Get in touch!"), /*#__PURE__*/_react["default"].createElement("p", null, "484-347-7297"), /*#__PURE__*/_react["default"].createElement("p", null, "jszimmer545@gmail.com"), /*#__PURE__*/_react["default"].createElement("h2", null, "See More!"), /*#__PURE__*/_react["default"].createElement("p", null, "Github"), /*#__PURE__*/_react["default"].createElement("p", null, "Download resume"));
 }
 
 },{"react":16}],23:[function(require,module,exports){
+"use strict";
+
+function _typeof(o) {
+  "@babel/helpers - typeof";
+
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
+}
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = HomePage;
+var _react = _interopRequireWildcard(require("react"));
+var _homePageLeft = _interopRequireDefault(require("./homePageLeft.js"));
+var _homePageRight = _interopRequireDefault(require("./homePageRight.js"));
+function _interopRequireDefault(e) {
+  return e && e.__esModule ? e : {
+    "default": e
+  };
+}
+function _getRequireWildcardCache(e) {
+  if ("function" != typeof WeakMap) return null;
+  var r = new WeakMap(),
+    t = new WeakMap();
+  return (_getRequireWildcardCache = function _getRequireWildcardCache(e) {
+    return e ? t : r;
+  })(e);
+}
+function _interopRequireWildcard(e, r) {
+  if (!r && e && e.__esModule) return e;
+  if (null === e || "object" != _typeof(e) && "function" != typeof e) return {
+    "default": e
+  };
+  var t = _getRequireWildcardCache(r);
+  if (t && t.has(e)) return t.get(e);
+  var n = {
+      __proto__: null
+    },
+    a = Object.defineProperty && Object.getOwnPropertyDescriptor;
+  for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) {
+    var i = a ? Object.getOwnPropertyDescriptor(e, u) : null;
+    i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u];
+  }
+  return n["default"] = e, t && t.set(e, n), n;
+}
+function Animate() {
+  console.log("animate");
+  window.addEventListener('scroll', function () {
+    var element = document.getElementById("bioTextContainer");
+    var pos = window.scrollY;
+    var vh = window.innerHeight;
+    if (pos / vh < 2) {
+      element.classList.add('bioTextContainerHome');
+      element.classList.remove('bioTextContainerNav');
+    } else {
+      element.classList.remove('bioTextContainerHome');
+      element.classList.add('bioTextContainerNav');
+    }
+  });
+  (0, _react.useEffect)(function () {
+    var element = document.getElementById('homePageContainer');
+    var scrollTimeline = new ScrollTimeline({
+      source: document.scrollingElement,
+      orientation: "block"
+    });
+    var bodyHeight = document.body.clientHeight;
+    var startOffset = window.innerHeight * 1 / bodyHeight;
+    var endOffset = window.innerHeight * 1.9 / bodyHeight;
+    console.log(startOffset);
+    var animation = element.animate([{
+      opacity: "1",
+      offset: startOffset
+    }, {
+      opacity: "0",
+      offset: endOffset
+    }, {
+      opacity: "0",
+      offset: 1
+    }], {
+      duration: 1,
+      timeline: scrollTimeline
+    });
+  }, []);
+}
+function HomePage() {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Animate, null), /*#__PURE__*/_react["default"].createElement("div", {
+    id: "homePageContainer"
+  }, /*#__PURE__*/_react["default"].createElement(_homePageLeft["default"], null), /*#__PURE__*/_react["default"].createElement(_homePageRight["default"], null)));
+}
+
+},{"./homePageLeft.js":24,"./homePageRight.js":25,"react":16}],24:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = HomePageLeft;
+var _react = _interopRequireDefault(require("react"));
+function _interopRequireDefault(e) {
+  return e && e.__esModule ? e : {
+    "default": e
+  };
+}
+function Title() {
+  return /*#__PURE__*/_react["default"].createElement("h1", {
+    id: "h1"
+  }, "Jonah Zimmer");
+}
+function Bio() {
+  window.addEventListener('scroll', function () {
+    var pos = window.scrollY;
+    var vh = window.innerHeight;
+    if (pos / vh > 2) {
+      document.getElementById('bioText').style.display = 'none';
+    } else {
+      document.getElementById('bioText').style.display = 'block';
+    }
+  });
+  return /*#__PURE__*/_react["default"].createElement("p", {
+    id: "bioText"
+  }, "I'm a self-taught front-end developer, with a passion for building beautiful, usable websites in React.js.");
+}
+function Buttons() {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+    id: "buttonsContainer"
+  }, /*#__PURE__*/_react["default"].createElement("button", null, "About"), /*#__PURE__*/_react["default"].createElement("button", null, "My Work"), /*#__PURE__*/_react["default"].createElement("button", null, "Contact")));
+}
+function HomePageLeft() {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+    id: "homeLeftColumn"
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    id: "bioTextContainer",
+    className: "bioTextContainerHome"
+  }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement(Bio, null), /*#__PURE__*/_react["default"].createElement(Buttons, null))));
+}
+
+},{"react":16}],25:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = HomePageRight;
+var _react = _interopRequireDefault(require("react"));
+var _about = _interopRequireDefault(require("./about.js"));
+function _interopRequireDefault(e) {
+  return e && e.__esModule ? e : {
+    "default": e
+  };
+}
+function IdImg() {
+  window.addEventListener('scroll', function () {
+    var pos = window.scrollY;
+    var vh = window.innerHeight;
+    if (pos / vh > 1 && pos / vh < 2) {
+      document.getElementById('imgRow').style.visibility = 'hidden';
+    } else {
+      document.getElementById('imgRow').style.visibility = 'visible';
+    }
+  });
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    id: "imgRow",
+    className: "scrollSnapAlways"
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    id: "imgFrame"
+  }));
+}
+function HomePageRight() {
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    id: "homeRightColumn"
+  }, /*#__PURE__*/_react["default"].createElement(IdImg, null), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "placeHolder scrollSnapAlways"
+  }), /*#__PURE__*/_react["default"].createElement(_about["default"], null), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "placeHolder"
+  }));
+}
+
+},{"./about.js":21,"react":16}],26:[function(require,module,exports){
 "use strict";
 
 var _mySite = _interopRequireDefault(require("./mySite.js"));
@@ -43249,6 +43432,15 @@ function _interopRequireDefault(e) {
     "default": e
   };
 }
+// inspiration
+// https://m7mad.dev/
+
+// header that appears after passing about section
+// cards for my projects
+
+// how to use scroll animations
+// https://www.youtube.com/watch?v=5noL_qFobm0&t=5s
+
 var root = _client["default"].createRoot(document.getElementById('mainContent'));
 root.render(/*#__PURE__*/_react["default"].createElement(_react["default"].StrictMode, null, /*#__PURE__*/_react["default"].createElement(_reactRouterDom.HashRouter, null, /*#__PURE__*/_react["default"].createElement(_reactRouterDom.Routes, null, /*#__PURE__*/_react["default"].createElement(_reactRouterDom.Route, {
   path: "/",
@@ -43258,7 +43450,7 @@ root.render(/*#__PURE__*/_react["default"].createElement(_react["default"].Stric
   element: /*#__PURE__*/_react["default"].createElement(_mySite["default"], null)
 })))));
 
-},{"./mySite.js":24,"react":16,"react-dom/client":6,"react-router-dom":8}],24:[function(require,module,exports){
+},{"./mySite.js":27,"react":16,"react-dom/client":6,"react-router-dom":8}],27:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43266,7 +43458,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = MySite;
 var _react = _interopRequireDefault(require("react"));
-var _about = _interopRequireDefault(require("./about.js"));
+var _homePage = _interopRequireDefault(require("./homePage.js"));
 var _myWork = _interopRequireDefault(require("./myWork.js"));
 var _contact = _interopRequireDefault(require("./contact.js"));
 function _interopRequireDefault(e) {
@@ -43274,51 +43466,11 @@ function _interopRequireDefault(e) {
     "default": e
   };
 }
-function Title() {
-  return /*#__PURE__*/_react["default"].createElement("h1", null, "Jonah Zimmer");
-}
-function IdImg() {
-  window.addEventListener('scroll', function () {
-    var pos = window.scrollY;
-    var vh = window.innerHeight;
-    console.log(pos / vh);
-    if (pos / vh > 1 && pos / vh < 2) {
-      document.getElementById('imgRow').style.visibility = 'hidden';
-    } else {
-      document.getElementById('imgRow').style.visibility = 'visible';
-    }
-  });
-  return /*#__PURE__*/_react["default"].createElement("div", {
-    id: "imgRow"
-  }, /*#__PURE__*/_react["default"].createElement("div", {
-    id: "imgFrame"
-  }));
-}
-function Bio() {
-  return /*#__PURE__*/_react["default"].createElement("p", {
-    id: "bioText"
-  }, "I'm a self-taught front-end developer, with a passion for building beautiful, usable websites in React.js.");
-}
-function Buttons() {
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
-    id: "buttonsContainer"
-  }, /*#__PURE__*/_react["default"].createElement("button", null, "About"), /*#__PURE__*/_react["default"].createElement("button", null, "My Work"), /*#__PURE__*/_react["default"].createElement("button", null, "Contact")));
-}
 function MySite() {
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
-    id: "homePageContainer"
-  }, /*#__PURE__*/_react["default"].createElement("div", {
-    id: "homeLeftColumn"
-  }, /*#__PURE__*/_react["default"].createElement("div", {
-    id: "bioTextContainer"
-  }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement(Bio, null), /*#__PURE__*/_react["default"].createElement(Buttons, null))), /*#__PURE__*/_react["default"].createElement("div", {
-    id: "homeRightColumn"
-  }, /*#__PURE__*/_react["default"].createElement(IdImg, null), /*#__PURE__*/_react["default"].createElement("div", {
-    id: "placeHolder"
-  }), /*#__PURE__*/_react["default"].createElement(_about["default"], null))), /*#__PURE__*/_react["default"].createElement(_myWork["default"], null), /*#__PURE__*/_react["default"].createElement(_contact["default"], null));
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_homePage["default"], null), /*#__PURE__*/_react["default"].createElement(_myWork["default"], null), /*#__PURE__*/_react["default"].createElement(_contact["default"], null));
 }
 
-},{"./about.js":21,"./contact.js":22,"./myWork.js":25,"react":16}],25:[function(require,module,exports){
+},{"./contact.js":22,"./homePage.js":23,"./myWork.js":28,"react":16}],28:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43355,7 +43507,8 @@ function Work(_ref) {
 function MyWork() {
   var dataList = Object.entries(_myWork["default"]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
-    id: "myWorkPage"
+    id: "myWorkPage",
+    className: "scrollSnapAlways"
   }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "myWorkContainer"
   }, dataList.map(function (item) {
@@ -43366,4 +43519,4 @@ function MyWork() {
   }))));
 }
 
-},{"../myWork.json":1,"react":16}]},{},[23]);
+},{"../myWork.json":1,"react":16}]},{},[26]);

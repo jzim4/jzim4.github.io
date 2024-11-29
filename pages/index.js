@@ -2,7 +2,6 @@
 // https://m7mad.dev/
 
 
-
 // header that appears after passing about section
 // cards for my projects
 
