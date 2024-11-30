@@ -72,6 +72,7 @@ html{
     justify-content: space-around;
 }
 #bioTextContainer {
+    opacity: 1 important;
     background-color: #fcebff;
     margin: 0 auto;
     position: fixed;
@@ -92,6 +93,7 @@ html{
     width: 100vw;
     height: 50px;
     left: 0;
+    opacity: 1;
 }
 h1 {
     text-align: right;
@@ -202,13 +204,17 @@ li {
 
 /* MY WORK */
 #myWorkPage {
+    background-color: white;
     padding: 20px;
     position: relative;
     min-height: 100vh;
-    background-color: white;
     z-index: 1;
+    overflow: unset;
+    padding-bottom: 30vh;
 }
 #myWorkTitle {
+    position: sticky;
+    top: 0;
     text-align: center;
     font-size: 2em;
     width: 100%;
@@ -220,10 +226,18 @@ li {
 }
 /* individual work */
 .workTitle {
+    top: 0;
     text-align: center;
     margin-bottom: 0;
     width: 100%;
     height: fit-content;
+}
+.workPage {
+    height: 60vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .workContainer {
     display: flex;
@@ -242,7 +256,6 @@ li {
     margin: auto 3%;
     height: fit-content;
 }
-
 .workContainer:nth-child(even) {
     background: #680246ff;
     color: #fcebff;
@@ -251,7 +264,6 @@ li {
     background: #fcebff;
     color: #680246ff;
 }
-
 /* CONTACT */
 #contactPage {
     z-index: 1;

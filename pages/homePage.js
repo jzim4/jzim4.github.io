@@ -19,6 +19,13 @@ function Animate() {
 
         window.addEventListener('scroll', function () {
             let currentScrollTop = window.scrollY; 
+            if (currentScrollTop < window.innerHeight) {
+                homePageContainer.style.opacity = 1;
+                bioTextContainer.classList.add('bioTextContainerHome');
+                bioTextContainer.classList.remove('bioTextContainerNav');
+            }
+
+
             if (currentScrollTop > lastScrollTop) {
                 scrollDir = 1;
             } else if (currentScrollTop < lastScrollTop) {
@@ -26,22 +33,11 @@ function Animate() {
             }
             lastScrollTop = currentScrollTop;
 
-
-
             const phBox = fadePlaceHolder.getBoundingClientRect();
 
-            if (phBox.top >= window.innerHeight) {
-                bioTextContainer.classList.add('bioTextContainerHome');
-                bioTextContainer.classList.remove('bioTextContainerNav');
-            } else {
+            if (!faded && phBox.top < window.innerHeight && scrollDir == 1) {
                 bioTextContainer.classList.remove('bioTextContainerHome');
                 bioTextContainer.classList.add('bioTextContainerNav');
-            }
-
-            const myWorkBox = myWorkPage.getBoundingClientRect();
-            const aboutBox = aboutRow.getBoundingClientRect();
-        
-            if (!faded && phBox.top < window.innerHeight && scrollDir == 1) {
                 faded = true;
                 homePageContainer.animate(
                     [
@@ -55,15 +51,16 @@ function Animate() {
                     }
                 );
                 this.setTimeout(() => {
-                    console.log("animation end");
                     myWorkPage.scrollIntoView(true);
                 }, 600)
                 homePageContainer.style.opacity = 0;
             }
         
-            else if (faded && phBox.top == 0 && scrollDir == -1) {
+            else if (faded && Math.abs(phBox.top) < 0.5 && scrollDir == -1) {
+                bioTextContainer.classList.add('bioTextContainerHome');
+                bioTextContainer.classList.remove('bioTextContainerNav');
                 faded = false;
-                aboutRow.scrollIntoView(true);
+                
                 homePageContainer.animate(
                     [
                         { opacity: 0 },
@@ -75,6 +72,9 @@ function Animate() {
                         easing: 'ease-out'
                     }
                 );
+                window.scroll(0, window.innerHeight * 2);
+                aboutRow.scrollIntoView(true);
+                window.scroll(0, window.innerHeight);
                 homePageContainer.style.opacity = 1;
             }
         });

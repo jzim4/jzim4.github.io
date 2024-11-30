@@ -43300,24 +43300,21 @@ function Animate() {
     var scrollDir = 0;
     window.addEventListener('scroll', function () {
       var currentScrollTop = window.scrollY;
+      if (currentScrollTop < window.innerHeight) {
+        homePageContainer.style.opacity = 1;
+        bioTextContainer.classList.add('bioTextContainerHome');
+        bioTextContainer.classList.removee('bioTextContainerNav');
+      }
       if (currentScrollTop > lastScrollTop) {
         scrollDir = 1;
       } else if (currentScrollTop < lastScrollTop) {
         scrollDir = -1;
       }
-      console.log(scrollDir);
       lastScrollTop = currentScrollTop;
       var phBox = fadePlaceHolder.getBoundingClientRect();
-      if (phBox.top >= window.innerHeight) {
-        bioTextContainer.classList.add('bioTextContainerHome');
-        bioTextContainer.classList.remove('bioTextContainerNav');
-      } else {
+      if (!faded && phBox.top < window.innerHeight && scrollDir == 1) {
         bioTextContainer.classList.remove('bioTextContainerHome');
         bioTextContainer.classList.add('bioTextContainerNav');
-      }
-      var myWorkBox = myWorkPage.getBoundingClientRect();
-      var aboutBox = aboutRow.getBoundingClientRect();
-      if (!faded && phBox.top < window.innerHeight && scrollDir == 1) {
         faded = true;
         homePageContainer.animate([{
           opacity: 1
@@ -43331,13 +43328,13 @@ function Animate() {
           easing: 'ease-out'
         });
         this.setTimeout(function () {
-          console.log("animation end");
           myWorkPage.scrollIntoView(true);
         }, 600);
         homePageContainer.style.opacity = 0;
-      } else if (faded && phBox.top == 0 && scrollDir == -1) {
+      } else if (faded && Math.abs(phBox.top) < 0.5 && scrollDir == -1) {
+        bioTextContainer.classList.add('bioTextContainerHome');
+        bioTextContainer.classList.remove('bioTextContainerNav');
         faded = false;
-        aboutRow.scrollIntoView(true);
         homePageContainer.animate([{
           opacity: 0
         }, {
@@ -43349,6 +43346,8 @@ function Animate() {
           duration: 600,
           easing: 'ease-out'
         });
+        aboutRow.scrollIntoView(true);
+        window.scroll(0, window.innerHeight);
         homePageContainer.style.opacity = 1;
       }
     });
@@ -43424,7 +43423,7 @@ function IdImg() {
   window.addEventListener('scroll', function () {
     var pos = window.scrollY;
     var vh = window.innerHeight;
-    if (pos / vh > 1 && pos / vh < 2) {
+    if (pos / vh > 1 && pos / vh < 3) {
       document.getElementById('imgRow').style.visibility = 'hidden';
     } else {
       document.getElementById('imgRow').style.visibility = 'visible';
@@ -43504,16 +43503,146 @@ function MySite() {
 },{"./contact.js":22,"./homePage.js":23,"./myWork.js":28,"react":16}],28:[function(require,module,exports){
 "use strict";
 
+function _typeof(o) {
+  "@babel/helpers - typeof";
+
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
+}
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = MyWork;
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 var _myWork = _interopRequireDefault(require("../myWork.json"));
 function _interopRequireDefault(e) {
   return e && e.__esModule ? e : {
     "default": e
   };
+}
+function _getRequireWildcardCache(e) {
+  if ("function" != typeof WeakMap) return null;
+  var r = new WeakMap(),
+    t = new WeakMap();
+  return (_getRequireWildcardCache = function _getRequireWildcardCache(e) {
+    return e ? t : r;
+  })(e);
+}
+function _interopRequireWildcard(e, r) {
+  if (!r && e && e.__esModule) return e;
+  if (null === e || "object" != _typeof(e) && "function" != typeof e) return {
+    "default": e
+  };
+  var t = _getRequireWildcardCache(r);
+  if (t && t.has(e)) return t.get(e);
+  var n = {
+      __proto__: null
+    },
+    a = Object.defineProperty && Object.getOwnPropertyDescriptor;
+  for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) {
+    var i = a ? Object.getOwnPropertyDescriptor(e, u) : null;
+    i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u];
+  }
+  return n["default"] = e, t && t.set(e, n), n;
+}
+function _createForOfIteratorHelper(r, e) {
+  var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+  if (!t) {
+    if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) {
+      t && (r = t);
+      var _n = 0,
+        F = function F() {};
+      return {
+        s: F,
+        n: function n() {
+          return _n >= r.length ? {
+            done: !0
+          } : {
+            done: !1,
+            value: r[_n++]
+          };
+        },
+        e: function e(r) {
+          throw r;
+        },
+        f: F
+      };
+    }
+    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+  var o,
+    a = !0,
+    u = !1;
+  return {
+    s: function s() {
+      t = t.call(r);
+    },
+    n: function n() {
+      var r = t.next();
+      return a = r.done, r;
+    },
+    e: function e(r) {
+      u = !0, o = r;
+    },
+    f: function f() {
+      try {
+        a || null == t["return"] || t["return"]();
+      } finally {
+        if (u) throw o;
+      }
+    }
+  };
+}
+function _unsupportedIterableToArray(r, a) {
+  if (r) {
+    if ("string" == typeof r) return _arrayLikeToArray(r, a);
+    var t = {}.toString.call(r).slice(8, -1);
+    return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0;
+  }
+}
+function _arrayLikeToArray(r, a) {
+  (null == a || a > r.length) && (a = r.length);
+  for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
+  return n;
+}
+function AnimateWorks() {
+  (0, _react.useEffect)(function () {
+    var works = document.getElementsByClassName('workContainer');
+    var _iterator = _createForOfIteratorHelper(works),
+      _step;
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var i = _step.value;
+        i.animate([{
+          opacity: 0,
+          transform: "translateY(-30%)"
+        }, {
+          opacity: 0.2,
+          transform: "translateY(-10%)"
+        }, {
+          opacity: 1,
+          transform: "translateY(0%)"
+        }, {
+          opacity: 0.2,
+          transform: "translateY(10%)"
+        }, {
+          opacity: 0,
+          transform: "translateY(30%)"
+        }], {
+          timeline: new ViewTimeline({
+            subject: i
+          })
+        });
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+  });
 }
 function Title() {
   return /*#__PURE__*/_react["default"].createElement("div", {
@@ -43525,6 +43654,8 @@ function Title() {
 function Work(_ref) {
   var work = _ref.work;
   return /*#__PURE__*/_react["default"].createElement("div", {
+    className: "workPage"
+  }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "workContainer"
   }, /*#__PURE__*/_react["default"].createElement("h3", {
     className: "workTitle"
@@ -43533,11 +43664,11 @@ function Work(_ref) {
     src: work.img
   }), /*#__PURE__*/_react["default"].createElement("p", {
     className: "workDescr"
-  }, work.description));
+  }, work.description)));
 }
 function MyWork() {
   var dataList = Object.entries(_myWork["default"]);
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(AnimateWorks, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "myWorkPage",
     className: "scrollSnapNormal"
   }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement("div", {

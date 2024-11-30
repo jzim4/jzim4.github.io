@@ -6,7 +6,7 @@ function IdImg() {
         const pos = window.scrollY;
         const vh = window.innerHeight;
 
-        if (pos/vh > 1 && pos/vh < 2) {
+        if (pos/vh > 1 && pos/vh < 3) {
         document.getElementById('imgRow').style.visibility = 'hidden';
         } else {
         document.getElementById('imgRow').style.visibility = 'visible';
