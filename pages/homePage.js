@@ -12,71 +12,29 @@ function Animate() {
         const myWorkPage = document.getElementById("myWorkPage");
         const aboutRow = document.getElementById("aboutRow");
 
-        let faded = false;
-
-        let lastScrollTop = window.scrollY;
-        let scrollDir = 0;
-
         window.addEventListener('scroll', function () {
-            let currentScrollTop = window.scrollY; 
-            if (currentScrollTop < window.innerHeight) {
-                homePageContainer.style.opacity = 1;
-                bioTextContainer.classList.add('bioTextContainerHome');
-                bioTextContainer.classList.remove('bioTextContainerNav');
-            }
+            homePageContainer.animate(
+                [
+                    { opacity: 1 },
+                    { opacity: 0 }
+                ],
+                {
+                    timeline: new ViewTimeline({
+                        subject: fadePlaceHolder,
+                    })
+                }
+            );
 
-
-            if (currentScrollTop > lastScrollTop) {
-                scrollDir = 1;
-            } else if (currentScrollTop < lastScrollTop) {
-                scrollDir = -1;
-            }
-            lastScrollTop = currentScrollTop;
-
-            const phBox = fadePlaceHolder.getBoundingClientRect();
-
-            if (!faded && phBox.top < window.innerHeight && scrollDir == 1) {
-                bioTextContainer.classList.remove('bioTextContainerHome');
-                bioTextContainer.classList.add('bioTextContainerNav');
-                faded = true;
-                homePageContainer.animate(
-                    [
-                        { opacity: 1 },
-                        { opacity: 0.3, offset: 0.3 },
-                        { opacity: 0 }
-                    ],
-                    {
-                        duration: 600,
-                        easing: 'ease-out'
-                    }
-                );
-                this.setTimeout(() => {
-                    myWorkPage.scrollIntoView(true);
-                }, 600)
-                homePageContainer.style.opacity = 0;
-            }
-        
-            else if (faded && Math.abs(phBox.top) < 0.5 && scrollDir == -1) {
-                bioTextContainer.classList.add('bioTextContainerHome');
-                bioTextContainer.classList.remove('bioTextContainerNav');
-                faded = false;
-                
-                homePageContainer.animate(
-                    [
-                        { opacity: 0 },
-                        { opacity: 0.7, offset: 0.3 },
-                        { opacity: 1 }
-                    ],
-                    {
-                        duration: 600,
-                        easing: 'ease-out'
-                    }
-                );
-                window.scroll(0, window.innerHeight * 2);
-                aboutRow.scrollIntoView(true);
-                window.scroll(0, window.innerHeight);
-                homePageContainer.style.opacity = 1;
-            }
+            // CURRENTLY ACTS WONKY ASF IF I DO IT LIKE THIS
+            // if (window.scrollY >= window.innerHeight) {
+            //     aboutRow.style.position = "fixed";
+            //     aboutRow.style.top = "0";
+            //     aboutRow.style.right = "0";
+            //     console.log("fixed")
+            // }
+            // else {
+            //     aboutRow.style.position = "relative";
+            // }
         });
     }, []);
 }

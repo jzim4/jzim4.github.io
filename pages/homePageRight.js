@@ -2,27 +2,28 @@ import React from 'react';
 import About from './about.js';
 
 function IdImg() {
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const pos = window.scrollY;
         const vh = window.innerHeight;
 
-        if (pos/vh > 1 && pos/vh < 3) {
-        document.getElementById('imgRow').style.visibility = 'hidden';
+        if (pos / vh > 1 && pos / vh < 4) {
+            document.getElementById('imgRow').style.visibility = 'hidden';
         } else {
-        document.getElementById('imgRow').style.visibility = 'visible';
+            document.getElementById('imgRow').style.visibility = 'visible';
         }
     });
-    return <div id="imgRow" className="scrollSnapAlways">
-    <div id="imgFrame">
-    </div>
+    return <div id="imgRow" className="scrollSnapNormal">
+        <div id="imgFrame">
+        </div>
     </div>
 }
 
 export default function HomePageRight() {
-  return <div id="homeRightColumn">
-            <IdImg/>
-            <div className="placeHolder scrollSnapAlways"></div>
-            <About/>
-            <div id="fadePlaceHolder" className="scrollSnapAlways"></div>
-        </div>
+    return <div id="homeRightColumn">
+        <IdImg />
+        <div className="placeHolder scrollSnapAlways"></div>
+        <About />
+        <div id="fadePlaceHolder"></div>
+        <div id="endOfFade" className="scrollSnapAlways"></div>
+    </div>
 }

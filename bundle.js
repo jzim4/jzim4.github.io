@@ -43295,61 +43295,27 @@ function Animate() {
     var bioTextContainer = document.getElementById("bioTextContainer");
     var myWorkPage = document.getElementById("myWorkPage");
     var aboutRow = document.getElementById("aboutRow");
-    var faded = false;
-    var lastScrollTop = window.scrollY;
-    var scrollDir = 0;
     window.addEventListener('scroll', function () {
-      var currentScrollTop = window.scrollY;
-      if (currentScrollTop < window.innerHeight) {
-        homePageContainer.style.opacity = 1;
-        bioTextContainer.classList.add('bioTextContainerHome');
-        bioTextContainer.classList.removee('bioTextContainerNav');
-      }
-      if (currentScrollTop > lastScrollTop) {
-        scrollDir = 1;
-      } else if (currentScrollTop < lastScrollTop) {
-        scrollDir = -1;
-      }
-      lastScrollTop = currentScrollTop;
-      var phBox = fadePlaceHolder.getBoundingClientRect();
-      if (!faded && phBox.top < window.innerHeight && scrollDir == 1) {
-        bioTextContainer.classList.remove('bioTextContainerHome');
-        bioTextContainer.classList.add('bioTextContainerNav');
-        faded = true;
-        homePageContainer.animate([{
-          opacity: 1
-        }, {
-          opacity: 0.3,
-          offset: 0.3
-        }, {
-          opacity: 0
-        }], {
-          duration: 600,
-          easing: 'ease-out'
-        });
-        this.setTimeout(function () {
-          myWorkPage.scrollIntoView(true);
-        }, 600);
-        homePageContainer.style.opacity = 0;
-      } else if (faded && Math.abs(phBox.top) < 0.5 && scrollDir == -1) {
-        bioTextContainer.classList.add('bioTextContainerHome');
-        bioTextContainer.classList.remove('bioTextContainerNav');
-        faded = false;
-        homePageContainer.animate([{
-          opacity: 0
-        }, {
-          opacity: 0.7,
-          offset: 0.3
-        }, {
-          opacity: 1
-        }], {
-          duration: 600,
-          easing: 'ease-out'
-        });
-        aboutRow.scrollIntoView(true);
-        window.scroll(0, window.innerHeight);
-        homePageContainer.style.opacity = 1;
-      }
+      homePageContainer.animate([{
+        opacity: 1
+      }, {
+        opacity: 0
+      }], {
+        timeline: new ViewTimeline({
+          subject: fadePlaceHolder
+        })
+      });
+
+      // CURRENTLY ACTS WONKY ASF IF I DO IT LIKE THIS
+      // if (window.scrollY >= window.innerHeight) {
+      //     aboutRow.style.position = "fixed";
+      //     aboutRow.style.top = "0";
+      //     aboutRow.style.right = "0";
+      //     console.log("fixed")
+      // }
+      // else {
+      //     aboutRow.style.position = "relative";
+      // }
     });
   }, []);
 }
@@ -43372,27 +43338,39 @@ function _interopRequireDefault(e) {
     "default": e
   };
 }
+function Animate() {
+  window.addEventListener('scroll', function () {
+    var pos = window.scrollY;
+    var vh = window.innerHeight;
+    if (pos / vh < 3) {
+      document.getElementById("bioTextContainer").classList.remove("bioTextContainerNav");
+      document.getElementById("bioTextContainer").classList.add("bioTextContainerHome");
+      document.getElementById('bioText').style.display = 'block';
+      document.getElementById("h1").style.fontSize = "4em";
+      document.getElementById("h1").style.width = "100%";
+      document.getElementById("buttonsContainer").style.marginLeft = "auto";
+    } else {
+      document.getElementById("bioTextContainer").classList.add("bioTextContainerNav");
+      document.getElementById("bioTextContainer").classList.remove("bioTextContainerHome");
+      document.getElementById('bioText').style.display = 'none';
+      document.getElementById("h1").style.fontSize = "2em";
+      document.getElementById("h1").style.width = "fit-content";
+      document.getElementById("buttonsContainer").style.marginLeft = "0";
+    }
+  });
+}
 function Title() {
   return /*#__PURE__*/_react["default"].createElement("h1", {
     id: "h1"
   }, "Jonah Zimmer");
 }
 function Bio() {
-  window.addEventListener('scroll', function () {
-    var pos = window.scrollY;
-    var vh = window.innerHeight;
-    if (pos / vh > 2) {
-      document.getElementById('bioText').style.display = 'none';
-    } else {
-      document.getElementById('bioText').style.display = 'block';
-    }
-  });
   return /*#__PURE__*/_react["default"].createElement("p", {
     id: "bioText"
   }, "I'm a self-taught front-end developer, with a passion for building beautiful, usable websites in React.js.");
 }
 function Buttons() {
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Animate, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "buttonsContainer"
   }, /*#__PURE__*/_react["default"].createElement("button", null, "About"), /*#__PURE__*/_react["default"].createElement("button", null, "My Work"), /*#__PURE__*/_react["default"].createElement("button", null, "Contact")));
 }
@@ -43423,7 +43401,7 @@ function IdImg() {
   window.addEventListener('scroll', function () {
     var pos = window.scrollY;
     var vh = window.innerHeight;
-    if (pos / vh > 1 && pos / vh < 3) {
+    if (pos / vh > 1 && pos / vh < 4) {
       document.getElementById('imgRow').style.visibility = 'hidden';
     } else {
       document.getElementById('imgRow').style.visibility = 'visible';
@@ -43431,7 +43409,7 @@ function IdImg() {
   });
   return /*#__PURE__*/_react["default"].createElement("div", {
     id: "imgRow",
-    className: "scrollSnapAlways"
+    className: "scrollSnapNormal"
   }, /*#__PURE__*/_react["default"].createElement("div", {
     id: "imgFrame"
   }));
@@ -43442,7 +43420,9 @@ function HomePageRight() {
   }, /*#__PURE__*/_react["default"].createElement(IdImg, null), /*#__PURE__*/_react["default"].createElement("div", {
     className: "placeHolder scrollSnapAlways"
   }), /*#__PURE__*/_react["default"].createElement(_about["default"], null), /*#__PURE__*/_react["default"].createElement("div", {
-    id: "fadePlaceHolder",
+    id: "fadePlaceHolder"
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    id: "endOfFade",
     className: "scrollSnapAlways"
   }));
 }
