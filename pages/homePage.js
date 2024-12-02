@@ -8,9 +8,6 @@ function Animate() {
     useEffect(() => {
         const fadePlaceHolder = document.getElementById('fadePlaceHolder');
         const homePageContainer = document.getElementById('homePageContainer');
-        const bioTextContainer = document.getElementById("bioTextContainer");
-        const myWorkPage = document.getElementById("myWorkPage");
-        const aboutRow = document.getElementById("aboutRow");
 
         window.addEventListener('scroll', function () {
             homePageContainer.animate(

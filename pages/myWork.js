@@ -45,7 +45,7 @@ export default function MyWork() {
     let dataList = Object.entries(data);
     return <>
         <AnimateWorks />
-        <div id="myWorkPage" className="scrollSnapNormal">
+        <div id="myWorkPage" className="scrollSnapNormal scrollSnapMargin">
             <Title />
             <div id="myWorkContainer">
                 {dataList.map((item) => (

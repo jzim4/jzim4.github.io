@@ -43235,7 +43235,7 @@ function _interopRequireDefault(e) {
 function Contact() {
   return /*#__PURE__*/_react["default"].createElement("div", {
     id: "contactPage",
-    className: "scrollSnapAlways"
+    className: "scrollSnapAlways scrollSnapMargin"
   }, /*#__PURE__*/_react["default"].createElement("h2", null, "Get in touch!"), /*#__PURE__*/_react["default"].createElement("p", null, "484-347-7297"), /*#__PURE__*/_react["default"].createElement("p", null, "jszimmer545@gmail.com"), /*#__PURE__*/_react["default"].createElement("h2", null, "See More!"), /*#__PURE__*/_react["default"].createElement("p", null, "Github"), /*#__PURE__*/_react["default"].createElement("p", null, "Download resume"));
 }
 
@@ -43292,9 +43292,6 @@ function Animate() {
   (0, _react.useEffect)(function () {
     var fadePlaceHolder = document.getElementById('fadePlaceHolder');
     var homePageContainer = document.getElementById('homePageContainer');
-    var bioTextContainer = document.getElementById("bioTextContainer");
-    var myWorkPage = document.getElementById("myWorkPage");
-    var aboutRow = document.getElementById("aboutRow");
     window.addEventListener('scroll', function () {
       homePageContainer.animate([{
         opacity: 1
@@ -43328,35 +43325,85 @@ function HomePage() {
 },{"./homePageLeft.js":24,"./homePageRight.js":25,"react":16}],24:[function(require,module,exports){
 "use strict";
 
+function _typeof(o) {
+  "@babel/helpers - typeof";
+
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
+}
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = HomePageLeft;
-var _react = _interopRequireDefault(require("react"));
-function _interopRequireDefault(e) {
-  return e && e.__esModule ? e : {
+var _react = _interopRequireWildcard(require("react"));
+function _getRequireWildcardCache(e) {
+  if ("function" != typeof WeakMap) return null;
+  var r = new WeakMap(),
+    t = new WeakMap();
+  return (_getRequireWildcardCache = function _getRequireWildcardCache(e) {
+    return e ? t : r;
+  })(e);
+}
+function _interopRequireWildcard(e, r) {
+  if (!r && e && e.__esModule) return e;
+  if (null === e || "object" != _typeof(e) && "function" != typeof e) return {
     "default": e
   };
+  var t = _getRequireWildcardCache(r);
+  if (t && t.has(e)) return t.get(e);
+  var n = {
+      __proto__: null
+    },
+    a = Object.defineProperty && Object.getOwnPropertyDescriptor;
+  for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) {
+    var i = a ? Object.getOwnPropertyDescriptor(e, u) : null;
+    i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u];
+  }
+  return n["default"] = e, t && t.set(e, n), n;
 }
 function Animate() {
   window.addEventListener('scroll', function () {
-    var pos = window.scrollY;
-    var vh = window.innerHeight;
-    if (pos / vh < 3) {
+    if (window.scrollY < window.innerHeight * 3 - 50) {
+      document.getElementById("homeLeftColumn").style.visibility = "visible";
       document.getElementById("bioTextContainer").classList.remove("bioTextContainerNav");
       document.getElementById("bioTextContainer").classList.add("bioTextContainerHome");
       document.getElementById('bioText').style.display = 'block';
       document.getElementById("h1").style.fontSize = "4em";
       document.getElementById("h1").style.width = "100%";
+      document.getElementById("h1").style.marginBottom = "0";
       document.getElementById("buttonsContainer").style.marginLeft = "auto";
     } else {
+      document.getElementById("homeLeftColumn").style.visibility = "hidden";
       document.getElementById("bioTextContainer").classList.add("bioTextContainerNav");
       document.getElementById("bioTextContainer").classList.remove("bioTextContainerHome");
       document.getElementById('bioText').style.display = 'none';
       document.getElementById("h1").style.fontSize = "2em";
       document.getElementById("h1").style.width = "fit-content";
+      document.getElementById("h1").style.marginBottom = "unset";
       document.getElementById("buttonsContainer").style.marginLeft = "0";
     }
+  });
+}
+function ButtonClickHandler() {
+  (0, _react.useEffect)(function () {
+    var abt = document.getElementById("aboutButton");
+    var work = document.getElementById("workButton");
+    var contact = document.getElementById("contactButton");
+    var aboutRow = document.getElementById("aboutRow");
+    var workPage = document.getElementById("myWorkPage");
+    var contactPage = document.getElementById("contactPage");
+    abt.addEventListener("click", function () {
+      aboutRow.scrollIntoView(true);
+    });
+    work.addEventListener("click", function () {
+      workPage.scrollIntoView(true);
+    });
+    contact.addEventListener("click", function () {
+      contactPage.scrollIntoView(true);
+    });
   });
 }
 function Title() {
@@ -43370,12 +43417,18 @@ function Bio() {
   }, "I'm a self-taught front-end developer, with a passion for building beautiful, usable websites in React.js.");
 }
 function Buttons() {
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Animate, null), /*#__PURE__*/_react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(ButtonClickHandler, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "buttonsContainer"
-  }, /*#__PURE__*/_react["default"].createElement("button", null, "About"), /*#__PURE__*/_react["default"].createElement("button", null, "My Work"), /*#__PURE__*/_react["default"].createElement("button", null, "Contact")));
+  }, /*#__PURE__*/_react["default"].createElement("button", {
+    id: "aboutButton"
+  }, "About"), /*#__PURE__*/_react["default"].createElement("button", {
+    id: "workButton"
+  }, "My Work"), /*#__PURE__*/_react["default"].createElement("button", {
+    id: "contactButton"
+  }, "Contact")));
 }
 function HomePageLeft() {
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Animate, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "homeLeftColumn"
   }, /*#__PURE__*/_react["default"].createElement("div", {
     id: "bioTextContainer",
@@ -43650,7 +43703,7 @@ function MyWork() {
   var dataList = Object.entries(_myWork["default"]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(AnimateWorks, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "myWorkPage",
-    className: "scrollSnapNormal"
+    className: "scrollSnapNormal scrollSnapMargin"
   }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "myWorkContainer"
   }, dataList.map(function (item) {
