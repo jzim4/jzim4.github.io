@@ -5,35 +5,44 @@ module.exports={
         "name": "ChemBox",
         "date": "Fall 2024",
         "description": "SPWA built with React that hosts several chemistry study tools for intro chemistry students\n\nGroup project that developed teamwork and communication skills; Consistently received community feedback to improve site",
-        "img": "https://placehold.co/200x150"
+        "img": "https://placehold.co/200x150",
+        "github": "https://github.com/jzim4/jbj",
+        "siteLink": "https://jzim4.github.io/jbj/"
     },
     "restaurantRecommender": {
         "id": "4",
         "name": "Restaurant Recommender",
         "date": "Spring 2024",
         "description": "GUI in Java that takes user preferences and suggests a restaurant from a manually created dataset\n\nApplied knowledge of database management and OOP",
-        "img": "https://placehold.co/200x150"
+        "img": "https://placehold.co/200x150",
+        "github": "https://github.com/jzim4/Restaurant-Recommender"
     },
-    "loreePortolio": {
+    "loreesPortolio": {
         "id": "3",
         "name": "Loree's Portfolio",
         "date": "Fall 2023",
         "description": "SPWA built in javascript with Bootstrap front-end and Contentful CMS to display friend’s art collection.\n\nImproved knowledge of database management and front end design",
-        "img": "https://placehold.co/200x150"
+        "img": "https://placehold.co/200x150",
+        "github": "https://github.com/jzim4/Lorees-Portfolio",
+        "siteLink": "https://jzim4.github.io/Lorees-Portfolio/"
     },
-    "Danny's Dolls": {
+    "DannysDolls": {
         "id": "2",
         "name": "Danny's Dolls",
         "date": "Summer 2022",
         "description": "SPWA built in javascript with Contentful CMS to display friend’s doll collection.\n\nFirst experience with databases and external importing",
-        "img": "https://placehold.co/200x150"
+        "img": "https://placehold.co/200x150",
+        "github": "https://github.com/jzim4/Dannys-Dolls",
+        "siteLink": "https://jzim4.github.io/Dannys-Dolls/"
     },
     "coffeeTalk": {
         "id": "1",
         "name": "Coffee Talk",
         "date": "January 2022",
         "description": "Website in html and css that hosts my articles about local coffee shops\n\nFocus on learning static front end design, first web dev project that sparked my passion",
-        "img": "https://placehold.co/200x150"
+        "img": "https://placehold.co/200x150",
+        "github": "https://github.com/jzim4/Coffee-Talk",
+        "siteLink": "https://jzim4.github.io/Coffee-Talk"
     }
 }
 },{}],2:[function(require,module,exports){
@@ -43210,11 +43219,16 @@ function Interests() {
     className: "aboutList"
   }, /*#__PURE__*/_react["default"].createElement("h3", null, "Interests"), /*#__PURE__*/_react["default"].createElement("li", null, "Puzzles"), /*#__PURE__*/_react["default"].createElement("li", null, "Knitting"), /*#__PURE__*/_react["default"].createElement("li", null, "Crossword"), /*#__PURE__*/_react["default"].createElement("li", null, "Biking"), /*#__PURE__*/_react["default"].createElement("li", null, "Knitting"), /*#__PURE__*/_react["default"].createElement("li", null, "Baking"), /*#__PURE__*/_react["default"].createElement("li", null, "Climbing"), /*#__PURE__*/_react["default"].createElement("li", null, "Snowboarding"), /*#__PURE__*/_react["default"].createElement("li", null, "Tennis"));
 }
+function AboutBio() {
+  return /*#__PURE__*/_react["default"].createElement("p", {
+    id: "aboutBio"
+  }, "I'm originally from the suburbs of Philadelphia, and I'm currently a sophomore at Macalester College. I'm studying Computer Science and Psychology, and I have a passion for front-end development.");
+}
 function About() {
   return /*#__PURE__*/_react["default"].createElement("div", {
     id: "aboutRow",
     className: "scrollSnapAlways"
-  }, /*#__PURE__*/_react["default"].createElement("h2", null, "About"), "I'm originally from the suburbs of Philadelphia, and I'm currently a sophomore at Macalester College. I'm studying Computer Science and Psychology, and I have a passion for front-end development.", /*#__PURE__*/_react["default"].createElement("div", {
+  }, /*#__PURE__*/_react["default"].createElement("h2", null, "About"), /*#__PURE__*/_react["default"].createElement(AboutBio, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "aboutListsContainer"
   }, /*#__PURE__*/_react["default"].createElement(Skills, null), /*#__PURE__*/_react["default"].createElement(Interests, null)));
 }
@@ -43236,7 +43250,30 @@ function Contact() {
   return /*#__PURE__*/_react["default"].createElement("div", {
     id: "contactPage",
     className: "scrollSnapAlways scrollSnapMargin"
-  }, /*#__PURE__*/_react["default"].createElement("h2", null, "Get in touch!"), /*#__PURE__*/_react["default"].createElement("p", null, "484-347-7297"), /*#__PURE__*/_react["default"].createElement("p", null, "jszimmer545@gmail.com"), /*#__PURE__*/_react["default"].createElement("h2", null, "See More!"), /*#__PURE__*/_react["default"].createElement("p", null, "Github"), /*#__PURE__*/_react["default"].createElement("p", null, "Download resume"));
+  }, /*#__PURE__*/_react["default"].createElement("h3", {
+    className: "contactHeader"
+  }, "Get in touch!"), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "contactContainer"
+  }, /*#__PURE__*/_react["default"].createElement("a", {
+    href: "tel:484-347-7297",
+    className: "contactInfo"
+  }, "484-347-7297"), /*#__PURE__*/_react["default"].createElement("a", {
+    href: "mailto:jszimmer545@email.com",
+    className: "contactInfo"
+  }, "jszimmer545@gmail.com")), /*#__PURE__*/_react["default"].createElement("h3", {
+    className: "contactHeader"
+  }, "See More!"), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "contactContainer"
+  }, /*#__PURE__*/_react["default"].createElement("a", {
+    target: "_blank",
+    rel: "noopener noreferrer",
+    className: "contactInfo contactLink",
+    href: "https://github.com/jzim4"
+  }, "Github"), /*#__PURE__*/_react["default"].createElement("a", {
+    className: "contactInfo contactLink",
+    href: "resume.pdf",
+    download: "Jonah-Zimmer-Resume.pdf"
+  }, "Download resume")));
 }
 
 },{"react":16}],23:[function(require,module,exports){
@@ -43678,11 +43715,9 @@ function AnimateWorks() {
   });
 }
 function Title() {
-  return /*#__PURE__*/_react["default"].createElement("div", {
-    id: "myWorkTitleContainer"
-  }, /*#__PURE__*/_react["default"].createElement("h2", {
+  return /*#__PURE__*/_react["default"].createElement("h2", {
     id: "myWorkTitle"
-  }, "My Work"));
+  }, "My Work");
 }
 function Work(_ref) {
   var work = _ref.work;
@@ -43695,9 +43730,39 @@ function Work(_ref) {
   }, work.name), /*#__PURE__*/_react["default"].createElement("img", {
     className: "workImg",
     src: work.img
-  }), /*#__PURE__*/_react["default"].createElement("p", {
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "workTextContainer"
+  }, /*#__PURE__*/_react["default"].createElement("p", {
     className: "workDescr"
-  }, work.description)));
+  }, work.description), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "workButtonsContainer"
+  }, /*#__PURE__*/_react["default"].createElement(GithubLink, {
+    work: work
+  }), /*#__PURE__*/_react["default"].createElement(SiteLinkLink, {
+    work: work
+  })))));
+}
+function GithubLink(_ref2) {
+  var work = _ref2.work;
+  if (work.hasOwnProperty("github")) {
+    return /*#__PURE__*/_react["default"].createElement("a", {
+      className: "workExternalLink",
+      href: work.github,
+      target: "_blank",
+      rel: "noopener noreferrer"
+    }, "Github Repo");
+  } else return;
+}
+function SiteLinkLink(_ref3) {
+  var work = _ref3.work;
+  if (work.hasOwnProperty("siteLink")) {
+    return /*#__PURE__*/_react["default"].createElement("a", {
+      className: "workExternalLink",
+      href: work.siteLink,
+      target: "_blank",
+      rel: "noopener noreferrer"
+    }, "Live Site");
+  } else return;
 }
 function MyWork() {
   var dataList = Object.entries(_myWork["default"]);

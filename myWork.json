@@ -4,34 +4,43 @@
         "name": "ChemBox",
         "date": "Fall 2024",
         "description": "SPWA built with React that hosts several chemistry study tools for intro chemistry students\n\nGroup project that developed teamwork and communication skills; Consistently received community feedback to improve site",
-        "img": "https://placehold.co/200x150"
+        "img": "https://placehold.co/200x150",
+        "github": "https://github.com/jzim4/jbj",
+        "siteLink": "https://jzim4.github.io/jbj/"
     },
     "restaurantRecommender": {
         "id": "4",
         "name": "Restaurant Recommender",
         "date": "Spring 2024",
         "description": "GUI in Java that takes user preferences and suggests a restaurant from a manually created dataset\n\nApplied knowledge of database management and OOP",
-        "img": "https://placehold.co/200x150"
+        "img": "https://placehold.co/200x150",
+        "github": "https://github.com/jzim4/Restaurant-Recommender"
     },
-    "loreePortolio": {
+    "loreesPortolio": {
         "id": "3",
         "name": "Loree's Portfolio",
         "date": "Fall 2023",
         "description": "SPWA built in javascript with Bootstrap front-end and Contentful CMS to display friend’s art collection.\n\nImproved knowledge of database management and front end design",
-        "img": "https://placehold.co/200x150"
+        "img": "https://placehold.co/200x150",
+        "github": "https://github.com/jzim4/Lorees-Portfolio",
+        "siteLink": "https://jzim4.github.io/Lorees-Portfolio/"
     },
-    "Danny's Dolls": {
+    "DannysDolls": {
         "id": "2",
         "name": "Danny's Dolls",
         "date": "Summer 2022",
         "description": "SPWA built in javascript with Contentful CMS to display friend’s doll collection.\n\nFirst experience with databases and external importing",
-        "img": "https://placehold.co/200x150"
+        "img": "https://placehold.co/200x150",
+        "github": "https://github.com/jzim4/Dannys-Dolls",
+        "siteLink": "https://jzim4.github.io/Dannys-Dolls/"
     },
     "coffeeTalk": {
         "id": "1",
         "name": "Coffee Talk",
         "date": "January 2022",
         "description": "Website in html and css that hosts my articles about local coffee shops\n\nFocus on learning static front end design, first web dev project that sparked my passion",
-        "img": "https://placehold.co/200x150"
+        "img": "https://placehold.co/200x150",
+        "github": "https://github.com/jzim4/Coffee-Talk",
+        "siteLink": "https://jzim4.github.io/Coffee-Talk"
     }
 }

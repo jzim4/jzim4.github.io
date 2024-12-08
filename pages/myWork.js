@@ -26,19 +26,35 @@ function AnimateWorks() {
 }
 
 function Title() {
-    return <div id="myWorkTitleContainer">
-        <h2 id="myWorkTitle">My Work</h2>
-
-    </div>
+    return <h2 id="myWorkTitle">My Work</h2>
 }
 function Work({ work }) {
     return <div className="workPage">
         <div className="workContainer">
             <h3 className="workTitle">{work.name}</h3>
             <img className="workImg" src={work.img}></img>
-            <p className="workDescr">{work.description}</p>
+            <div className="workTextContainer">
+                <p className="workDescr">{work.description}</p>
+                <div className="workButtonsContainer">
+                    <GithubLink work={work} />
+                    <SiteLinkLink work={work} />
+                </div>
+            </div>
         </div>
     </div>
+}
+
+function GithubLink({ work }) {
+    if (work.hasOwnProperty("github")) {
+        return <a className="workExternalLink" href={work.github} target="_blank" rel="noopener noreferrer">Github Repo</a>
+    }
+    else return
+}
+function SiteLinkLink({ work }) {
+    if (work.hasOwnProperty("siteLink")) {
+        return <a className="workExternalLink" href={work.siteLink} target="_blank" rel="noopener noreferrer">Live Site</a>
+    }
+    else return
 }
 
 export default function MyWork() {

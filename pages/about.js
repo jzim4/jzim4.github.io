@@ -31,10 +31,16 @@ function Interests() {
   </ul>
 }
 
+function AboutBio() {
+  return <p id="aboutBio">
+    I'm originally from the suburbs of Philadelphia, and I'm currently a sophomore at Macalester College. I'm studying Computer Science and Psychology, and I have a passion for front-end development.
+  </p>
+}
+
 export default function About() {
     return <div id="aboutRow" className="scrollSnapAlways">
         <h2>About</h2>
-        I'm originally from the suburbs of Philadelphia, and I'm currently a sophomore at Macalester College. I'm studying Computer Science and Psychology, and I have a passion for front-end development.
+        <AboutBio/>
         <div id="aboutListsContainer">
           <Skills/>
           <Interests/>
