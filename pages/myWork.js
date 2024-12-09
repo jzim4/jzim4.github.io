@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import data from '../myWork.json' with { type: "json" };
+import { Buttons } from './homePageLeft.js';
 
 function AnimateWorks() {
 
@@ -61,7 +62,11 @@ export default function MyWork() {
     let dataList = Object.entries(data);
     return <>
         <AnimateWorks />
-        <div id="myWorkPage" className="scrollSnapNormal scrollSnapMargin">
+        <div id="navHeader">
+            <h2>Jonah Zimmer</h2>
+            <Buttons />
+        </div>
+        <div id="myWorkPage" className="scrollSnapNormal">
             <Title />
             <div id="myWorkContainer">
                 {dataList.map((item) => (

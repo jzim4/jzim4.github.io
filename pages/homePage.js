@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import HomePageLeft from './homePageLeft.js';
 import HomePageRight from './homePageRight.js';
 
-
 function Animate() {
 
     useEffect(() => {
@@ -21,17 +20,6 @@ function Animate() {
                     })
                 }
             );
-
-            // CURRENTLY ACTS WONKY ASF IF I DO IT LIKE THIS
-            // if (window.scrollY >= window.innerHeight) {
-            //     aboutRow.style.position = "fixed";
-            //     aboutRow.style.top = "0";
-            //     aboutRow.style.right = "0";
-            //     console.log("fixed")
-            // }
-            // else {
-            //     aboutRow.style.position = "relative";
-            // }
         });
     }, []);
 }

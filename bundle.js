@@ -43220,14 +43220,18 @@ function Interests() {
   }, /*#__PURE__*/_react["default"].createElement("h3", null, "Interests"), /*#__PURE__*/_react["default"].createElement("li", null, "Puzzles"), /*#__PURE__*/_react["default"].createElement("li", null, "Knitting"), /*#__PURE__*/_react["default"].createElement("li", null, "Crossword"), /*#__PURE__*/_react["default"].createElement("li", null, "Biking"), /*#__PURE__*/_react["default"].createElement("li", null, "Knitting"), /*#__PURE__*/_react["default"].createElement("li", null, "Baking"), /*#__PURE__*/_react["default"].createElement("li", null, "Climbing"), /*#__PURE__*/_react["default"].createElement("li", null, "Snowboarding"), /*#__PURE__*/_react["default"].createElement("li", null, "Tennis"));
 }
 function AboutBio() {
-  return /*#__PURE__*/_react["default"].createElement("p", {
-    id: "aboutBio"
-  }, "I'm originally from the suburbs of Philadelphia, and I'm currently a sophomore at Macalester College. I'm studying Computer Science and Psychology, and I have a passion for front-end development.");
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("p", {
+    className: "aboutBio"
+  }, "Hi, I\u2019m Jonah, a detail-oriented and creative web developer with a passion for building intuitive and visually engaging web applications. I enjoy crafting seamless user experiences and solving technical challenges with precision and efficiency."), /*#__PURE__*/_react["default"].createElement("p", {
+    className: "aboutBio"
+  }, "Beyond my technical pursuits, I value meaningful connections and strive to maintain balance in all aspects of life. I believe in approaching everything with thoughtfulness and care."), /*#__PURE__*/_react["default"].createElement("p", {
+    className: "aboutBio"
+  }, "I thrive on simplicity, clarity, and a hands-on approach to problem-solving, making every project an opportunity to learn, grow, and deliver impactful results. Let\u2019s create something amazing together!"));
 }
 function About() {
   return /*#__PURE__*/_react["default"].createElement("div", {
     id: "aboutRow",
-    className: "scrollSnapAlways"
+    className: "homeRightColumn scrollSnapAlways"
   }, /*#__PURE__*/_react["default"].createElement("h2", null, "About"), /*#__PURE__*/_react["default"].createElement(AboutBio, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "aboutListsContainer"
   }, /*#__PURE__*/_react["default"].createElement(Skills, null), /*#__PURE__*/_react["default"].createElement(Interests, null)));
@@ -43339,17 +43343,6 @@ function Animate() {
           subject: fadePlaceHolder
         })
       });
-
-      // CURRENTLY ACTS WONKY ASF IF I DO IT LIKE THIS
-      // if (window.scrollY >= window.innerHeight) {
-      //     aboutRow.style.position = "fixed";
-      //     aboutRow.style.top = "0";
-      //     aboutRow.style.right = "0";
-      //     console.log("fixed")
-      // }
-      // else {
-      //     aboutRow.style.position = "relative";
-      // }
     });
   }, []);
 }
@@ -43374,6 +43367,7 @@ function _typeof(o) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.Buttons = Buttons;
 exports["default"] = HomePageLeft;
 var _react = _interopRequireWildcard(require("react"));
 function _getRequireWildcardCache(e) {
@@ -43405,41 +43399,33 @@ function Animate() {
   window.addEventListener('scroll', function () {
     if (window.scrollY < window.innerHeight * 3 - 50) {
       document.getElementById("homeLeftColumn").style.visibility = "visible";
-      document.getElementById("bioTextContainer").classList.remove("bioTextContainerNav");
-      document.getElementById("bioTextContainer").classList.add("bioTextContainerHome");
-      document.getElementById('bioText').style.display = 'block';
-      document.getElementById("h1").style.fontSize = "4em";
-      document.getElementById("h1").style.width = "100%";
-      document.getElementById("h1").style.marginBottom = "0";
-      document.getElementById("buttonsContainer").style.marginLeft = "auto";
     } else {
       document.getElementById("homeLeftColumn").style.visibility = "hidden";
-      document.getElementById("bioTextContainer").classList.add("bioTextContainerNav");
-      document.getElementById("bioTextContainer").classList.remove("bioTextContainerHome");
-      document.getElementById('bioText').style.display = 'none';
-      document.getElementById("h1").style.fontSize = "2em";
-      document.getElementById("h1").style.width = "fit-content";
-      document.getElementById("h1").style.marginBottom = "unset";
-      document.getElementById("buttonsContainer").style.marginLeft = "0";
     }
   });
 }
 function ButtonClickHandler() {
   (0, _react.useEffect)(function () {
-    var abt = document.getElementById("aboutButton");
-    var work = document.getElementById("workButton");
-    var contact = document.getElementById("contactButton");
+    var abt = document.getElementsByClassName("aboutButton");
+    var work = document.getElementsByClassName("workButton");
+    var contact = document.getElementsByClassName("contactButton");
     var aboutRow = document.getElementById("aboutRow");
     var workPage = document.getElementById("myWorkPage");
     var contactPage = document.getElementById("contactPage");
-    abt.addEventListener("click", function () {
-      aboutRow.scrollIntoView(true);
+    Array.from(abt).forEach(function (b) {
+      b.addEventListener("click", function () {
+        aboutRow.scrollIntoView(true);
+      });
     });
-    work.addEventListener("click", function () {
-      workPage.scrollIntoView(true);
+    Array.from(work).forEach(function (b) {
+      b.addEventListener("click", function () {
+        workPage.scrollIntoView(true);
+      });
     });
-    contact.addEventListener("click", function () {
-      contactPage.scrollIntoView(true);
+    Array.from(contact).forEach(function (b) {
+      b.addEventListener("click", function () {
+        contactPage.scrollIntoView(true);
+      });
     });
   });
 }
@@ -43457,11 +43443,11 @@ function Buttons() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(ButtonClickHandler, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "buttonsContainer"
   }, /*#__PURE__*/_react["default"].createElement("button", {
-    id: "aboutButton"
+    className: "aboutButton"
   }, "About"), /*#__PURE__*/_react["default"].createElement("button", {
-    id: "workButton"
+    className: "workButton"
   }, "My Work"), /*#__PURE__*/_react["default"].createElement("button", {
-    id: "contactButton"
+    className: "contactButton"
   }, "Contact")));
 }
 function HomePageLeft() {
@@ -43495,6 +43481,11 @@ function IdImg() {
       document.getElementById('imgRow').style.visibility = 'hidden';
     } else {
       document.getElementById('imgRow').style.visibility = 'visible';
+    }
+    if (pos / vh > 1) {
+      document.getElementById('imgRow').style.marginTop = '36px';
+    } else {
+      document.getElementById('imgRow').style.marginTop = '0';
     }
   });
   return /*#__PURE__*/_react["default"].createElement("div", {
@@ -43588,6 +43579,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = MyWork;
 var _react = _interopRequireWildcard(require("react"));
 var _myWork = _interopRequireDefault(require("../myWork.json"));
+var _homePageLeft = require("./homePageLeft.js");
 function _interopRequireDefault(e) {
   return e && e.__esModule ? e : {
     "default": e
@@ -43767,8 +43759,10 @@ function SiteLinkLink(_ref3) {
 function MyWork() {
   var dataList = Object.entries(_myWork["default"]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(AnimateWorks, null), /*#__PURE__*/_react["default"].createElement("div", {
+    id: "navHeader"
+  }, /*#__PURE__*/_react["default"].createElement("h2", null, "Jonah Zimmer"), /*#__PURE__*/_react["default"].createElement(_homePageLeft.Buttons, null)), /*#__PURE__*/_react["default"].createElement("div", {
     id: "myWorkPage",
-    className: "scrollSnapNormal scrollSnapMargin"
+    className: "scrollSnapNormal"
   }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "myWorkContainer"
   }, dataList.map(function (item) {
@@ -43779,4 +43773,4 @@ function MyWork() {
   }))));
 }
 
-},{"../myWork.json":1,"react":16}]},{},[26]);
+},{"../myWork.json":1,"./homePageLeft.js":24,"react":16}]},{},[26]);

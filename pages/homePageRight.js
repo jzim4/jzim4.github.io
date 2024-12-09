@@ -11,6 +11,12 @@ function IdImg() {
         } else {
             document.getElementById('imgRow').style.visibility = 'visible';
         }
+        if (pos / vh > 1) {
+            document.getElementById('imgRow').style.marginTop = '36px';
+        }
+        else {
+            document.getElementById('imgRow').style.marginTop = '0';
+        }
     });
     return <div id="imgRow" className="scrollSnapNormal">
         <div id="imgFrame">
