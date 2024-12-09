@@ -43199,42 +43199,73 @@ exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate :
 },{"process/browser.js":3,"timers":20}],21:[function(require,module,exports){
 "use strict";
 
+function _typeof(o) {
+  "@babel/helpers - typeof";
+
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
+}
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = About;
-var _react = _interopRequireDefault(require("react"));
-function _interopRequireDefault(e) {
-  return e && e.__esModule ? e : {
+var _react = _interopRequireWildcard(require("react"));
+function _getRequireWildcardCache(e) {
+  if ("function" != typeof WeakMap) return null;
+  var r = new WeakMap(),
+    t = new WeakMap();
+  return (_getRequireWildcardCache = function _getRequireWildcardCache(e) {
+    return e ? t : r;
+  })(e);
+}
+function _interopRequireWildcard(e, r) {
+  if (!r && e && e.__esModule) return e;
+  if (null === e || "object" != _typeof(e) && "function" != typeof e) return {
     "default": e
   };
+  var t = _getRequireWildcardCache(r);
+  if (t && t.has(e)) return t.get(e);
+  var n = {
+      __proto__: null
+    },
+    a = Object.defineProperty && Object.getOwnPropertyDescriptor;
+  for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) {
+    var i = a ? Object.getOwnPropertyDescriptor(e, u) : null;
+    i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u];
+  }
+  return n["default"] = e, t && t.set(e, n), n;
+}
+function Animate() {
+  (0, _react.useEffect)(function () {
+    var myWorkPage = document.getElementById('myWorkPage');
+    var aboutRow = document.getElementById('aboutRow');
+    window.addEventListener('scroll', function () {});
+  }, []);
 }
 function Skills() {
   return /*#__PURE__*/_react["default"].createElement("ul", {
     className: "aboutList"
   }, /*#__PURE__*/_react["default"].createElement("h3", null, "Key Skills"), /*#__PURE__*/_react["default"].createElement("li", null, "GIT"), /*#__PURE__*/_react["default"].createElement("li", null, "HTML"), /*#__PURE__*/_react["default"].createElement("li", null, "CSS"), /*#__PURE__*/_react["default"].createElement("li", null, "JAVASCRIPT"), /*#__PURE__*/_react["default"].createElement("li", null, "REACT"), /*#__PURE__*/_react["default"].createElement("li", null, "CONTENTFUL"), /*#__PURE__*/_react["default"].createElement("li", null, "FIREBASE"), /*#__PURE__*/_react["default"].createElement("li", null, "PYTHON"), /*#__PURE__*/_react["default"].createElement("li", null, "R"), /*#__PURE__*/_react["default"].createElement("li", null, "JAVA"), /*#__PURE__*/_react["default"].createElement("li", null, "MICROSOFT SUITE"), /*#__PURE__*/_react["default"].createElement("li", null, "GSUITE"));
 }
-function Interests() {
-  return /*#__PURE__*/_react["default"].createElement("ul", {
-    className: "aboutList"
-  }, /*#__PURE__*/_react["default"].createElement("h3", null, "Interests"), /*#__PURE__*/_react["default"].createElement("li", null, "Puzzles"), /*#__PURE__*/_react["default"].createElement("li", null, "Knitting"), /*#__PURE__*/_react["default"].createElement("li", null, "Crossword"), /*#__PURE__*/_react["default"].createElement("li", null, "Biking"), /*#__PURE__*/_react["default"].createElement("li", null, "Knitting"), /*#__PURE__*/_react["default"].createElement("li", null, "Baking"), /*#__PURE__*/_react["default"].createElement("li", null, "Climbing"), /*#__PURE__*/_react["default"].createElement("li", null, "Snowboarding"), /*#__PURE__*/_react["default"].createElement("li", null, "Tennis"));
-}
 function AboutBio() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("p", {
     className: "aboutBio"
   }, "Hi, I\u2019m Jonah, a detail-oriented and creative web developer with a passion for building intuitive and visually engaging web applications. I enjoy crafting seamless user experiences and solving technical challenges with precision and efficiency."), /*#__PURE__*/_react["default"].createElement("p", {
     className: "aboutBio"
-  }, "Beyond my technical pursuits, I value meaningful connections and strive to maintain balance in all aspects of life. I believe in approaching everything with thoughtfulness and care."), /*#__PURE__*/_react["default"].createElement("p", {
+  }, "Beyond my technical pursuits, I value meaningful connections and strive to maintain balance in all aspects of life. I love playing tennis and rock climbing as well as spending time with my four crazy dogs."), /*#__PURE__*/_react["default"].createElement("p", {
     className: "aboutBio"
-  }, "I thrive on simplicity, clarity, and a hands-on approach to problem-solving, making every project an opportunity to learn, grow, and deliver impactful results. Let\u2019s create something amazing together!"));
+  }, "I thrive on clarify and a hands-on problem-solving, making every project an opportunity to learn, grow, and deliver impactful results. Let\u2019s create something amazing together!"));
 }
 function About() {
   return /*#__PURE__*/_react["default"].createElement("div", {
     id: "aboutRow",
     className: "homeRightColumn scrollSnapAlways"
-  }, /*#__PURE__*/_react["default"].createElement("h2", null, "About"), /*#__PURE__*/_react["default"].createElement(AboutBio, null), /*#__PURE__*/_react["default"].createElement("div", {
+  }, /*#__PURE__*/_react["default"].createElement(Animate, null), /*#__PURE__*/_react["default"].createElement("h2", null, "About"), /*#__PURE__*/_react["default"].createElement(AboutBio, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "aboutListsContainer"
-  }, /*#__PURE__*/_react["default"].createElement(Skills, null), /*#__PURE__*/_react["default"].createElement(Interests, null)));
+  }, /*#__PURE__*/_react["default"].createElement(Skills, null)));
 }
 
 },{"react":16}],22:[function(require,module,exports){
@@ -43441,7 +43472,7 @@ function Bio() {
 }
 function Buttons() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(ButtonClickHandler, null), /*#__PURE__*/_react["default"].createElement("div", {
-    id: "buttonsContainer"
+    className: "buttonsContainer"
   }, /*#__PURE__*/_react["default"].createElement("button", {
     className: "aboutButton"
   }, "About"), /*#__PURE__*/_react["default"].createElement("button", {
@@ -43456,7 +43487,9 @@ function HomePageLeft() {
   }, /*#__PURE__*/_react["default"].createElement("div", {
     id: "bioTextContainer",
     className: "bioTextContainerHome"
-  }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement(Bio, null), /*#__PURE__*/_react["default"].createElement(Buttons, null))));
+  }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement("div", {
+    id: "homePagePlaceHolder"
+  }), /*#__PURE__*/_react["default"].createElement(Bio, null), /*#__PURE__*/_react["default"].createElement(Buttons, null))));
 }
 
 },{"react":16}],25:[function(require,module,exports){
@@ -43477,15 +43510,11 @@ function IdImg() {
   window.addEventListener('scroll', function () {
     var pos = window.scrollY;
     var vh = window.innerHeight;
-    if (pos / vh > 1 && pos / vh < 4) {
-      document.getElementById('imgRow').style.visibility = 'hidden';
+    var imgRow = document.getElementById('imgRow');
+    if (pos / vh > 2) {
+      imgRow.style.marginTop = '36px';
     } else {
-      document.getElementById('imgRow').style.visibility = 'visible';
-    }
-    if (pos / vh > 1) {
-      document.getElementById('imgRow').style.marginTop = '36px';
-    } else {
-      document.getElementById('imgRow').style.marginTop = '0';
+      imgRow.style.marginTop = '0';
     }
   });
   return /*#__PURE__*/_react["default"].createElement("div", {
@@ -43578,7 +43607,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = MyWork;
 var _react = _interopRequireWildcard(require("react"));
-var _myWork = _interopRequireDefault(require("../myWork.json"));
+var _myWork = _interopRequireDefault(require("../content/myWork.json"));
 var _homePageLeft = require("./homePageLeft.js");
 function _interopRequireDefault(e) {
   return e && e.__esModule ? e : {
@@ -43760,7 +43789,9 @@ function MyWork() {
   var dataList = Object.entries(_myWork["default"]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(AnimateWorks, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "navHeader"
-  }, /*#__PURE__*/_react["default"].createElement("h2", null, "Jonah Zimmer"), /*#__PURE__*/_react["default"].createElement(_homePageLeft.Buttons, null)), /*#__PURE__*/_react["default"].createElement("div", {
+  }, /*#__PURE__*/_react["default"].createElement("h2", null, "Jonah Zimmer"), /*#__PURE__*/_react["default"].createElement("div", {
+    id: "navButtonsContainer"
+  }, /*#__PURE__*/_react["default"].createElement(_homePageLeft.Buttons, null))), /*#__PURE__*/_react["default"].createElement("div", {
     id: "myWorkPage",
     className: "scrollSnapNormal"
   }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement("div", {
@@ -43773,4 +43804,4 @@ function MyWork() {
   }))));
 }
 
-},{"../myWork.json":1,"./homePageLeft.js":24,"react":16}]},{},[26]);
+},{"../content/myWork.json":1,"./homePageLeft.js":24,"react":16}]},{},[26]);

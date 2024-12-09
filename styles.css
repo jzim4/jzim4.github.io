@@ -58,7 +58,7 @@ html {
 }
 @keyframes slideInRightSmall {
     0% {
-        transform: translateX(5vw);
+        transform: translateX(30px);
         background-color: transparent;
     }
     100% {
@@ -106,6 +106,7 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: end;
 }
 #bioTextContainer {
     opacity: 1;
@@ -119,6 +120,7 @@ html {
     width: fit-content;
     height: fit-content;
     right: 55vw;
+    margin-right: 40px;
 }
 h1 {
     margin: 0 0 0 auto;
@@ -135,7 +137,7 @@ h1 {
     font-size: 1.5em;
     text-wrap: balance;
 }
-#buttonsContainer {
+.buttonsContainer {
     width: fit-content;
     display: flex;
     flex-wrap: nowrap;
@@ -190,7 +192,7 @@ button, button:visited {
     height: 40vw;
     max-height: 600px;
     overflow: hidden;
-    background: url('/bioImg.jpeg');
+    background-image: url('content/bioImg1.jpeg');
     background-position: center;
     background-size: cover;
 }
@@ -200,10 +202,15 @@ button, button:visited {
 }
 #fadePlaceHolder {
     height: 100vh;
+    width: 50vw;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+
 }
 /* about */
 #aboutRow {
-    overflow-y: scroll;
+    overflow-y: hidden;
     font-size: 1.5em;
     position: relative;
     top: 0;
@@ -214,6 +221,9 @@ button, button:visited {
     background-color: #660268;
     color: #fcebff;
     animation: 2s slideInAbout ease-out;
+}
+#aboutRow>h2 {
+    margin-top: 15px;
 }
 #aboutListsContainer {
     position: relative;
@@ -248,16 +258,53 @@ li {
         font-size: 0.7em;
     }
 }
-@media (max-width: 900px) {
-    #homePageContainer {
-        display: block;
+@media (max-width: 950px) {
+    #homePagePlaceHolder {
+        margin: 0 auto;
+        height: 300px;
+        width: 80%;
+        min-width: 300px;
+        max-width: 400px;
+        background-image: url('content/bioImg1.jpeg');
+        background-position: center;
+        background-size: cover;
+    }
+    #bioText {
+        padding: 10px 0;
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+    }
+    #imgRow {
+        display: none;
+    }
+    #h1 {
+        text-align: center;
+    }
+    #homeLeftColumn {
+        height: 100vh;
+        z-index: 0;
+        animation: none;
+        width: 100vw;
+        align-items: center;
+    }
+    #navButtonsContainer {
+        width: fit-content;
+        margin: 10px 0 0 auto;
+    } 
+    .buttonsContainer {
+        margin: 0 auto;
     }
     #homeRightColumn {
         left: 0;
-    }
-    #homeLeftColumn, #homeRightColumn, #aboutRow, div#contactPage {
         width: 100vw;
-        animation: none;
+    }
+    #aboutRow, div#contactPage {
+        width: calc(100vw - 60px);
+    }
+    #fadePlaceHolder {
+        width: 100vw;
+        height: 100vh;
     }
 }
 
@@ -283,7 +330,7 @@ li {
     padding: 0 20px;
     position: relative;
     min-height: 100vh;
-    z-index: 1;
+    z-index: 2;
     overflow: unset;
     padding-bottom: 30vh;
 }
@@ -372,9 +419,9 @@ a.workExternalLink:hover, a.workExternalLink:focus {
     z-index: 1;
     color:#fcebff;
     background-color: #660268;
-    padding: 20px;
-    height: calc(100vh - 73px - 40px);
-    width: calc(50vw - 40px);
+    padding: 30px;
+    height: calc(100vh - 73px - 60px);
+    width: calc(50vw - 60px);
 }
 .contactContainer {
     display: flex;

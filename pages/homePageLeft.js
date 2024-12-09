@@ -55,7 +55,7 @@ function Bio() {
 export function Buttons() {
     return <>
         <ButtonClickHandler/>
-        <div id="buttonsContainer">
+        <div className="buttonsContainer">
             <button className="aboutButton">About</button>
             <button className="workButton">My Work</button>
             <button className="contactButton">Contact</button>
@@ -69,6 +69,7 @@ export default function HomePageLeft() {
         <div id="homeLeftColumn">
             <div id="bioTextContainer" className="bioTextContainerHome">
                 <Title />
+                <div id="homePagePlaceHolder"></div>
                 <Bio />
                 <Buttons />
             </div>

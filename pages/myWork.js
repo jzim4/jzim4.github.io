@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import data from '../myWork.json' with { type: "json" };
+import data from '../content/myWork.json' with { type: "json" };
 import { Buttons } from './homePageLeft.js';
 
 function AnimateWorks() {
@@ -64,7 +64,9 @@ export default function MyWork() {
         <AnimateWorks />
         <div id="navHeader">
             <h2>Jonah Zimmer</h2>
+            <div id="navButtonsContainer">
             <Buttons />
+            </div>
         </div>
         <div id="myWorkPage" className="scrollSnapNormal">
             <Title />
