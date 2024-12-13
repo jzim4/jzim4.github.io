@@ -6,20 +6,30 @@ function Animate() {
 
     useEffect(() => {
         const fadePlaceHolder = document.getElementById('fadePlaceHolder');
-        const homePageContainer = document.getElementById('homePageContainer');
-
+        const homePageElement = document.getElementsByClassName('homePageElement');
+        
         window.addEventListener('scroll', function () {
-            homePageContainer.animate(
-                [
-                    { opacity: 1 },
-                    { opacity: 0 }
-                ],
-                {
-                    timeline: new ViewTimeline({
-                        subject: fadePlaceHolder,
-                    })
+            for (let i of homePageElement) {
+                i.animate(
+                    [
+                        { opacity: 1 },
+                        { opacity: 0.2 },
+                        { opacity: 0 },
+                        { opacity: 0 }
+                    ],
+                    {
+                        timeline: new ViewTimeline({
+                            subject: fadePlaceHolder,
+                        })
+                    }
+                );
+                if (window.scrollY/window.innerHeight >= 2) {
+                    i.style.visibility = "hidden";
+                  }
+                else {
+                    i.style.visibility = "visible";
                 }
-            );
+            }
         });
     }, []);
 }
@@ -27,9 +37,7 @@ function Animate() {
 export default function HomePage() {
     return <>
         <Animate />
-        <div id="homePageContainer">
-            <HomePageLeft />
-            <HomePageRight />
-        </div>
+        <HomePageLeft />
+        <HomePageRight />
     </>
 }

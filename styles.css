@@ -9,24 +9,7 @@ body {
 }
 
 html {
-    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
-}
-
-.scrollSnapAlways {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-}
-.scrollSnapAlwaysEnd {
-    scroll-snap-align: end;
-    scroll-snap-stop: always;
-}
-.scrollSnapNormal {
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
-}
-.scrollSnapMargin {
-    scroll-margin-top: 73px;
 }
 
 /* TRANSITIONS */
@@ -161,6 +144,15 @@ button, button:visited {
     box-shadow: 5px 5px #680246ff;
 }
 
+.otherLink, .otherLink:visited {
+    color:#006400;
+    padding: 10px;
+}
+.otherLink:hover, .otherLink:focus, .otherLink:active {
+    color:#006400;  
+    padding: 10px;
+}
+
 /* right */
 #homeRightColumn {
     left: 50vw;
@@ -212,8 +204,9 @@ button, button:visited {
 #aboutRow {
     overflow-y: hidden;
     font-size: 1.5em;
-    position: relative;
+    position: sticky;
     top: 0;
+    left: 50vw;
     padding: 30px;
     width: calc(50vw - 60px);
     height: calc(100vh - 60px);
@@ -275,7 +268,7 @@ li {
         width: 80%;
         text-align: center;
     }
-    #imgRow {
+    #imgFrame {
         display: none;
     }
     #h1 {
@@ -302,9 +295,12 @@ li {
     #aboutRow, div#contactPage {
         width: calc(100vw - 60px);
     }
+    #aboutRow {
+        position: relative;
+        left: 0;
+    }
     #fadePlaceHolder {
-        width: 100vw;
-        height: 100vh;
+        display: none;
     }
 }
 
@@ -332,7 +328,7 @@ li {
     min-height: 100vh;
     z-index: 2;
     overflow: unset;
-    padding-bottom: 30vh;
+    padding-bottom: 20vh;
 }
 #myWorkTitle {
     margin: 0 0 0 -20px;
@@ -341,7 +337,7 @@ li {
     padding: 20px;
     position: sticky;
     z-index: 5;
-    top: 75px;
+    top: 73px;
     text-align: center;
     font-size: 2em;
     width: 100%;
@@ -362,10 +358,11 @@ li {
 }
 .workPage {
     background-color: white;
-    height: 60vh;
+    margin: 10vw 0;
     width: 100vw;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-around;
 }
 .workContainer {
@@ -375,6 +372,7 @@ li {
     gap: 5%;
     justify-content: center;
     width: 100%;
+    max-width: 900px;
     font-size: 1.5em;
     background: #fcebff;
     color: #680246ff;
@@ -388,11 +386,12 @@ li {
     flex-direction: column;
     justify-content: space-between;
     width: 50%;
-    min-width: 500px;
+    /* min-width: 500px; */
     margin-bottom: 25px;
 }
 .workDescr {
     margin: auto 0;
+    width: 100%;
     height: fit-content;
 }
 .workButtonsContainer {
@@ -413,6 +412,11 @@ a.workExternalLink:hover, a.workExternalLink:focus {
     transform: translate(-5px, -5px);
     box-shadow: 10px 10px #680246ff;
 }
+@media(max-width: 900px) {
+    .workContainer {
+        font-size: 0.9em;
+    }
+}
 
 /* CONTACT */
 #contactPage {
@@ -427,6 +431,7 @@ a.workExternalLink:hover, a.workExternalLink:focus {
     display: flex;
     flex-wrap: nowrap;
     gap: 10%;
+    padding-bottom: 60px;
 }
 .contactHeader {
     text-align: center;

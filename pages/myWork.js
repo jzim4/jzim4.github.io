@@ -68,7 +68,7 @@ export default function MyWork() {
             <Buttons />
             </div>
         </div>
-        <div id="myWorkPage" className="scrollSnapNormal">
+        <div id="myWorkPage">
             <Title />
             <div id="myWorkContainer">
                 {dataList.map((item) => (

@@ -12,19 +12,25 @@ function IdImg() {
         else {
             imgRow.style.marginTop = '0';
         }
+
+        if (pos/vh > 1 && pos/vh < 4) {
+            imgRow.style.display = "none";
+        }
+        else {
+            imgRow.style.display = "flex";
+        }
     });
-    return <div id="imgRow" className="scrollSnapNormal">
-        <div id="imgFrame">
-        </div>
+    return <div id="imgRow">
+        <div id="imgFrame"></div>
     </div>
 }
 
 export default function HomePageRight() {
-    return <div id="homeRightColumn">
+    return <>
         <IdImg />
-        <div className="placeHolder scrollSnapAlways"></div>
+        <div className="placeHolder"></div>
         <About />
         <div id="fadePlaceHolder"></div>
-        <div id="endOfFade" className="scrollSnapAlways"></div>
-    </div>
+        <div id="endOfFade"></div>
+        </>
 }

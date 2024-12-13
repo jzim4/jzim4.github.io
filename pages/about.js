@@ -1,16 +1,5 @@
 import React, { useEffect } from 'react';
 
-function Animate() {
-  useEffect(() => {
-    const myWorkPage = document.getElementById('myWorkPage');
-    const aboutRow = document.getElementById('aboutRow');
-
-    window.addEventListener('scroll', function () {
-      
-    });
-}, []);
-}
-
 function Skills() {
   return <ul className="aboutList"><h3>Key Skills</h3>
     <li>GIT</li>
@@ -43,8 +32,7 @@ function AboutBio() {
 }
 
 export default function About() {
-  return <div id="aboutRow" className="homeRightColumn scrollSnapAlways">
-    <Animate/>
+  return <div id="aboutRow" className="homeRightColumn homePageElement">
     <h2>About</h2>
     <AboutBio />
     <div id="aboutListsContainer">

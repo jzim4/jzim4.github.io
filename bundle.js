@@ -43238,13 +43238,6 @@ function _interopRequireWildcard(e, r) {
   }
   return n["default"] = e, t && t.set(e, n), n;
 }
-function Animate() {
-  (0, _react.useEffect)(function () {
-    var myWorkPage = document.getElementById('myWorkPage');
-    var aboutRow = document.getElementById('aboutRow');
-    window.addEventListener('scroll', function () {});
-  }, []);
-}
 function Skills() {
   return /*#__PURE__*/_react["default"].createElement("ul", {
     className: "aboutList"
@@ -43262,8 +43255,8 @@ function AboutBio() {
 function About() {
   return /*#__PURE__*/_react["default"].createElement("div", {
     id: "aboutRow",
-    className: "homeRightColumn scrollSnapAlways"
-  }, /*#__PURE__*/_react["default"].createElement(Animate, null), /*#__PURE__*/_react["default"].createElement("h2", null, "About"), /*#__PURE__*/_react["default"].createElement(AboutBio, null), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "homeRightColumn homePageElement"
+  }, /*#__PURE__*/_react["default"].createElement("h2", null, "About"), /*#__PURE__*/_react["default"].createElement(AboutBio, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "aboutListsContainer"
   }, /*#__PURE__*/_react["default"].createElement(Skills, null)));
 }
@@ -43283,8 +43276,7 @@ function _interopRequireDefault(e) {
 }
 function Contact() {
   return /*#__PURE__*/_react["default"].createElement("div", {
-    id: "contactPage",
-    className: "scrollSnapAlways scrollSnapMargin"
+    id: "contactPage"
   }, /*#__PURE__*/_react["default"].createElement("h3", {
     className: "contactHeader"
   }, "Get in touch!"), /*#__PURE__*/_react["default"].createElement("div", {
@@ -43360,27 +43352,105 @@ function _interopRequireWildcard(e, r) {
   }
   return n["default"] = e, t && t.set(e, n), n;
 }
+function _createForOfIteratorHelper(r, e) {
+  var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+  if (!t) {
+    if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) {
+      t && (r = t);
+      var _n = 0,
+        F = function F() {};
+      return {
+        s: F,
+        n: function n() {
+          return _n >= r.length ? {
+            done: !0
+          } : {
+            done: !1,
+            value: r[_n++]
+          };
+        },
+        e: function e(r) {
+          throw r;
+        },
+        f: F
+      };
+    }
+    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+  var o,
+    a = !0,
+    u = !1;
+  return {
+    s: function s() {
+      t = t.call(r);
+    },
+    n: function n() {
+      var r = t.next();
+      return a = r.done, r;
+    },
+    e: function e(r) {
+      u = !0, o = r;
+    },
+    f: function f() {
+      try {
+        a || null == t["return"] || t["return"]();
+      } finally {
+        if (u) throw o;
+      }
+    }
+  };
+}
+function _unsupportedIterableToArray(r, a) {
+  if (r) {
+    if ("string" == typeof r) return _arrayLikeToArray(r, a);
+    var t = {}.toString.call(r).slice(8, -1);
+    return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0;
+  }
+}
+function _arrayLikeToArray(r, a) {
+  (null == a || a > r.length) && (a = r.length);
+  for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
+  return n;
+}
 function Animate() {
   (0, _react.useEffect)(function () {
     var fadePlaceHolder = document.getElementById('fadePlaceHolder');
-    var homePageContainer = document.getElementById('homePageContainer');
+    var homePageElement = document.getElementsByClassName('homePageElement');
     window.addEventListener('scroll', function () {
-      homePageContainer.animate([{
-        opacity: 1
-      }, {
-        opacity: 0
-      }], {
-        timeline: new ViewTimeline({
-          subject: fadePlaceHolder
-        })
-      });
+      var _iterator = _createForOfIteratorHelper(homePageElement),
+        _step;
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var i = _step.value;
+          i.animate([{
+            opacity: 1
+          }, {
+            opacity: 0.2
+          }, {
+            opacity: 0
+          }, {
+            opacity: 0
+          }], {
+            timeline: new ViewTimeline({
+              subject: fadePlaceHolder
+            })
+          });
+          if (window.scrollY / window.innerHeight >= 2) {
+            i.style.visibility = "hidden";
+          } else {
+            i.style.visibility = "visible";
+          }
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
     });
   }, []);
 }
 function HomePage() {
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Animate, null), /*#__PURE__*/_react["default"].createElement("div", {
-    id: "homePageContainer"
-  }, /*#__PURE__*/_react["default"].createElement(_homePageLeft["default"], null), /*#__PURE__*/_react["default"].createElement(_homePageRight["default"], null)));
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Animate, null), /*#__PURE__*/_react["default"].createElement(_homePageLeft["default"], null), /*#__PURE__*/_react["default"].createElement(_homePageRight["default"], null));
 }
 
 },{"./homePageLeft.js":24,"./homePageRight.js":25,"react":16}],24:[function(require,module,exports){
@@ -43440,12 +43510,11 @@ function ButtonClickHandler() {
     var abt = document.getElementsByClassName("aboutButton");
     var work = document.getElementsByClassName("workButton");
     var contact = document.getElementsByClassName("contactButton");
-    var aboutRow = document.getElementById("aboutRow");
     var workPage = document.getElementById("myWorkPage");
     var contactPage = document.getElementById("contactPage");
     Array.from(abt).forEach(function (b) {
       b.addEventListener("click", function () {
-        aboutRow.scrollIntoView(true);
+        scrollTo(0, window.innerHeight);
       });
     });
     Array.from(work).forEach(function (b) {
@@ -43455,6 +43524,7 @@ function ButtonClickHandler() {
     });
     Array.from(contact).forEach(function (b) {
       b.addEventListener("click", function () {
+        workPage.scrollIntoView(true);
         contactPage.scrollIntoView(true);
       });
     });
@@ -43481,15 +43551,32 @@ function Buttons() {
     className: "contactButton"
   }, "Contact")));
 }
+function OtherLinks() {
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    className: "buttonsContainer"
+  }, /*#__PURE__*/_react["default"].createElement("a", {
+    href: "resume.pdf",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    download: true,
+    className: "otherLink"
+  }, "Download Resume"), /*#__PURE__*/_react["default"].createElement("a", {
+    href: "https://github.com/jzim4",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    className: "otherLink"
+  }, "Github"));
+}
 function HomePageLeft() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Animate, null), /*#__PURE__*/_react["default"].createElement("div", {
-    id: "homeLeftColumn"
+    id: "homeLeftColumn",
+    className: "homePageElement"
   }, /*#__PURE__*/_react["default"].createElement("div", {
     id: "bioTextContainer",
     className: "bioTextContainerHome"
   }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "homePagePlaceHolder"
-  }), /*#__PURE__*/_react["default"].createElement(Bio, null), /*#__PURE__*/_react["default"].createElement(Buttons, null))));
+  }), /*#__PURE__*/_react["default"].createElement(Bio, null), /*#__PURE__*/_react["default"].createElement(Buttons, null), /*#__PURE__*/_react["default"].createElement(OtherLinks, null))));
 }
 
 },{"react":16}],25:[function(require,module,exports){
@@ -43516,24 +43603,25 @@ function IdImg() {
     } else {
       imgRow.style.marginTop = '0';
     }
+    if (pos / vh > 1 && pos / vh < 4) {
+      imgRow.style.display = "none";
+    } else {
+      imgRow.style.display = "flex";
+    }
   });
   return /*#__PURE__*/_react["default"].createElement("div", {
-    id: "imgRow",
-    className: "scrollSnapNormal"
+    id: "imgRow"
   }, /*#__PURE__*/_react["default"].createElement("div", {
     id: "imgFrame"
   }));
 }
 function HomePageRight() {
-  return /*#__PURE__*/_react["default"].createElement("div", {
-    id: "homeRightColumn"
-  }, /*#__PURE__*/_react["default"].createElement(IdImg, null), /*#__PURE__*/_react["default"].createElement("div", {
-    className: "placeHolder scrollSnapAlways"
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(IdImg, null), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "placeHolder"
   }), /*#__PURE__*/_react["default"].createElement(_about["default"], null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "fadePlaceHolder"
   }), /*#__PURE__*/_react["default"].createElement("div", {
-    id: "endOfFade",
-    className: "scrollSnapAlways"
+    id: "endOfFade"
   }));
 }
 
@@ -43792,8 +43880,7 @@ function MyWork() {
   }, /*#__PURE__*/_react["default"].createElement("h2", null, "Jonah Zimmer"), /*#__PURE__*/_react["default"].createElement("div", {
     id: "navButtonsContainer"
   }, /*#__PURE__*/_react["default"].createElement(_homePageLeft.Buttons, null))), /*#__PURE__*/_react["default"].createElement("div", {
-    id: "myWorkPage",
-    className: "scrollSnapNormal"
+    id: "myWorkPage"
   }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "myWorkContainer"
   }, dataList.map(function (item) {
