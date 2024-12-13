@@ -32,9 +32,12 @@ function Title() {
 function Work({ work }) {
     return <div className="workPage">
         <div className="workContainer">
-            <h3 className="workTitle">{work.name}</h3>
-            <img className="workImg" src={work.img}></img>
-            <div className="workTextContainer">
+            <div className="workLeftCol">
+                <div className="workDate">{work.date}</div>
+                <img className="workImg" src={work.img}></img>
+            </div>
+            <div className="workRightCol">
+                <h3 className="workTitle">{work.name}</h3>
                 <p className="workDescr">{work.description}</p>
                 <div className="workButtonsContainer">
                     <GithubLink work={work} />
@@ -65,7 +68,7 @@ export default function MyWork() {
         <div id="navHeader">
             <h2>Jonah Zimmer</h2>
             <div id="navButtonsContainer">
-            <Buttons />
+                <Buttons />
             </div>
         </div>
         <div id="myWorkPage">

@@ -43834,14 +43834,18 @@ function Work(_ref) {
     className: "workPage"
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "workContainer"
-  }, /*#__PURE__*/_react["default"].createElement("h3", {
-    className: "workTitle"
-  }, work.name), /*#__PURE__*/_react["default"].createElement("img", {
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "workLeftCol"
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "workDate"
+  }, work.date), /*#__PURE__*/_react["default"].createElement("img", {
     className: "workImg",
     src: work.img
-  }), /*#__PURE__*/_react["default"].createElement("div", {
-    className: "workTextContainer"
-  }, /*#__PURE__*/_react["default"].createElement("p", {
+  })), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "workRightCol"
+  }, /*#__PURE__*/_react["default"].createElement("h3", {
+    className: "workTitle"
+  }, work.name), /*#__PURE__*/_react["default"].createElement("p", {
     className: "workDescr"
   }, work.description), /*#__PURE__*/_react["default"].createElement("div", {
     className: "workButtonsContainer"

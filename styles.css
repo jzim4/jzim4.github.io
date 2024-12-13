@@ -348,14 +348,6 @@ li {
     flex-wrap: wrap;
 }
 /* individual work */
-.workTitle {
-    font-size: 1.5em;
-    top: 0;
-    text-align: center;
-    margin-bottom: 20px;
-    width: 100%;
-    height: fit-content;
-}
 .workPage {
     background-color: white;
     margin: 10vw 0;
@@ -366,27 +358,48 @@ li {
     justify-content: space-around;
 }
 .workContainer {
+    padding: 30px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 5%;
     justify-content: center;
-    width: 100%;
+    width: calc(100% - 60px);
     max-width: 900px;
     font-size: 1.5em;
     background: #fcebff;
     color: #680246ff;
 }
+.workLeftCol {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+.workDate {
+    margin-top: 5px;
+}
 .workImg {
-    width: 20%;
-    margin-bottom: 20px;
+    width: 100%;
+}
+.workRightCol {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 20px;
+}
+.workTitle {
+    margin: 0;
+    font-size: 1.5em;
+    top: 0;
+    width: 100%;
+    height: fit-content;
 }
 .workTextContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 50%;
-    /* min-width: 500px; */
     margin-bottom: 25px;
 }
 .workDescr {
@@ -398,7 +411,6 @@ li {
     display: flex;
     gap: 15px;
     width: fit-content;
-    padding: 7px 0;
 }
 a.workExternalLink {
     padding: 10px;
