@@ -13,8 +13,6 @@ function Animate() {
                 i.animate(
                     [
                         { opacity: 1 },
-                        { opacity: 0.2 },
-                        { opacity: 0 },
                         { opacity: 0 }
                     ],
                     {
@@ -23,7 +21,7 @@ function Animate() {
                         })
                     }
                 );
-                if (window.scrollY/window.innerHeight >= 2) {
+                if (window.scrollY/window.innerHeight >= 3) {
                     i.style.visibility = "hidden";
                   }
                 else {

@@ -73,7 +73,7 @@ export default function HomePageLeft() {
     return <>
         <Animate />
         <div id="homeLeftColumn" className="homePageElement">
-            <div id="bioTextContainer" className="bioTextContainerHome">
+            <div id="bioTextContainer">
                 <Title />
                 <div id="homePagePlaceHolder"></div>
                 <Bio />

@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 
 function Skills() {
-  return <ul className="aboutList"><h3>Key Skills</h3>
+  return <>
+  <h3>Key Skills</h3>
+  <ul className="aboutList">
     <li>GIT</li>
     <li>HTML</li>
     <li>CSS</li>
@@ -15,6 +17,7 @@ function Skills() {
     <li>MICROSOFT SUITE</li>
     <li>GSUITE</li>
   </ul>
+  </>
 }
 
 function AboutBio() {

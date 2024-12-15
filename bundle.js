@@ -43239,9 +43239,9 @@ function _interopRequireWildcard(e, r) {
   return n["default"] = e, t && t.set(e, n), n;
 }
 function Skills() {
-  return /*#__PURE__*/_react["default"].createElement("ul", {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("h3", null, "Key Skills"), /*#__PURE__*/_react["default"].createElement("ul", {
     className: "aboutList"
-  }, /*#__PURE__*/_react["default"].createElement("h3", null, "Key Skills"), /*#__PURE__*/_react["default"].createElement("li", null, "GIT"), /*#__PURE__*/_react["default"].createElement("li", null, "HTML"), /*#__PURE__*/_react["default"].createElement("li", null, "CSS"), /*#__PURE__*/_react["default"].createElement("li", null, "JAVASCRIPT"), /*#__PURE__*/_react["default"].createElement("li", null, "REACT"), /*#__PURE__*/_react["default"].createElement("li", null, "CONTENTFUL"), /*#__PURE__*/_react["default"].createElement("li", null, "FIREBASE"), /*#__PURE__*/_react["default"].createElement("li", null, "PYTHON"), /*#__PURE__*/_react["default"].createElement("li", null, "R"), /*#__PURE__*/_react["default"].createElement("li", null, "JAVA"), /*#__PURE__*/_react["default"].createElement("li", null, "MICROSOFT SUITE"), /*#__PURE__*/_react["default"].createElement("li", null, "GSUITE"));
+  }, /*#__PURE__*/_react["default"].createElement("li", null, "GIT"), /*#__PURE__*/_react["default"].createElement("li", null, "HTML"), /*#__PURE__*/_react["default"].createElement("li", null, "CSS"), /*#__PURE__*/_react["default"].createElement("li", null, "JAVASCRIPT"), /*#__PURE__*/_react["default"].createElement("li", null, "REACT"), /*#__PURE__*/_react["default"].createElement("li", null, "CONTENTFUL"), /*#__PURE__*/_react["default"].createElement("li", null, "FIREBASE"), /*#__PURE__*/_react["default"].createElement("li", null, "PYTHON"), /*#__PURE__*/_react["default"].createElement("li", null, "R"), /*#__PURE__*/_react["default"].createElement("li", null, "JAVA"), /*#__PURE__*/_react["default"].createElement("li", null, "MICROSOFT SUITE"), /*#__PURE__*/_react["default"].createElement("li", null, "GSUITE")));
 }
 function AboutBio() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("p", {
@@ -43425,17 +43425,13 @@ function Animate() {
           i.animate([{
             opacity: 1
           }, {
-            opacity: 0.2
-          }, {
-            opacity: 0
-          }, {
             opacity: 0
           }], {
             timeline: new ViewTimeline({
               subject: fadePlaceHolder
             })
           });
-          if (window.scrollY / window.innerHeight >= 2) {
+          if (window.scrollY / window.innerHeight >= 3) {
             i.style.visibility = "hidden";
           } else {
             i.style.visibility = "visible";
@@ -43572,8 +43568,7 @@ function HomePageLeft() {
     id: "homeLeftColumn",
     className: "homePageElement"
   }, /*#__PURE__*/_react["default"].createElement("div", {
-    id: "bioTextContainer",
-    className: "bioTextContainerHome"
+    id: "bioTextContainer"
   }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "homePagePlaceHolder"
   }), /*#__PURE__*/_react["default"].createElement(Bio, null), /*#__PURE__*/_react["default"].createElement(Buttons, null), /*#__PURE__*/_react["default"].createElement(OtherLinks, null))));

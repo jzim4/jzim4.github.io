@@ -78,7 +78,7 @@ html {
 }
 /* left */
 #homeLeftColumn {
-    z-index: 5;
+    z-index: 1;
     animation: 2s slideInLeftBig ease-out;
     background-color: #fcebff;
     height: 100vh;
@@ -197,7 +197,7 @@ button, button:visited {
     width: 50vw;
     background-color: white;
     position: relative;
-    z-index: 1;
+    z-index: 0;
 
 }
 /* about */
@@ -210,7 +210,7 @@ button, button:visited {
     padding: 30px;
     width: calc(50vw - 60px);
     height: calc(100vh - 60px);
-    z-index: 6;
+    z-index: 1;
     background-color: #660268;
     color: #fcebff;
     animation: 2s slideInAbout ease-out;
@@ -243,65 +243,6 @@ li {
     background-color: #006400;
     box-shadow: 6px 6px #00640080;
     padding: 7px;
-}
-
-/* small version of full home page */
-@media(max-width: 1200px) {
-    li {
-        font-size: 0.7em;
-    }
-}
-@media (max-width: 950px) {
-    #homePagePlaceHolder {
-        margin: 0 auto;
-        height: 300px;
-        width: 80%;
-        min-width: 300px;
-        max-width: 400px;
-        background-image: url('content/bioImg1.jpeg');
-        background-position: center;
-        background-size: cover;
-    }
-    #bioText {
-        padding: 10px 0;
-        margin: 0 auto;
-        width: 80%;
-        text-align: center;
-    }
-    #imgFrame {
-        display: none;
-    }
-    #h1 {
-        text-align: center;
-    }
-    #homeLeftColumn {
-        height: 100vh;
-        z-index: 0;
-        animation: none;
-        width: 100vw;
-        align-items: center;
-    }
-    #navButtonsContainer {
-        width: fit-content;
-        margin: 10px 0 0 auto;
-    } 
-    .buttonsContainer {
-        margin: 0 auto;
-    }
-    #homeRightColumn {
-        left: 0;
-        width: 100vw;
-    }
-    #aboutRow, div#contactPage {
-        width: calc(100vw - 60px);
-    }
-    #aboutRow {
-        position: relative;
-        left: 0;
-    }
-    #fadePlaceHolder {
-        display: none;
-    }
 }
 
 /* MY WORK */
@@ -350,7 +291,7 @@ li {
 /* individual work */
 .workPage {
     background-color: white;
-    margin: 10vw 0;
+    margin: 50px 0;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -464,4 +405,67 @@ a.workExternalLink:hover, a.workExternalLink:focus {
     animation: 0.5s contactButtonHover ease-out;
     box-shadow: 10px 10px #00640080;
     transform: translate(-4px, -4px);
+}
+
+/* small version of site */
+@media(max-width: 1200px) {
+    li {
+        font-size: 0.7em;
+    }
+}
+@media (max-width: 950px) {
+    #homePagePlaceHolder {
+        margin: 0 auto;
+        height: 300px;
+        width: 80%;
+        max-width: 300px;
+        background-image: url('content/bioImg1.jpeg');
+        background-position: center;
+        background-size: cover;
+    }
+    #bioText {
+        padding: 10px 0;
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+    }
+    #imgRow, #imgFrame {
+        display: none !important;
+    }
+    #h1 {
+        text-align: center;
+        font-size: 3em;
+    }
+    #homeLeftColumn {
+        height: 100vh;
+        z-index: 0;
+        animation: none;
+        width: 100vw;
+        align-items: center;
+    }
+    #bioTextContainer, #aboutRow {
+        animation: none;
+        margin: 0;
+    }
+    #navButtonsContainer {
+        width: fit-content;
+        margin: 10px 0 0 auto;
+    }
+    .buttonsContainer {
+        margin: 0 auto;
+    }
+    #homeRightColumn {
+        left: 0;
+        width: 100vw;
+    }
+    #aboutRow, div#contactPage {
+        width: calc(100vw - 60px);
+    }
+    #aboutRow {
+        position: relative;
+        left: 0;
+    }
+    #fadePlaceHolder {
+        display: none;
+    }
 }
