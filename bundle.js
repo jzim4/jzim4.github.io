@@ -43413,29 +43413,23 @@ function _arrayLikeToArray(r, a) {
   return n;
 }
 function Animate() {
+  function clamp(num, min, max) {
+    return Math.max(min, Math.min(num, max));
+  }
   (0, _react.useEffect)(function () {
-    var fadePlaceHolder = document.getElementById('fadePlaceHolder');
     var homePageElement = document.getElementsByClassName('homePageElement');
     window.addEventListener('scroll', function () {
+      var op = 1.7 - window.scrollY / window.innerHeight;
+      if (op > 1) op = 1;
+      if (op < 0) op = 0;
+      op = clamp(op, 0, 1);
+      console.log(op);
       var _iterator = _createForOfIteratorHelper(homePageElement),
         _step;
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
           var i = _step.value;
-          i.animate([{
-            opacity: 1
-          }, {
-            opacity: 0
-          }], {
-            timeline: new ViewTimeline({
-              subject: fadePlaceHolder
-            })
-          });
-          if (window.scrollY / window.innerHeight >= 3) {
-            i.style.visibility = "hidden";
-          } else {
-            i.style.visibility = "visible";
-          }
+          i.style.opacity = op;
         }
       } catch (err) {
         _iterator.e(err);
@@ -43785,37 +43779,24 @@ function _arrayLikeToArray(r, a) {
 function AnimateWorks() {
   (0, _react.useEffect)(function () {
     var works = document.getElementsByClassName('workContainer');
-    var _iterator = _createForOfIteratorHelper(works),
-      _step;
-    try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var i = _step.value;
-        i.animate([{
-          opacity: 0,
-          transform: "translateY(-30%)"
-        }, {
-          opacity: 0.2,
-          transform: "translateY(-10%)"
-        }, {
-          opacity: 1,
-          transform: "translateY(0%)"
-        }, {
-          opacity: 0.2,
-          transform: "translateY(10%)"
-        }, {
-          opacity: 0,
-          transform: "translateY(30%)"
-        }], {
-          timeline: new ViewTimeline({
-            subject: i
-          })
-        });
+    window.addEventListener('scroll', function () {
+      var _iterator = _createForOfIteratorHelper(works),
+        _step;
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var i = _step.value;
+          var top = i.getBoundingClientRect().top;
+          var x = top / window.innerHeight;
+          var op = -1 * Math.pow(2 * x - 1, 2) + 1;
+          if (op < 0) op = 0;
+          i.style.opacity = op;
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
       }
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
-    }
+    });
   });
 }
 function Title() {

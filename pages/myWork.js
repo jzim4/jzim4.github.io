@@ -7,22 +7,15 @@ function AnimateWorks() {
     useEffect(() => {
         const works = document.getElementsByClassName('workContainer');
 
-        for (let i of works) {
-            i.animate(
-                [
-                    { opacity: 0, transform: "translateY(-30%)" },
-                    { opacity: 0.2, transform: "translateY(-10%)" },
-                    { opacity: 1, transform: "translateY(0%)" },
-                    { opacity: 0.2, transform: "translateY(10%)" },
-                    { opacity: 0, transform: "translateY(30%)" }
-                ],
-                {
-                    timeline: new ViewTimeline({
-                        subject: i,
-                    })
-                }
-            );
-        }
+        window.addEventListener('scroll', function () {
+            for (let i of works) {
+                const top = i.getBoundingClientRect().top;
+                const x = top/window.innerHeight;
+                let op = -1 * Math.pow(2*x - 1, 2) + 1;
+                if (op < 0) op = 0;
+                i.style.opacity = op;
+            }
+        });
     });
 }
 

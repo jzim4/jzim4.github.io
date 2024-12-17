@@ -4,29 +4,20 @@ import HomePageRight from './homePageRight.js';
 
 function Animate() {
 
+    function clamp(num, min, max) {
+        return Math.max(min, Math.min(num, max));
+    }
+
     useEffect(() => {
-        const fadePlaceHolder = document.getElementById('fadePlaceHolder');
-        const homePageElement = document.getElementsByClassName('homePageElement');
-        
+        const homePageElement = document.getElementsByClassName('homePageElement');        
         window.addEventListener('scroll', function () {
+            let op = 1.7 - (window.scrollY/window.innerHeight);
+            if (op > 1 ) op = 1;
+            if (op < 0) op = 0;
+            op = clamp(op, 0, 1);
+            console.log(op);
             for (let i of homePageElement) {
-                i.animate(
-                    [
-                        { opacity: 1 },
-                        { opacity: 0 }
-                    ],
-                    {
-                        timeline: new ViewTimeline({
-                            subject: fadePlaceHolder,
-                        })
-                    }
-                );
-                if (window.scrollY/window.innerHeight >= 3) {
-                    i.style.visibility = "hidden";
-                  }
-                else {
-                    i.style.visibility = "visible";
-                }
+                i.style.opacity = op;
             }
         });
     }, []);
