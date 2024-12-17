@@ -1,10 +1,35 @@
 {
+    "bestTree": {
+        "id": "8",
+        "name": "Tree Balancing Activity",
+        "date": "December 2024",
+        "description": "ENTER DESCRIPTION HERE",
+        "img": "../content/workImg/bestTree.png",
+        "github": "https://github.com/jzim4/BeST-Tree"
+    },
+    "publicSafety": {
+        "id": "7",
+        "name": "Macalester College Public Safety",
+        "date": "December 2024",
+        "description": "ENTER DESCRIPTION HERE",
+        "img": "../content/workImg/publicSafety.png",
+        "github": "https://github.com/jzim4.github.io",
+        "siteLink": "https://jzim4.github.io/Macalester-Public-Safety/"
+    },
+    "portfolio": {
+        "id": "6",
+        "name": "My Portfolio Site",
+        "date": "December 2024",
+        "description": "This site here! I started learning about scroll-based animation and inter-browser compatibility.",
+        "img": "../content/workImg/mySite.png",
+        "github": "https://github.com/jzim4.github.io"
+    },
     "chemBox": {
         "id": "5",
         "name": "ChemBox",
         "date": "Fall 2024",
         "description": "SPWA built with React that hosts several chemistry study tools for intro chemistry students\n\nGroup project that developed teamwork and communication skills; Consistently received community feedback to improve site",
-        "img": "https://placehold.co/200x150",
+        "img": "../content/workImg/chemBox.png",
         "github": "https://github.com/jzim4/jbj",
         "siteLink": "https://jzim4.github.io/jbj/"
     },
@@ -13,7 +38,7 @@
         "name": "Restaurant Recommender",
         "date": "Spring 2024",
         "description": "GUI in Java that takes user preferences and suggests a restaurant from a manually created dataset\n\nApplied knowledge of database management and OOP",
-        "img": "https://placehold.co/200x150",
+        "img": "../content/workImg/restaurantRecommender.png",
         "github": "https://github.com/jzim4/Restaurant-Recommender"
     },
     "loreesPortolio": {
@@ -21,7 +46,7 @@
         "name": "Loree's Portfolio",
         "date": "Fall 2023",
         "description": "SPWA built in javascript with Bootstrap front-end and Contentful CMS to display friend’s art collection.\n\nImproved knowledge of database management and front end design",
-        "img": "https://placehold.co/200x150",
+        "img": "../content/workImg/loreesPortfolio.png",
         "github": "https://github.com/jzim4/Lorees-Portfolio",
         "siteLink": "https://jzim4.github.io/Lorees-Portfolio/"
     },
@@ -30,7 +55,7 @@
         "name": "Danny's Dolls",
         "date": "Summer 2022",
         "description": "SPWA built in javascript with Contentful CMS to display friend’s doll collection.\n\nFirst experience with databases and external importing",
-        "img": "https://placehold.co/200x150",
+        "img": "../content/workImg/dannysDolls.png",
         "github": "https://github.com/jzim4/Dannys-Dolls",
         "siteLink": "https://jzim4.github.io/Dannys-Dolls/"
     },
@@ -39,7 +64,7 @@
         "name": "Coffee Talk",
         "date": "January 2022",
         "description": "Website in html and css that hosts my articles about local coffee shops\n\nFocus on learning static front end design, first web dev project that sparked my passion",
-        "img": "https://placehold.co/200x150",
+        "img": "../content/workImg/coffeeTalk.png",
         "github": "https://github.com/jzim4/Coffee-Talk",
         "siteLink": "https://jzim4.github.io/Coffee-Talk"
     }

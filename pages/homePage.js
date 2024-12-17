@@ -9,13 +9,12 @@ function Animate() {
     }
 
     useEffect(() => {
-        const homePageElement = document.getElementsByClassName('homePageElement');        
+        const homePageElement = document.getElementsByClassName('homePageElement');       
         window.addEventListener('scroll', function () {
-            let op = 1.7 - (window.scrollY/window.innerHeight);
+            let op = 1.5 - (window.scrollY/window.innerHeight)/2;
             if (op > 1 ) op = 1;
             if (op < 0) op = 0;
             op = clamp(op, 0, 1);
-            console.log(op);
             for (let i of homePageElement) {
                 i.style.opacity = op;
             }

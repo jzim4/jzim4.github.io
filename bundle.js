@@ -1,11 +1,36 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 module.exports={
+    "bestTree": {
+        "id": "8",
+        "name": "Tree Balancing Activity",
+        "date": "December 2024",
+        "description": "ENTER DESCRIPTION HERE",
+        "img": "../content/workImg/bestTree.png",
+        "github": "https://github.com/jzim4/BeST-Tree"
+    },
+    "publicSafety": {
+        "id": "7",
+        "name": "Macalester College Public Safety",
+        "date": "December 2024",
+        "description": "ENTER DESCRIPTION HERE",
+        "img": "../content/workImg/publicSafety.png",
+        "github": "https://github.com/jzim4.github.io",
+        "siteLink": "https://jzim4.github.io/Macalester-Public-Safety/"
+    },
+    "portfolio": {
+        "id": "6",
+        "name": "My Portfolio Site",
+        "date": "December 2024",
+        "description": "This site here! I started learning about scroll-based animation and inter-browser compatibility.",
+        "img": "../content/workImg/mySite.png",
+        "github": "https://github.com/jzim4.github.io"
+    },
     "chemBox": {
         "id": "5",
         "name": "ChemBox",
         "date": "Fall 2024",
         "description": "SPWA built with React that hosts several chemistry study tools for intro chemistry students\n\nGroup project that developed teamwork and communication skills; Consistently received community feedback to improve site",
-        "img": "https://placehold.co/200x150",
+        "img": "../content/workImg/chemBox.png",
         "github": "https://github.com/jzim4/jbj",
         "siteLink": "https://jzim4.github.io/jbj/"
     },
@@ -14,7 +39,7 @@ module.exports={
         "name": "Restaurant Recommender",
         "date": "Spring 2024",
         "description": "GUI in Java that takes user preferences and suggests a restaurant from a manually created dataset\n\nApplied knowledge of database management and OOP",
-        "img": "https://placehold.co/200x150",
+        "img": "../content/workImg/restaurantRecommender.png",
         "github": "https://github.com/jzim4/Restaurant-Recommender"
     },
     "loreesPortolio": {
@@ -22,7 +47,7 @@ module.exports={
         "name": "Loree's Portfolio",
         "date": "Fall 2023",
         "description": "SPWA built in javascript with Bootstrap front-end and Contentful CMS to display friend’s art collection.\n\nImproved knowledge of database management and front end design",
-        "img": "https://placehold.co/200x150",
+        "img": "../content/workImg/loreesPortfolio.png",
         "github": "https://github.com/jzim4/Lorees-Portfolio",
         "siteLink": "https://jzim4.github.io/Lorees-Portfolio/"
     },
@@ -31,7 +56,7 @@ module.exports={
         "name": "Danny's Dolls",
         "date": "Summer 2022",
         "description": "SPWA built in javascript with Contentful CMS to display friend’s doll collection.\n\nFirst experience with databases and external importing",
-        "img": "https://placehold.co/200x150",
+        "img": "../content/workImg/dannysDolls.png",
         "github": "https://github.com/jzim4/Dannys-Dolls",
         "siteLink": "https://jzim4.github.io/Dannys-Dolls/"
     },
@@ -40,7 +65,7 @@ module.exports={
         "name": "Coffee Talk",
         "date": "January 2022",
         "description": "Website in html and css that hosts my articles about local coffee shops\n\nFocus on learning static front end design, first web dev project that sparked my passion",
-        "img": "https://placehold.co/200x150",
+        "img": "../content/workImg/coffeeTalk.png",
         "github": "https://github.com/jzim4/Coffee-Talk",
         "siteLink": "https://jzim4.github.io/Coffee-Talk"
     }
@@ -43419,11 +43444,10 @@ function Animate() {
   (0, _react.useEffect)(function () {
     var homePageElement = document.getElementsByClassName('homePageElement');
     window.addEventListener('scroll', function () {
-      var op = 1.7 - window.scrollY / window.innerHeight;
+      var op = 1.5 - window.scrollY / window.innerHeight / 2;
       if (op > 1) op = 1;
       if (op < 0) op = 0;
       op = clamp(op, 0, 1);
-      console.log(op);
       var _iterator = _createForOfIteratorHelper(homePageElement),
         _step;
       try {
@@ -43489,9 +43513,9 @@ function _interopRequireWildcard(e, r) {
 function Animate() {
   window.addEventListener('scroll', function () {
     if (window.scrollY < window.innerHeight * 3 - 50) {
-      document.getElementById("homeLeftColumn").style.visibility = "visible";
+      document.getElementById("homeLeftColumn").style.display = "flex";
     } else {
-      document.getElementById("homeLeftColumn").style.visibility = "hidden";
+      document.getElementById("homeLeftColumn").style.display = "none";
     }
   });
 }
@@ -43776,28 +43800,51 @@ function _arrayLikeToArray(r, a) {
   for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
   return n;
 }
+function ImgHoverAnimation() {
+  (0, _react.useEffect)(function () {
+    var imgs = document.getElementsByClassName('workImg');
+    var bigImg = document.getElementById('bigWorkImg');
+    var _loop = function _loop(i) {
+      i.addEventListener('mouseover', function () {
+        bigImg.src = i.src;
+        bigImg.display = "block";
+      });
+    };
+    for (var i in imgs) {
+      _loop(i);
+    }
+  }, []);
+}
 function AnimateWorks() {
   (0, _react.useEffect)(function () {
     var works = document.getElementsByClassName('workContainer');
+    formatWork(works);
     window.addEventListener('scroll', function () {
-      var _iterator = _createForOfIteratorHelper(works),
-        _step;
-      try {
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var i = _step.value;
-          var top = i.getBoundingClientRect().top;
-          var x = top / window.innerHeight;
-          var op = -1 * Math.pow(2 * x - 1, 2) + 1;
-          if (op < 0) op = 0;
-          i.style.opacity = op;
-        }
-      } catch (err) {
-        _iterator.e(err);
-      } finally {
-        _iterator.f();
-      }
+      formatWork(works);
     });
-  });
+    addEventListener("resize", function () {
+      formatWork(works);
+    });
+  }, []);
+  function formatWork(works) {
+    var _iterator = _createForOfIteratorHelper(works),
+      _step;
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var i = _step.value;
+        var top = i.getBoundingClientRect().top;
+        var x = top / window.innerHeight;
+        var op = -1 * Math.pow(1.8 * x - 0.7, 2) + 1;
+        if (op < 0) op = 0;
+        i.style.opacity = op;
+        i.style.transform = "translateY(" + (op * 30).toString() + "px)";
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+  }
 }
 function Title() {
   return /*#__PURE__*/_react["default"].createElement("h2", {
@@ -43816,7 +43863,8 @@ function Work(_ref) {
     className: "workDate"
   }, work.date), /*#__PURE__*/_react["default"].createElement("img", {
     className: "workImg",
-    src: work.img
+    src: work.img,
+    alt: "Screenshot of " + work.name
   })), /*#__PURE__*/_react["default"].createElement("div", {
     className: "workRightCol"
   }, /*#__PURE__*/_react["default"].createElement("h3", {
@@ -43855,7 +43903,9 @@ function SiteLinkLink(_ref3) {
 }
 function MyWork() {
   var dataList = Object.entries(_myWork["default"]);
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(AnimateWorks, null), /*#__PURE__*/_react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("img", {
+    id: "bigWorkImg"
+  }), /*#__PURE__*/_react["default"].createElement(AnimateWorks, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "navHeader"
   }, /*#__PURE__*/_react["default"].createElement("h2", null, "Jonah Zimmer"), /*#__PURE__*/_react["default"].createElement("div", {
     id: "navButtonsContainer"

@@ -76,6 +76,9 @@ html {
     display: flex;
     height: 300vh;
 }
+.homePageElement {
+    opacity: 1;
+}
 /* left */
 #homeLeftColumn {
     z-index: 1;
@@ -299,6 +302,7 @@ li {
     justify-content: space-around;
 }
 .workContainer {
+    opacity: 1;
     padding: 30px;
     display: flex;
     flex-direction: row;
@@ -318,10 +322,22 @@ li {
     align-items: center
 }
 .workDate {
+    width: 200px;
+    text-align: center;
     margin-top: 5px;
 }
 .workImg {
+    border:#660268 solid 2px;
+    border-radius: 8px;
+    position: relative;
+    max-width: 200px;
     width: 100%;
+}
+#bigWorkImg {
+    display: none;
+    position: fixed;
+    top: 30px;
+    width: 500px;
 }
 .workRightCol {
     display: flex;
@@ -447,13 +463,6 @@ a.workExternalLink:hover, a.workExternalLink:focus {
         animation: none;
         margin: 0;
     }
-    #navButtonsContainer {
-        width: fit-content;
-        margin: 10px 0 0 auto;
-    }
-    .buttonsContainer {
-        margin: 0 auto;
-    }
     #homeRightColumn {
         left: 0;
         width: 100vw;
@@ -467,5 +476,38 @@ a.workExternalLink:hover, a.workExternalLink:focus {
     }
     #fadePlaceHolder {
         display: none;
+    }
+}
+@media (max-width: 500px) {
+    #navHeader {
+        padding: 0 10px;
+    }
+    #navHeader > h2 {
+        width: 92px;
+    }
+    .buttonsContainer {
+        margin: 0;
+    }
+    #navButtonsContainer {
+        width: fit-content;
+        margin: 0 0 0 auto;
+    }
+    .buttonsContainer > button {
+        /* padding: 5px; */
+        font-size: 0.8em;
+    }
+    #myWorkTitle {
+        top: 55px;
+        font-size: 1.5em;
+        width: calc(100vw - 24px);
+        padding: 12px;
+    }
+    .workImg, .workDate {
+        width: 150px;
+    }
+}
+@media(max-width: 450px) {
+    .workButtonsContainer {
+        flex-direction: column;
     }
 }

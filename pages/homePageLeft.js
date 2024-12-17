@@ -3,10 +3,10 @@ import React, {useEffect} from 'react';
 function Animate() {
     window.addEventListener('scroll', function () {
         if (window.scrollY < window.innerHeight * 3 - 50) {
-            document.getElementById("homeLeftColumn").style.visibility = "visible";
+            document.getElementById("homeLeftColumn").style.display = "flex";
         }
         else {
-            document.getElementById("homeLeftColumn").style.visibility = "hidden";
+            document.getElementById("homeLeftColumn").style.display = "none";
         }
     });
 }
