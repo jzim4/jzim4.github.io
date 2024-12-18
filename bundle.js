@@ -43445,17 +43445,11 @@ function _arrayLikeToArray(r, a) {
   for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
   return n;
 }
-function Animate() {
-  function clamp(num, min, max) {
-    return Math.max(min, Math.min(num, max));
-  }
+function ScrollFadeAnimation() {
   (0, _react.useEffect)(function () {
     var homePageElement = document.getElementsByClassName('homePageElement');
     window.addEventListener('scroll', function () {
       var op = 1.5 - window.scrollY / window.innerHeight / 2;
-      if (op > 1) op = 1;
-      if (op < 0) op = 0;
-      op = clamp(op, 0, 1);
       var _iterator = _createForOfIteratorHelper(homePageElement),
         _step;
       try {
@@ -43468,11 +43462,75 @@ function Animate() {
       } finally {
         _iterator.f();
       }
+      if (window.innerWidth <= 950 && window.scrollY > window.innerHeight) {
+        document.getElementById("homeLeftColumn").style.opacity = 0;
+      }
     });
   }, []);
 }
+function SiteLoadAnimation() {
+  (0, _react.useEffect)(function () {
+    if (window.innerWidth >= 950) {
+      var idImg = document.getElementById("imgFrame");
+      var name = document.getElementById("h1");
+      var bioText = document.getElementById("bioTextContainer");
+      var leftColumn = document.getElementById("homeLeftColumn");
+      var aboutRow = document.getElementById("aboutRow");
+      idImg.animate([{
+        transform: 'translateX(100px)'
+      }, {
+        transform: 'translateX(0)'
+      }], {
+        duration: 1500
+      });
+      aboutRow.animate([{
+        transform: 'translateX(6vw)'
+      }, {
+        transform: 'translateX(0)'
+      }], {
+        duration: 1500
+      });
+      leftColumn.animate([{
+        width: "56vw"
+      }, {
+        width: "50vw"
+      }], {
+        duration: 1500
+      });
+      bioText.animate([{
+        opacity: 0,
+        transform: 'translateX(-200px)'
+      }, {
+        offset: 0.2,
+        opacity: 0,
+        transform: 'translateX(-200px)'
+      }, {
+        opacity: 0.5,
+        transform: 'translateX(-100px)'
+      }, {
+        opacity: 1,
+        transform: 'translateX(0)'
+      }], {
+        duration: 2000
+      });
+      name.animate([{
+        opacity: 0,
+        transform: 'translateX(-200px)'
+      }, {
+        offset: 0.3,
+        opacity: 0,
+        transform: 'translateX(-200px)'
+      }, {
+        opacity: 1,
+        transform: 'translateX(0)'
+      }], {
+        duration: 2000
+      });
+    }
+  }, []);
+}
 function HomePage() {
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Animate, null), /*#__PURE__*/_react["default"].createElement(_homePageLeft["default"], null), /*#__PURE__*/_react["default"].createElement(_homePageRight["default"], null));
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(ScrollFadeAnimation, null), /*#__PURE__*/_react["default"].createElement(SiteLoadAnimation, null), /*#__PURE__*/_react["default"].createElement(_homePageLeft["default"], null), /*#__PURE__*/_react["default"].createElement(_homePageRight["default"], null));
 }
 
 },{"./homePageLeft.js":24,"./homePageRight.js":25,"react":16}],24:[function(require,module,exports){

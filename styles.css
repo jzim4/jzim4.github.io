@@ -13,40 +13,7 @@ html {
 }
 
 /* TRANSITIONS */
-@keyframes slideInLeftBig {
-    0% {
-        width: 53vw;
-    }
-    100% {
-        width: 50vw;
-    }
-}
-@keyframes slideInImg {
-    0% {
-        margin-left: 5vw;
-        width: 45vw;
-    }
-    100% {
-        margin-left: 0;
-        width: 50vw;
-    }
-}
-@keyframes slideInAbout {
-    0% {
-        transform: translateX(3vw);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-@keyframes slideInRightSmall {
-    0% {
-        transform: translateX(-6vw);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
+
 @keyframes buttonHover {
     0% {
         transform: translate(0, 0);
@@ -80,7 +47,6 @@ html {
 /* left */
 #homeLeftColumn {
     z-index: 1;
-    animation: 2s slideInLeftBig ease-out;
     background-color: #fcebff;
     height: 100vh;
     width: 50vw;
@@ -148,6 +114,7 @@ button, button:visited {
 .otherLink, .otherLink:visited {
     color:#006400;
     padding: 10px;
+    font-size: 20px;
 }
 .otherLink:hover, .otherLink:focus, .otherLink:active {
     color:#006400;  
@@ -417,7 +384,6 @@ a.workExternalLink:hover, a.workExternalLink:focus {
     display: flex;
     flex-wrap: wrap;
     gap: 10%;
-    padding-bottom: 60px;
     justify-content: center;
 }
 .contactHeader {
@@ -480,9 +446,8 @@ a.workExternalLink:hover, a.workExternalLink:focus {
         width: 100vw;
         align-items: center;
     }
-    #bioTextContainer, #aboutRow {
-        animation: none;
-        margin: 0;
+    .buttonsContainer {
+        margin: 0 auto;
     }
     #homeRightColumn {
         left: 0;
@@ -494,6 +459,7 @@ a.workExternalLink:hover, a.workExternalLink:focus {
     #aboutRow {
         position: relative;
         left: 0;
+        height: fit-content;
     }
     #fadePlaceHolder {
         display: none;
@@ -503,6 +469,7 @@ a.workExternalLink:hover, a.workExternalLink:focus {
     }
     #contactPage {
         font-size: 0.8rem;
+        height: calc(100vh - 60px - 55px);
     }
 }
 @media (max-width: 500px) {
@@ -511,9 +478,6 @@ a.workExternalLink:hover, a.workExternalLink:focus {
     }
     #navHeader > h2 {
         width: 92px;
-    }
-    .buttonsContainer {
-        margin: 0;
     }
     #navButtonsContainer {
         width: fit-content;
