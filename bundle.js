@@ -43865,16 +43865,16 @@ function AnimateWorks() {
         var center = window.innerHeight / 2 + offset;
         var tr = 0;
         var op = void 0;
-        if (rect.top <= center - 40 && rect.bottom >= center + 40) {
+        if (rect.top <= center - 80 && rect.bottom >= center + 40) {
           op = 1;
-          tr = 0;
-        } else if (rect.top > center - 40) {
+        } else if (rect.top > center - 80) {
           op = 1.5 - rect.top / (center - 40);
-          // tr = ((center-40) - rect.top);
+          // tr = 0;
+          tr = (center - 80 - rect.top) / 2;
           console.log(tr);
         } else if (rect.bottom < center + 40) {
           op = (rect.bottom - offset) / (center + 40);
-          // tr = ((center + 40) - rect.bottom) / 3;
+          tr = (center + 40 - rect.bottom) / 3;
         }
         i.style.opacity = op;
         i.style.transform = "translateY(" + tr + "px)";
