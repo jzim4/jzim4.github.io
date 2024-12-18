@@ -43232,44 +43232,15 @@ exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate :
 },{"process/browser.js":3,"timers":20}],21:[function(require,module,exports){
 "use strict";
 
-function _typeof(o) {
-  "@babel/helpers - typeof";
-
-  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
-    return typeof o;
-  } : function (o) {
-    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-  }, _typeof(o);
-}
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = About;
-var _react = _interopRequireWildcard(require("react"));
-function _getRequireWildcardCache(e) {
-  if ("function" != typeof WeakMap) return null;
-  var r = new WeakMap(),
-    t = new WeakMap();
-  return (_getRequireWildcardCache = function _getRequireWildcardCache(e) {
-    return e ? t : r;
-  })(e);
-}
-function _interopRequireWildcard(e, r) {
-  if (!r && e && e.__esModule) return e;
-  if (null === e || "object" != _typeof(e) && "function" != typeof e) return {
+var _react = _interopRequireDefault(require("react"));
+function _interopRequireDefault(e) {
+  return e && e.__esModule ? e : {
     "default": e
   };
-  var t = _getRequireWildcardCache(r);
-  if (t && t.has(e)) return t.get(e);
-  var n = {
-      __proto__: null
-    },
-    a = Object.defineProperty && Object.getOwnPropertyDescriptor;
-  for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) {
-    var i = a ? Object.getOwnPropertyDescriptor(e, u) : null;
-    i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u];
-  }
-  return n["default"] = e, t && t.set(e, n), n;
 }
 function Skills() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("h3", null, "Key Skills"), /*#__PURE__*/_react["default"].createElement("ul", {
@@ -43690,8 +43661,10 @@ function IdImg() {
   });
   return /*#__PURE__*/_react["default"].createElement("div", {
     id: "imgRow"
-  }, /*#__PURE__*/_react["default"].createElement("div", {
-    id: "imgFrame"
+  }, /*#__PURE__*/_react["default"].createElement("img", {
+    id: "imgFrame",
+    src: "../content/bioImg1.jpeg",
+    alt: "Headshot of Jonah"
   }));
 }
 function HomePageRight() {
@@ -43927,9 +43900,7 @@ function AnimateWorks() {
           op = 1;
         } else if (rect.top > center - 80) {
           op = 1.5 - rect.top / (center - 40);
-          // tr = 0;
           tr = (center - 80 - rect.top) / 2;
-          console.log(tr);
         } else if (rect.bottom < center + 40) {
           op = (rect.bottom - offset) / (center + 40);
           tr = (center + 40 - rect.bottom) / 3;
@@ -43986,7 +43957,9 @@ function Skills(_ref2) {
   }, "Key Skills:"), /*#__PURE__*/_react["default"].createElement("ul", {
     className: "workList"
   }, work.skills.map(function (skill) {
-    return /*#__PURE__*/_react["default"].createElement("li", null, skill);
+    return /*#__PURE__*/_react["default"].createElement("li", {
+      key: work.id + skill
+    }, skill);
   })));
 }
 function GithubLink(_ref3) {

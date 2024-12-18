@@ -21,7 +21,7 @@ function IdImg() {
         }
     });
     return <div id="imgRow">
-        <div id="imgFrame"></div>
+        <img id="imgFrame" src="../content/bioImg1.jpeg" alt="Headshot of Jonah"></img>
     </div>
 }
 

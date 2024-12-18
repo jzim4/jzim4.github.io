@@ -41,9 +41,6 @@ html {
     display: flex;
     height: 300vh;
 }
-.homePageElement {
-    opacity: 1;
-}
 /* left */
 #homeLeftColumn {
     z-index: 1;
@@ -59,17 +56,11 @@ html {
     align-items: end;
 }
 #bioTextContainer {
-    opacity: 1;
     background-color: #fcebff;
     display: flex;
-    top: 0;
-    left: 0;
-    animation: 2s slideInRightSmall ease-out;
-    z-index: 5;
     flex-direction: column;
     width: fit-content;
     height: fit-content;
-    right: 55vw;
     margin-right: 40px;
 }
 h1 {
@@ -111,14 +102,10 @@ button, button:visited {
     box-shadow: 5px 5px #680246ff;
 }
 
-.otherLink, .otherLink:visited {
+.otherLink, .otherLink:visited, .otherLink:hover, .otherLink:focus, .otherLink:active {
     color:#006400;
     padding: 10px;
     font-size: 20px;
-}
-.otherLink:hover, .otherLink:focus, .otherLink:active {
-    color:#006400;  
-    padding: 10px;
 }
 
 /* right */
@@ -133,7 +120,6 @@ button, button:visited {
 }
 /* pic */
 #imgRow {
-    animation: 2s slideInImg ease-out;
     height: 100vh;
     width: 50vw;
     z-index: 0;
@@ -147,9 +133,9 @@ button, button:visited {
 }
 #imgFrame {
     margin: 0 auto;
-    max-width: 600px;
     width: 40vw;
     height: 40vw;
+    max-width: 600px;
     max-height: 600px;
     overflow: hidden;
     background-image: url('content/bioImg1.jpeg');
@@ -166,11 +152,10 @@ button, button:visited {
     background-color: white;
     position: relative;
     z-index: 0;
-
 }
+
 /* about */
 #aboutRow {
-    overflow-y: hidden;
     font-size: 1.5em;
     position: sticky;
     top: 0;
@@ -181,13 +166,9 @@ button, button:visited {
     z-index: 1;
     background-color: #660268;
     color: #fcebff;
-    animation: 2s slideInAbout ease-out;
 }
 #aboutRow>h2 {
     margin-top: 15px;
-}
-#aboutListsContainer {
-    position: relative;
 }
 h3 {
     width: 100%;
@@ -231,12 +212,9 @@ li {
 
 #myWorkPage {
     background-color: white;
-    opacity: 1;
     padding: 0 20px;
     position: relative;
-    min-height: 100vh;
     z-index: 2;
-    overflow: unset;
     padding-bottom: 20vh;
 }
 #myWorkTitle {
@@ -267,7 +245,6 @@ li {
     justify-content: space-around;
 }
 .workContainer {
-    opacity: 1;
     padding: 30px;
     display: flex;
     flex-direction: row;
@@ -294,7 +271,6 @@ li {
 .workImg {
     border:#660268 solid 2px;
     border-radius: 8px;
-    position: relative;
     max-width: 200px;
     width: 100%;
 }
@@ -320,9 +296,8 @@ a.workExternalLink:hover, a.workExternalLink:focus {
     position: fixed;
     top: 0px;
     width: 100vw;
-    height: 105vh;
+    height: 100vh;
     background:#000000bb;
-    overflow-y: scroll;
 }
 #bigWorkImgContainer:hover {
     cursor: zoom-out;
@@ -344,16 +319,8 @@ a.workExternalLink:hover, a.workExternalLink:focus {
 .workTitle {
     margin: 0;
     font-size: 1.5em;
-    top: 0;
     width: 100%;
     height: fit-content;
-}
-.workTextContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 50%;
-    margin-bottom: 25px;
 }
 .workDescr {
     margin: 5px 0;
@@ -433,7 +400,7 @@ a.workExternalLink:hover, a.workExternalLink:focus {
         text-align: center;
     }
     #imgRow, #imgFrame {
-        display: none !important;
+        display: none;
     }
     #h1 {
         text-align: center;
@@ -448,10 +415,6 @@ a.workExternalLink:hover, a.workExternalLink:focus {
     }
     .buttonsContainer {
         margin: 0 auto;
-    }
-    #homeRightColumn {
-        left: 0;
-        width: 100vw;
     }
     #aboutRow, div#contactPage {
         width: calc(100vw - 60px);

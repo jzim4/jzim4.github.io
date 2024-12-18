@@ -55,9 +55,7 @@ function AnimateWorks() {
             }
             else if (rect.top > center - 80) {
                 op = 1.5 - (rect.top/(center-40));
-                // tr = 0;
                 tr = ((center - 80) - (rect.top)) / 2;
-                console.log(tr);
 
             }
             else if (rect.bottom < center + 40) {
@@ -98,7 +96,7 @@ function Skills({ work }) {
         <h3 className="workSkillsHeader">Key Skills:</h3>
         <ul className="workList">
             {work.skills.map((skill) => (
-                <li>{skill}</li>
+                <li key={work.id + skill}>{skill}</li>
             ))}
         </ul>
     </>

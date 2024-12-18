@@ -57,11 +57,6 @@ function SiteLoadAnimation() {
                 { opacity: 1, transform: 'translateX(0)' }
             ], { duration: 2000 });
         }
-
-        
-
-
-
     }, []);
 }
 
