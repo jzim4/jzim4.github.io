@@ -1,26 +1,29 @@
 import React, { useEffect } from 'react';
 import data from '../content/myWork.json' with { type: "json" };
-import { Buttons } from './homePageLeft.js';
+import NavHeader from '../pages/navHeader.js'
 
 function ImgHoverAnimation() {
     useEffect(() => {
         const imgs = document.getElementsByClassName('workImg');
         const bigImg = document.getElementById('bigWorkImg');
+        const bigImgContainer = document.getElementById('bigWorkImgContainer');
 
-        for (let i in imgs) {
-            i.addEventListener('mouseover', function() {
+        for (let i of imgs) {
+            i.addEventListener('click', function () {
                 bigImg.src = i.src;
-                bigImg.display = "block";
+                bigImgContainer.style.display = "block";
+                document.body.style.overflow = "hidden";
             })
         }
-        
-    }, []);
+        bigImgContainer.addEventListener('click', function () {
+            bigImgContainer.style.display = "none";
+            document.body.style.overflow = "scroll";
+        })
 
-    
+    }, []);
 }
 
 function AnimateWorks() {
-
     useEffect(() => {
         const works = document.getElementsByClassName('workContainer');
 
@@ -36,12 +39,32 @@ function AnimateWorks() {
 
     function formatWork(works) {
         for (let i of works) {
-            const top = i.getBoundingClientRect().top;
-            const x = top/window.innerHeight;
-            let op = -1 * Math.pow(1.8*x - 0.7, 2) + 1;
-            if (op < 0) op = 0;
+            // if any part of the work is in the middle, opacity should be 1
+            // if it's not there, fade to 0
+
+            const rect = i.getBoundingClientRect();
+            const header = document.getElementById("navHeader");
+            const title = document.getElementById("myWorkTitle");
+            const offset =  header.clientHeight + title.clientHeight;
+            const center = window.innerHeight/2 + offset;
+
+            let tr = 0;
+            let op;
+            if (rect.top <= center - 40 && rect.bottom >= center + 40) {
+                op = 1;
+                tr = 0;
+            }
+            else if (rect.top > center - 40) {
+                op = 1.5 - (rect.top/(center-40));
+                // tr = ((center-40) - rect.top);
+                console.log(tr);
+            }
+            else if (rect.bottom < center + 40) {
+                op = (rect.bottom - offset)/(center + 40);
+                // tr = ((center + 40) - rect.bottom) / 3;
+            }
             i.style.opacity = op;
-            i.style.transform = "translateY(" + (op * 30).toString() + "px)";
+            i.style.transform = "translateY(" + tr +"px)";
         }
     }
 }
@@ -55,17 +78,29 @@ function Work({ work }) {
             <div className="workLeftCol">
                 <div className="workDate">{work.date}</div>
                 <img className="workImg" src={work.img} alt={"Screenshot of " + work.name}></img>
-            </div>
-            <div className="workRightCol">
-                <h3 className="workTitle">{work.name}</h3>
-                <p className="workDescr">{work.description}</p>
                 <div className="workButtonsContainer">
                     <GithubLink work={work} />
                     <SiteLinkLink work={work} />
                 </div>
             </div>
+            <div className="workRightCol">
+                <h3 className="workTitle">{work.name}</h3>
+                <p className="workDescr">{work.description}</p>
+                <Skills work={work}></Skills>
+            </div>
         </div>
     </div>
+}
+
+function Skills({ work }) {
+    return <>
+        <h3 className="workSkillsHeader">Key Skills:</h3>
+        <ul className="workList">
+            {work.skills.map((skill) => (
+                <li>{skill}</li>
+            ))}
+        </ul>
+    </>
 }
 
 function GithubLink({ work }) {
@@ -84,14 +119,12 @@ function SiteLinkLink({ work }) {
 export default function MyWork() {
     let dataList = Object.entries(data);
     return <>
-        <img id="bigWorkImg"></img>
-        <AnimateWorks />
-        <div id="navHeader">
-            <h2>Jonah Zimmer</h2>
-            <div id="navButtonsContainer">
-                <Buttons />
-            </div>
+        <ImgHoverAnimation />
+        <div id="bigWorkImgContainer">
+            <img id="bigWorkImg"></img>
         </div>
+        <AnimateWorks />
+        <NavHeader />
         <div id="myWorkPage">
             <Title />
             <div id="myWorkContainer">

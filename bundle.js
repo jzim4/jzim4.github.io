@@ -4,7 +4,8 @@ module.exports={
         "id": "8",
         "name": "Tree Balancing Activity",
         "date": "December 2024",
-        "description": "ENTER DESCRIPTION HERE",
+        "description": "This project is a binary tree simulation where the user can make rotations and see how it impacts the balance of the tree. It was the final project for the class Data Structures.",
+        "skills": ["Java", "Teamwork"],
         "img": "../content/workImg/bestTree.png",
         "github": "https://github.com/jzim4/BeST-Tree"
     },
@@ -12,16 +13,18 @@ module.exports={
         "id": "7",
         "name": "Macalester College Public Safety",
         "date": "December 2024",
-        "description": "ENTER DESCRIPTION HERE",
+        "description": "This project displays several visualizations of the publically available Crime and Fire Log at Mac and a survey for community members in order to see two different perspectives on Public Safety's impact on the campus community. It was the final project for the class Critical Race and Digital Studies.",
+        "skills": ["React", "Python", "HTML", "CSS", "Javascript", "Teamwork"],
         "img": "../content/workImg/publicSafety.png",
-        "github": "https://github.com/jzim4.github.io",
-        "siteLink": "https://jzim4.github.io/Macalester-Public-Safety/"
+        "github": "https://github.com/jzim4/Macalester-Public-Safety",
+        "siteLink": "https://public-safety-data-at-macalester.vercel.app/"
     },
     "portfolio": {
         "id": "6",
         "name": "My Portfolio Site",
         "date": "December 2024",
-        "description": "This site here! I started learning about scroll-based animation and inter-browser compatibility.",
+        "description": "That is this site here! I am continuing to update it, and I used this project to learning more about scroll-based animation.",
+        "skills": ["React", "HTML", "CSS", "Javascript"],
         "img": "../content/workImg/mySite.png",
         "github": "https://github.com/jzim4.github.io"
     },
@@ -29,7 +32,8 @@ module.exports={
         "id": "5",
         "name": "ChemBox",
         "date": "Fall 2024",
-        "description": "SPWA built with React that hosts several chemistry study tools for intro chemistry students\n\nGroup project that developed teamwork and communication skills; Consistently received community feedback to improve site",
+        "description": "This project is made up of several chemistry study tools for intro chemistry students. I developed many soft skills during this semester long project including teamwork, communication, and user-feedback collection.",
+        "skills": ["React", "HTML", "CSS", "Javascript", "Teamwork"],
         "img": "../content/workImg/chemBox.png",
         "github": "https://github.com/jzim4/jbj",
         "siteLink": "https://jzim4.github.io/jbj/"
@@ -38,7 +42,8 @@ module.exports={
         "id": "4",
         "name": "Restaurant Recommender",
         "date": "Spring 2024",
-        "description": "GUI in Java that takes user preferences and suggests a restaurant from a manually created dataset\n\nApplied knowledge of database management and OOP",
+        "description": "For this project, users input their cuisine preference, budget, and zip code in order to provide a recommendation for users in the Twin Cities. Though it currently has 30 restaurants, by paying for an API with more data it would be scalable. This was my final project for the class Object Oriented Programming.",
+        "skills": ["Java", "Teamwork"],
         "img": "../content/workImg/restaurantRecommender.png",
         "github": "https://github.com/jzim4/Restaurant-Recommender"
     },
@@ -46,7 +51,8 @@ module.exports={
         "id": "3",
         "name": "Loree's Portfolio",
         "date": "Fall 2023",
-        "description": "SPWA built in javascript with Bootstrap front-end and Contentful CMS to display friend’s art collection.\n\nImproved knowledge of database management and front end design",
+        "description": "This site displays a friend’s art collection. I used the CMS Contentful in order to allow Loree to dynamically update the site without programming experience.",
+        "skills": ["HTML", "CSS", "Javascript", "Contentful", "Bootstrap"],
         "img": "../content/workImg/loreesPortfolio.png",
         "github": "https://github.com/jzim4/Lorees-Portfolio",
         "siteLink": "https://jzim4.github.io/Lorees-Portfolio/"
@@ -55,7 +61,8 @@ module.exports={
         "id": "2",
         "name": "Danny's Dolls",
         "date": "Summer 2022",
-        "description": "SPWA built in javascript with Contentful CMS to display friend’s doll collection.\n\nFirst experience with databases and external importing",
+        "description": "My first project using Javascript, this site displays a friend's doll collection. I used the CMS Contentful in order to allow Daniel to dynamically update the site without programming experience.",
+        "skills": ["HTML", "CSS", "Javascript", "Contentful"],
         "img": "../content/workImg/dannysDolls.png",
         "github": "https://github.com/jzim4/Dannys-Dolls",
         "siteLink": "https://jzim4.github.io/Dannys-Dolls/"
@@ -64,7 +71,8 @@ module.exports={
         "id": "1",
         "name": "Coffee Talk",
         "date": "January 2022",
-        "description": "Website in html and css that hosts my articles about local coffee shops\n\nFocus on learning static front end design, first web dev project that sparked my passion",
+        "description": "This is my first website. I was learning HTML and CSS as I built it during January of my 11th grade year in high school. It hosts my articles about three local coffee shops in Philadelphia. This project really sparked my passion for web development.",
+        "skills": ["HTML", "CSS", "Bootstrap"],
         "img": "../content/workImg/coffeeTalk.png",
         "github": "https://github.com/jzim4/Coffee-Talk",
         "siteLink": "https://jzim4.github.io/Coffee-Talk"
@@ -43709,7 +43717,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = MyWork;
 var _react = _interopRequireWildcard(require("react"));
 var _myWork = _interopRequireDefault(require("../content/myWork.json"));
-var _homePageLeft = require("./homePageLeft.js");
+var _navHeader = _interopRequireDefault(require("../pages/navHeader.js"));
 function _interopRequireDefault(e) {
   return e && e.__esModule ? e : {
     "default": e
@@ -43804,15 +43812,30 @@ function ImgHoverAnimation() {
   (0, _react.useEffect)(function () {
     var imgs = document.getElementsByClassName('workImg');
     var bigImg = document.getElementById('bigWorkImg');
-    var _loop = function _loop(i) {
-      i.addEventListener('mouseover', function () {
-        bigImg.src = i.src;
-        bigImg.display = "block";
-      });
-    };
-    for (var i in imgs) {
-      _loop(i);
+    var bigImgContainer = document.getElementById('bigWorkImgContainer');
+    var _iterator = _createForOfIteratorHelper(imgs),
+      _step;
+    try {
+      var _loop = function _loop() {
+        var i = _step.value;
+        i.addEventListener('click', function () {
+          bigImg.src = i.src;
+          bigImgContainer.style.display = "block";
+          document.body.style.overflow = "hidden";
+        });
+      };
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        _loop();
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
     }
+    bigImgContainer.addEventListener('click', function () {
+      bigImgContainer.style.display = "none";
+      document.body.style.overflow = "scroll";
+    });
   }, []);
 }
 function AnimateWorks() {
@@ -43827,22 +43850,39 @@ function AnimateWorks() {
     });
   }, []);
   function formatWork(works) {
-    var _iterator = _createForOfIteratorHelper(works),
-      _step;
+    var _iterator2 = _createForOfIteratorHelper(works),
+      _step2;
     try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var i = _step.value;
-        var top = i.getBoundingClientRect().top;
-        var x = top / window.innerHeight;
-        var op = -1 * Math.pow(1.8 * x - 0.7, 2) + 1;
-        if (op < 0) op = 0;
+      for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+        var i = _step2.value;
+        // if any part of the work is in the middle, opacity should be 1
+        // if it's not there, fade to 0
+
+        var rect = i.getBoundingClientRect();
+        var header = document.getElementById("navHeader");
+        var title = document.getElementById("myWorkTitle");
+        var offset = header.clientHeight + title.clientHeight;
+        var center = window.innerHeight / 2 + offset;
+        var tr = 0;
+        var op = void 0;
+        if (rect.top <= center - 40 && rect.bottom >= center + 40) {
+          op = 1;
+          tr = 0;
+        } else if (rect.top > center - 40) {
+          op = 1.5 - rect.top / (center - 40);
+          // tr = ((center-40) - rect.top);
+          console.log(tr);
+        } else if (rect.bottom < center + 40) {
+          op = (rect.bottom - offset) / (center + 40);
+          // tr = ((center + 40) - rect.bottom) / 3;
+        }
         i.style.opacity = op;
-        i.style.transform = "translateY(" + (op * 30).toString() + "px)";
+        i.style.transform = "translateY(" + tr + "px)";
       }
     } catch (err) {
-      _iterator.e(err);
+      _iterator2.e(err);
     } finally {
-      _iterator.f();
+      _iterator2.f();
     }
   }
 }
@@ -43865,22 +43905,34 @@ function Work(_ref) {
     className: "workImg",
     src: work.img,
     alt: "Screenshot of " + work.name
-  })), /*#__PURE__*/_react["default"].createElement("div", {
-    className: "workRightCol"
-  }, /*#__PURE__*/_react["default"].createElement("h3", {
-    className: "workTitle"
-  }, work.name), /*#__PURE__*/_react["default"].createElement("p", {
-    className: "workDescr"
-  }, work.description), /*#__PURE__*/_react["default"].createElement("div", {
+  }), /*#__PURE__*/_react["default"].createElement("div", {
     className: "workButtonsContainer"
   }, /*#__PURE__*/_react["default"].createElement(GithubLink, {
     work: work
   }), /*#__PURE__*/_react["default"].createElement(SiteLinkLink, {
     work: work
-  })))));
+  }))), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "workRightCol"
+  }, /*#__PURE__*/_react["default"].createElement("h3", {
+    className: "workTitle"
+  }, work.name), /*#__PURE__*/_react["default"].createElement("p", {
+    className: "workDescr"
+  }, work.description), /*#__PURE__*/_react["default"].createElement(Skills, {
+    work: work
+  }))));
 }
-function GithubLink(_ref2) {
+function Skills(_ref2) {
   var work = _ref2.work;
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("h3", {
+    className: "workSkillsHeader"
+  }, "Key Skills:"), /*#__PURE__*/_react["default"].createElement("ul", {
+    className: "workList"
+  }, work.skills.map(function (skill) {
+    return /*#__PURE__*/_react["default"].createElement("li", null, skill);
+  })));
+}
+function GithubLink(_ref3) {
+  var work = _ref3.work;
   if (work.hasOwnProperty("github")) {
     return /*#__PURE__*/_react["default"].createElement("a", {
       className: "workExternalLink",
@@ -43890,8 +43942,8 @@ function GithubLink(_ref2) {
     }, "Github Repo");
   } else return;
 }
-function SiteLinkLink(_ref3) {
-  var work = _ref3.work;
+function SiteLinkLink(_ref4) {
+  var work = _ref4.work;
   if (work.hasOwnProperty("siteLink")) {
     return /*#__PURE__*/_react["default"].createElement("a", {
       className: "workExternalLink",
@@ -43903,13 +43955,11 @@ function SiteLinkLink(_ref3) {
 }
 function MyWork() {
   var dataList = Object.entries(_myWork["default"]);
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("img", {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(ImgHoverAnimation, null), /*#__PURE__*/_react["default"].createElement("div", {
+    id: "bigWorkImgContainer"
+  }, /*#__PURE__*/_react["default"].createElement("img", {
     id: "bigWorkImg"
-  }), /*#__PURE__*/_react["default"].createElement(AnimateWorks, null), /*#__PURE__*/_react["default"].createElement("div", {
-    id: "navHeader"
-  }, /*#__PURE__*/_react["default"].createElement("h2", null, "Jonah Zimmer"), /*#__PURE__*/_react["default"].createElement("div", {
-    id: "navButtonsContainer"
-  }, /*#__PURE__*/_react["default"].createElement(_homePageLeft.Buttons, null))), /*#__PURE__*/_react["default"].createElement("div", {
+  })), /*#__PURE__*/_react["default"].createElement(AnimateWorks, null), /*#__PURE__*/_react["default"].createElement(_navHeader["default"], null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "myWorkPage"
   }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "myWorkContainer"
@@ -43921,4 +43971,26 @@ function MyWork() {
   }))));
 }
 
-},{"../content/myWork.json":1,"./homePageLeft.js":24,"react":16}]},{},[26]);
+},{"../content/myWork.json":1,"../pages/navHeader.js":29,"react":16}],29:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = NavHeader;
+var _react = _interopRequireDefault(require("react"));
+var _homePageLeft = require("./homePageLeft.js");
+function _interopRequireDefault(e) {
+  return e && e.__esModule ? e : {
+    "default": e
+  };
+}
+function NavHeader() {
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    id: "navHeader"
+  }, /*#__PURE__*/_react["default"].createElement("h2", null, "Jonah Zimmer"), /*#__PURE__*/_react["default"].createElement("div", {
+    id: "navButtonsContainer"
+  }, /*#__PURE__*/_react["default"].createElement(_homePageLeft.Buttons, null)));
+}
+
+},{"./homePageLeft.js":24,"react":16}]},{},[26]);

@@ -3,7 +3,8 @@
         "id": "8",
         "name": "Tree Balancing Activity",
         "date": "December 2024",
-        "description": "ENTER DESCRIPTION HERE",
+        "description": "This project is a binary tree simulation where the user can make rotations and see how it impacts the balance of the tree. It was the final project for the class Data Structures.",
+        "skills": ["Java", "Teamwork"],
         "img": "../content/workImg/bestTree.png",
         "github": "https://github.com/jzim4/BeST-Tree"
     },
@@ -11,16 +12,18 @@
         "id": "7",
         "name": "Macalester College Public Safety",
         "date": "December 2024",
-        "description": "ENTER DESCRIPTION HERE",
+        "description": "This project displays several visualizations of the publically available Crime and Fire Log at Mac and a survey for community members in order to see two different perspectives on Public Safety's impact on the campus community. It was the final project for the class Critical Race and Digital Studies.",
+        "skills": ["React", "Python", "HTML", "CSS", "Javascript", "Teamwork"],
         "img": "../content/workImg/publicSafety.png",
-        "github": "https://github.com/jzim4.github.io",
-        "siteLink": "https://jzim4.github.io/Macalester-Public-Safety/"
+        "github": "https://github.com/jzim4/Macalester-Public-Safety",
+        "siteLink": "https://public-safety-data-at-macalester.vercel.app/"
     },
     "portfolio": {
         "id": "6",
         "name": "My Portfolio Site",
         "date": "December 2024",
-        "description": "This site here! I started learning about scroll-based animation and inter-browser compatibility.",
+        "description": "That is this site here! I am continuing to update it, and I used this project to learning more about scroll-based animation.",
+        "skills": ["React", "HTML", "CSS", "Javascript"],
         "img": "../content/workImg/mySite.png",
         "github": "https://github.com/jzim4.github.io"
     },
@@ -28,7 +31,8 @@
         "id": "5",
         "name": "ChemBox",
         "date": "Fall 2024",
-        "description": "SPWA built with React that hosts several chemistry study tools for intro chemistry students\n\nGroup project that developed teamwork and communication skills; Consistently received community feedback to improve site",
+        "description": "This project is made up of several chemistry study tools for intro chemistry students. I developed many soft skills during this semester long project including teamwork, communication, and user-feedback collection.",
+        "skills": ["React", "HTML", "CSS", "Javascript", "Teamwork"],
         "img": "../content/workImg/chemBox.png",
         "github": "https://github.com/jzim4/jbj",
         "siteLink": "https://jzim4.github.io/jbj/"
@@ -37,7 +41,8 @@
         "id": "4",
         "name": "Restaurant Recommender",
         "date": "Spring 2024",
-        "description": "GUI in Java that takes user preferences and suggests a restaurant from a manually created dataset\n\nApplied knowledge of database management and OOP",
+        "description": "For this project, users input their cuisine preference, budget, and zip code in order to provide a recommendation for users in the Twin Cities. Though it currently has 30 restaurants, by paying for an API with more data it would be scalable. This was my final project for the class Object Oriented Programming.",
+        "skills": ["Java", "Teamwork"],
         "img": "../content/workImg/restaurantRecommender.png",
         "github": "https://github.com/jzim4/Restaurant-Recommender"
     },
@@ -45,7 +50,8 @@
         "id": "3",
         "name": "Loree's Portfolio",
         "date": "Fall 2023",
-        "description": "SPWA built in javascript with Bootstrap front-end and Contentful CMS to display friend’s art collection.\n\nImproved knowledge of database management and front end design",
+        "description": "This site displays a friend’s art collection. I used the CMS Contentful in order to allow Loree to dynamically update the site without programming experience.",
+        "skills": ["HTML", "CSS", "Javascript", "Contentful", "Bootstrap"],
         "img": "../content/workImg/loreesPortfolio.png",
         "github": "https://github.com/jzim4/Lorees-Portfolio",
         "siteLink": "https://jzim4.github.io/Lorees-Portfolio/"
@@ -54,7 +60,8 @@
         "id": "2",
         "name": "Danny's Dolls",
         "date": "Summer 2022",
-        "description": "SPWA built in javascript with Contentful CMS to display friend’s doll collection.\n\nFirst experience with databases and external importing",
+        "description": "My first project using Javascript, this site displays a friend's doll collection. I used the CMS Contentful in order to allow Daniel to dynamically update the site without programming experience.",
+        "skills": ["HTML", "CSS", "Javascript", "Contentful"],
         "img": "../content/workImg/dannysDolls.png",
         "github": "https://github.com/jzim4/Dannys-Dolls",
         "siteLink": "https://jzim4.github.io/Dannys-Dolls/"
@@ -63,7 +70,8 @@
         "id": "1",
         "name": "Coffee Talk",
         "date": "January 2022",
-        "description": "Website in html and css that hosts my articles about local coffee shops\n\nFocus on learning static front end design, first web dev project that sparked my passion",
+        "description": "This is my first website. I was learning HTML and CSS as I built it during January of my 11th grade year in high school. It hosts my articles about three local coffee shops in Philadelphia. This project really sparked my passion for web development.",
+        "skills": ["HTML", "CSS", "Bootstrap"],
         "img": "../content/workImg/coffeeTalk.png",
         "github": "https://github.com/jzim4/Coffee-Talk",
         "siteLink": "https://jzim4.github.io/Coffee-Talk"
