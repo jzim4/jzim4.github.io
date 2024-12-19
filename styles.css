@@ -332,6 +332,7 @@ a.workExternalLink:hover, a.workExternalLink:focus {
     flex-direction: column;
     gap: 15px;
     width: fit-content;
+    padding-bottom: 10px;
 }
 .workSkillsHeader {
     margin: 0;

@@ -23,13 +23,17 @@ function Skills() {
 function AboutBio() {
   return <>
     <p className="aboutBio">
-      Hi, I’m Jonah, a detail-oriented and creative web developer with a passion for building intuitive and visually engaging web applications. I enjoy crafting seamless user experiences and solving technical challenges with precision and efficiency.
+      Hi, I’m Jonah, a detail-oriented and creative web developer with a passion for building intuitive and visually 
+      engaging web applications. I enjoy crafting seamless user experiences and solving technical challenges with precision 
+      and efficiency.
     </p>
     <p className="aboutBio">
-      Beyond my technical pursuits, I value meaningful connections and strive to maintain balance in all aspects of life. I love playing tennis and rock climbing as well as spending time with my four crazy dogs.
+      When I'm not programming, I enjoy spending time with loved-ones, playing tennis, rock climbing, and 
+      playing with my four crazy dogs.
     </p>
     <p className="aboutBio">
-      I thrive on clarify and a hands-on problem-solving, making every project an opportunity to learn, grow, and deliver impactful results. Let’s create something amazing together!
+      I thrive on clarity and a hands-on problem-solving, making every project an opportunity to learn, grow, and 
+      deliver impactful results. Let’s create something amazing together!
     </p>
   </>
 }

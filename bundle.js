@@ -1,8 +1,8 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 module.exports={
     "bestTree": {
-        "id": "8",
-        "name": "Tree Balancing Activity",
+        "id": "9",
+        "name": "Tree Balancing Interactive Simulation",
         "date": "December 2024",
         "description": "This project is a binary tree simulation where the user can make rotations and see how it impacts the balance of the tree. It was the final project for the class Data Structures.",
         "skills": ["Java", "Teamwork"],
@@ -10,8 +10,8 @@ module.exports={
         "github": "https://github.com/jzim4/BeST-Tree"
     },
     "publicSafety": {
-        "id": "7",
-        "name": "Macalester College Public Safety",
+        "id": "8",
+        "name": "Data Visualizations of Macalester College Public Safety",
         "date": "December 2024",
         "description": "This project displays several visualizations of the publically available Crime and Fire Log at Mac and a survey for community members in order to see two different perspectives on Public Safety's impact on the campus community. It was the final project for the class Critical Race and Digital Studies.",
         "skills": ["React", "Python", "HTML", "CSS", "Javascript", "Teamwork"],
@@ -20,7 +20,7 @@ module.exports={
         "siteLink": "https://public-safety-data-at-macalester.vercel.app/"
     },
     "portfolio": {
-        "id": "6",
+        "id": "7",
         "name": "My Portfolio Site",
         "date": "December 2024",
         "description": "That is this site here! I am continuing to update it, and I used this project to learning more about scroll-based animation.",
@@ -29,7 +29,7 @@ module.exports={
         "github": "https://github.com/jzim4.github.io"
     },
     "chemBox": {
-        "id": "5",
+        "id": "6",
         "name": "ChemBox",
         "date": "Fall 2024",
         "description": "This project is made up of several chemistry study tools for intro chemistry students. I developed many soft skills during this semester long project including teamwork, communication, and user-feedback collection.",
@@ -39,7 +39,7 @@ module.exports={
         "siteLink": "https://jzim4.github.io/jbj/"
     },
     "restaurantRecommender": {
-        "id": "4",
+        "id": "5",
         "name": "Restaurant Recommender",
         "date": "Spring 2024",
         "description": "For this project, users input their cuisine preference, budget, and zip code in order to provide a recommendation for users in the Twin Cities. Though it currently has 30 restaurants, by paying for an API with more data it would be scalable. This was my final project for the class Object Oriented Programming.",
@@ -48,7 +48,7 @@ module.exports={
         "github": "https://github.com/jzim4/Restaurant-Recommender"
     },
     "loreesPortolio": {
-        "id": "3",
+        "id": "4",
         "name": "Loree's Portfolio",
         "date": "Fall 2023",
         "description": "This site displays a friend’s art collection. I used the CMS Contentful in order to allow Loree to dynamically update the site without programming experience.",
@@ -58,7 +58,7 @@ module.exports={
         "siteLink": "https://jzim4.github.io/Lorees-Portfolio/"
     },
     "DannysDolls": {
-        "id": "2",
+        "id": "3",
         "name": "Danny's Dolls",
         "date": "Summer 2022",
         "description": "My first project using Javascript, this site displays a friend's doll collection. I used the CMS Contentful in order to allow Daniel to dynamically update the site without programming experience.",
@@ -67,8 +67,17 @@ module.exports={
         "github": "https://github.com/jzim4/Dannys-Dolls",
         "siteLink": "https://jzim4.github.io/Dannys-Dolls/"
     },
+    "pigs": {
+        "id": "3",
+        "name": "Swine Research Intern",
+        "date": "Summer 2022",
+        "description": "For this research project, I was an intern at the Swine Teaching and Research Center through the University of Pennsylvania. I created graphs in R that demonstrated swine movement throughout the day using datapoints including lying bouts, motion index, time spent standing, and steps. My work was then used to determine how to minimize swine movement to ensure the safety of newborn piglets.",
+        "skills": ["R", "Teamwork"],
+        "img": "../content/workImg/pigs.png",
+        "github": "https://github.com/jzim4/Swine-Research"
+    },
     "coffeeTalk": {
-        "id": "1",
+        "id": "2",
         "name": "Coffee Talk",
         "date": "January 2022",
         "description": "This is my first website. I was learning HTML and CSS as I built it during January of my 11th grade year in high school. It hosts my articles about three local coffee shops in Philadelphia. This project really sparked my passion for web development.",
@@ -76,6 +85,15 @@ module.exports={
         "img": "../content/workImg/coffeeTalk.png",
         "github": "https://github.com/jzim4/Coffee-Talk",
         "siteLink": "https://jzim4.github.io/Coffee-Talk"
+    },
+    "pythonChallenges": {
+        "id": "1",
+        "name": "Python Programming Challenges",
+        "date": "Fall 2021- Spring 2022",
+        "description": "In my junior year of high school, a teacher at my school named Matt posted weekly programming challenges that I completed. Many of the questions were pulled directly from or take inspiration from Project Euler, while others were written by Matt himself.",
+        "skills": ["Python"],
+        "img": "../content/workImg/python.png",
+        "github": "https://github.com/jzim4/Python-Challenges"
     }
 }
 },{}],2:[function(require,module,exports){
@@ -43252,9 +43270,9 @@ function AboutBio() {
     className: "aboutBio"
   }, "Hi, I\u2019m Jonah, a detail-oriented and creative web developer with a passion for building intuitive and visually engaging web applications. I enjoy crafting seamless user experiences and solving technical challenges with precision and efficiency."), /*#__PURE__*/_react["default"].createElement("p", {
     className: "aboutBio"
-  }, "Beyond my technical pursuits, I value meaningful connections and strive to maintain balance in all aspects of life. I love playing tennis and rock climbing as well as spending time with my four crazy dogs."), /*#__PURE__*/_react["default"].createElement("p", {
+  }, "When I'm not programming, I enjoy spending time with loved-ones, playing tennis, rock climbing, and playing with my four crazy dogs."), /*#__PURE__*/_react["default"].createElement("p", {
     className: "aboutBio"
-  }, "I thrive on clarify and a hands-on problem-solving, making every project an opportunity to learn, grow, and deliver impactful results. Let\u2019s create something amazing together!"));
+  }, "I thrive on clarity and a hands-on problem-solving, making every project an opportunity to learn, grow, and deliver impactful results. Let\u2019s create something amazing together!"));
 }
 function About() {
   return /*#__PURE__*/_react["default"].createElement("div", {
