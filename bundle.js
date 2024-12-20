@@ -4,8 +4,8 @@ module.exports={
         "id": "10",
         "name": "Tree Balancing Interactive Simulation",
         "date": "December 2024",
-        "description": "This project is a binary tree simulation where the user can make rotations and see how it impacts the balance of the tree. It was the final project for the class Data Structures.",
-        "skills": ["Java", "Teamwork"],
+        "description": "This project is a binary search tree simulation where the user can make rotations and see how it impacts the balance of the tree. It was the final project for the class Data Structures.",
+        "skills": ["Java", "OOP", "Teamwork"],
         "img": "../content/workImg/bestTree.png",
         "github": "https://github.com/jzim4/BeST-Tree"
     },
@@ -33,7 +33,7 @@ module.exports={
         "name": "ChemBox",
         "date": "Fall 2024",
         "description": "This project is made up of several chemistry study tools for intro chemistry students. I developed many soft skills during this semester long project including teamwork, communication, and user-feedback collection.",
-        "skills": ["React", "HTML", "CSS", "Javascript", "Teamwork"],
+        "skills": ["React", "HTML", "CSS", "Javascript", "OOP", "Teamwork"],
         "img": "../content/workImg/chemBox.png",
         "github": "https://github.com/jzim4/jbj",
         "siteLink": "https://jzim4.github.io/jbj/"
@@ -43,7 +43,7 @@ module.exports={
         "name": "Restaurant Recommender",
         "date": "Spring 2024",
         "description": "For this project, users input their cuisine preference, budget, and zip code in order to provide a recommendation for users in the Twin Cities. Though it currently has 30 restaurants, by paying for an API with more data it would be scalable. This was my final project for the class Object Oriented Programming.",
-        "skills": ["Java", "Teamwork"],
+        "skills": ["Java", "OOP", "Teamwork"],
         "img": "../content/workImg/restaurantRecommender.png",
         "github": "https://github.com/jzim4/Restaurant-Recommender"
     },
@@ -62,7 +62,7 @@ module.exports={
         "name": "Danny's Dolls",
         "date": "Summer 2022",
         "description": "My first project using Javascript, this site displays a friend's doll collection. I used the CMS Contentful in order to allow Daniel to dynamically update the site without programming experience.",
-        "skills": ["HTML", "CSS", "Javascript", "Contentful"],
+        "skills": ["HTML", "CSS", "Javascript", "OOP", "Contentful"],
         "img": "../content/workImg/dannysDolls.png",
         "github": "https://github.com/jzim4/Dannys-Dolls",
         "siteLink": "https://jzim4.github.io/Dannys-Dolls/"
@@ -43263,7 +43263,7 @@ function _interopRequireDefault(e) {
 function Skills() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("h3", null, "Key Skills"), /*#__PURE__*/_react["default"].createElement("ul", {
     className: "aboutList"
-  }, /*#__PURE__*/_react["default"].createElement("li", null, "GIT"), /*#__PURE__*/_react["default"].createElement("li", null, "HTML"), /*#__PURE__*/_react["default"].createElement("li", null, "CSS"), /*#__PURE__*/_react["default"].createElement("li", null, "JAVASCRIPT"), /*#__PURE__*/_react["default"].createElement("li", null, "REACT"), /*#__PURE__*/_react["default"].createElement("li", null, "CONTENTFUL"), /*#__PURE__*/_react["default"].createElement("li", null, "FIREBASE"), /*#__PURE__*/_react["default"].createElement("li", null, "PYTHON"), /*#__PURE__*/_react["default"].createElement("li", null, "R"), /*#__PURE__*/_react["default"].createElement("li", null, "JAVA"), /*#__PURE__*/_react["default"].createElement("li", null, "MICROSOFT SUITE"), /*#__PURE__*/_react["default"].createElement("li", null, "GSUITE")));
+  }, /*#__PURE__*/_react["default"].createElement("li", null, "GIT"), /*#__PURE__*/_react["default"].createElement("li", null, "HTML"), /*#__PURE__*/_react["default"].createElement("li", null, "CSS"), /*#__PURE__*/_react["default"].createElement("li", null, "JAVASCRIPT"), /*#__PURE__*/_react["default"].createElement("li", null, "REACT"), /*#__PURE__*/_react["default"].createElement("li", null, "CONTENTFUL"), /*#__PURE__*/_react["default"].createElement("li", null, "FIREBASE"), /*#__PURE__*/_react["default"].createElement("li", null, "PYTHON"), /*#__PURE__*/_react["default"].createElement("li", null, "R"), /*#__PURE__*/_react["default"].createElement("li", null, "JAVA"), /*#__PURE__*/_react["default"].createElement("li", null, "OOP"), /*#__PURE__*/_react["default"].createElement("li", null, "MICROSOFT SUITE"), /*#__PURE__*/_react["default"].createElement("li", null, "GSUITE")));
 }
 function AboutBio() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("p", {

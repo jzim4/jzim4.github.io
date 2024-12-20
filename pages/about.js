@@ -14,6 +14,7 @@ function Skills() {
     <li>PYTHON</li>
     <li>R</li>
     <li>JAVA</li>
+    <li>OOP</li>
     <li>MICROSOFT SUITE</li>
     <li>GSUITE</li>
   </ul>
