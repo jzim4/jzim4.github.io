@@ -31,7 +31,7 @@
         "id": "7",
         "name": "ChemBox",
         "date": "Fall 2024",
-        "description": "This project is made up of several chemistry study tools for intro chemistry students. I developed many soft skills during this semester long project including teamwork, communication, and user-feedback collection.",
+        "description": "This project is made up of several chemistry study tools for intro chemistry students. In addition to being the lead developer, I improved upon many soft skills during this semester long project including teamwork, communication, and user-feedback collection.",
         "skills": ["React", "HTML", "CSS", "Javascript", "OOP", "Teamwork"],
         "img": "../content/workImg/chemBox.png",
         "github": "https://github.com/jzim4/jbj",
