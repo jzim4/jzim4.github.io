@@ -64,12 +64,12 @@ html {
 }
 .leftHomeDot {
     position: fixed;
-    background-color: #c28db5;
+    background-color: #cf8db5;
     mix-blend-mode:multiply;
 }
 .rightHomeDot {
     position: fixed;
-    background-color: #c082b5ff;
+    background-color: #cd83b5;
     mix-blend-mode:normal;
     z-index: 2;
 }
@@ -95,13 +95,14 @@ h1 {
     font-family: 'Limelight';
     margin: 0 0 0 auto;
     text-align: right;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     width: 100%;
     font-size: 4em;
 }
 #bioText {
     text-align: right;
     margin-bottom: 10px;
+    margin-top: 0;
     margin-left: auto;
     min-width: 40vw;
     width: min-content;
