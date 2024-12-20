@@ -69,10 +69,40 @@ function OtherLinks() {
     </div>
 }
 
+function Dots() {
+    return <>
+    <div className="dot homeDot leftHomeDot" style={{
+        top: '6vw',
+        left: '2vw',
+        width: '30vw',
+        height: '30vw'
+    }}> </div>
+    <div className="dot homeDot leftHomeDot" style={{
+        top: '0.5vw',
+        left: '3vw',
+        width: '15vw',
+        height: '15vw'
+    }}> </div>
+    <div className="dot homeDot rightHomeDot" style={{
+        top: '60vh',
+        left: '30vw',
+        width: '40vw',
+        height: '40vw'
+    }}> </div>
+    <div className="dot homeDot rightHomeDot" style={{
+        top: '5vh',
+        left: '40vw',
+        width: '20vw',
+        height: '20vw'
+    }}> </div>
+    </>
+}
+
 export default function HomePageLeft() {
     return <>
         <Animate />
         <div id="homeLeftColumn" className="homePageElement">
+            <Dots/>
             <div id="bioTextContainer">
                 <Title />
                 <div id="homePagePlaceHolder"></div>

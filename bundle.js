@@ -1,7 +1,7 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 module.exports={
     "bestTree": {
-        "id": "9",
+        "id": "10",
         "name": "Tree Balancing Interactive Simulation",
         "date": "December 2024",
         "description": "This project is a binary tree simulation where the user can make rotations and see how it impacts the balance of the tree. It was the final project for the class Data Structures.",
@@ -10,7 +10,7 @@ module.exports={
         "github": "https://github.com/jzim4/BeST-Tree"
     },
     "publicSafety": {
-        "id": "8",
+        "id": "9",
         "name": "Data Visualizations of Macalester College Public Safety",
         "date": "December 2024",
         "description": "This project displays several visualizations of the publically available Crime and Fire Log at Mac and a survey for community members in order to see two different perspectives on Public Safety's impact on the campus community. It was the final project for the class Critical Race and Digital Studies.",
@@ -20,7 +20,7 @@ module.exports={
         "siteLink": "https://public-safety-data-at-macalester.vercel.app/"
     },
     "portfolio": {
-        "id": "7",
+        "id": "8",
         "name": "My Portfolio Site",
         "date": "December 2024",
         "description": "That is this site here! I am continuing to update it, and I used this project to learning more about scroll-based animation.",
@@ -29,7 +29,7 @@ module.exports={
         "github": "https://github.com/jzim4.github.io"
     },
     "chemBox": {
-        "id": "6",
+        "id": "7",
         "name": "ChemBox",
         "date": "Fall 2024",
         "description": "This project is made up of several chemistry study tools for intro chemistry students. I developed many soft skills during this semester long project including teamwork, communication, and user-feedback collection.",
@@ -39,7 +39,7 @@ module.exports={
         "siteLink": "https://jzim4.github.io/jbj/"
     },
     "restaurantRecommender": {
-        "id": "5",
+        "id": "6",
         "name": "Restaurant Recommender",
         "date": "Spring 2024",
         "description": "For this project, users input their cuisine preference, budget, and zip code in order to provide a recommendation for users in the Twin Cities. Though it currently has 30 restaurants, by paying for an API with more data it would be scalable. This was my final project for the class Object Oriented Programming.",
@@ -48,7 +48,7 @@ module.exports={
         "github": "https://github.com/jzim4/Restaurant-Recommender"
     },
     "loreesPortolio": {
-        "id": "4",
+        "id": "5",
         "name": "Loree's Portfolio",
         "date": "Fall 2023",
         "description": "This site displays a friend’s art collection. I used the CMS Contentful in order to allow Loree to dynamically update the site without programming experience.",
@@ -58,7 +58,7 @@ module.exports={
         "siteLink": "https://jzim4.github.io/Lorees-Portfolio/"
     },
     "DannysDolls": {
-        "id": "3",
+        "id": "4",
         "name": "Danny's Dolls",
         "date": "Summer 2022",
         "description": "My first project using Javascript, this site displays a friend's doll collection. I used the CMS Contentful in order to allow Daniel to dynamically update the site without programming experience.",
@@ -43286,19 +43286,161 @@ function About() {
 },{"react":16}],22:[function(require,module,exports){
 "use strict";
 
+function _typeof(o) {
+  "@babel/helpers - typeof";
+
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
+}
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = Contact;
-var _react = _interopRequireDefault(require("react"));
-function _interopRequireDefault(e) {
-  return e && e.__esModule ? e : {
+var _react = _interopRequireWildcard(require("react"));
+function _getRequireWildcardCache(e) {
+  if ("function" != typeof WeakMap) return null;
+  var r = new WeakMap(),
+    t = new WeakMap();
+  return (_getRequireWildcardCache = function _getRequireWildcardCache(e) {
+    return e ? t : r;
+  })(e);
+}
+function _interopRequireWildcard(e, r) {
+  if (!r && e && e.__esModule) return e;
+  if (null === e || "object" != _typeof(e) && "function" != typeof e) return {
     "default": e
   };
+  var t = _getRequireWildcardCache(r);
+  if (t && t.has(e)) return t.get(e);
+  var n = {
+      __proto__: null
+    },
+    a = Object.defineProperty && Object.getOwnPropertyDescriptor;
+  for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) {
+    var i = a ? Object.getOwnPropertyDescriptor(e, u) : null;
+    i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u];
+  }
+  return n["default"] = e, t && t.set(e, n), n;
+}
+function _createForOfIteratorHelper(r, e) {
+  var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+  if (!t) {
+    if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) {
+      t && (r = t);
+      var _n = 0,
+        F = function F() {};
+      return {
+        s: F,
+        n: function n() {
+          return _n >= r.length ? {
+            done: !0
+          } : {
+            done: !1,
+            value: r[_n++]
+          };
+        },
+        e: function e(r) {
+          throw r;
+        },
+        f: F
+      };
+    }
+    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+  var o,
+    a = !0,
+    u = !1;
+  return {
+    s: function s() {
+      t = t.call(r);
+    },
+    n: function n() {
+      var r = t.next();
+      return a = r.done, r;
+    },
+    e: function e(r) {
+      u = !0, o = r;
+    },
+    f: function f() {
+      try {
+        a || null == t["return"] || t["return"]();
+      } finally {
+        if (u) throw o;
+      }
+    }
+  };
+}
+function _unsupportedIterableToArray(r, a) {
+  if (r) {
+    if ("string" == typeof r) return _arrayLikeToArray(r, a);
+    var t = {}.toString.call(r).slice(8, -1);
+    return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0;
+  }
+}
+function _arrayLikeToArray(r, a) {
+  (null == a || a > r.length) && (a = r.length);
+  for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
+  return n;
+}
+function AnimateDots() {
+  (0, _react.useEffect)(function () {
+    var dots = document.getElementsByClassName("contactDot");
+    var offset = document.getElementById("navHeader").clientHeight;
+    window.addEventListener('scroll', function () {
+      var rect = document.getElementById("contactPage").getBoundingClientRect();
+      var _iterator = _createForOfIteratorHelper(dots),
+        _step;
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var i = _step.value;
+          var x = (parseInt(i.style.left.slice(0, -2)) - 20) * (rect.top - offset) / 30;
+          var tr = "translate(" + x + "px, " + x + "px)";
+          i.style.transform = tr;
+          console.log(rect.top);
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+    });
+  }, []);
+}
+function Dots() {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(AnimateDots, null), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "dot contactDot",
+    style: {
+      top: '0.5vw',
+      left: '3vw',
+      width: '15vw',
+      height: '15vw'
+    }
+  }, " "), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "dot contactDot",
+    style: {
+      top: '60vh',
+      left: '30vw',
+      width: '40vw',
+      height: '40vw'
+    }
+  }, " "), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "dot contactDot",
+    style: {
+      top: '5vh',
+      left: '40vw',
+      width: '20vw',
+      height: '20vw'
+    }
+  }, " "));
 }
 function Contact() {
   return /*#__PURE__*/_react["default"].createElement("div", {
     id: "contactPage"
+  }, /*#__PURE__*/_react["default"].createElement(Dots, null), /*#__PURE__*/_react["default"].createElement("div", {
+    id: "contactContent"
   }, /*#__PURE__*/_react["default"].createElement("h3", {
     className: "contactHeader"
   }, "Get in touch!"), /*#__PURE__*/_react["default"].createElement("div", {
@@ -43322,7 +43464,7 @@ function Contact() {
     className: "contactInfo contactLink",
     href: "resume.pdf",
     download: "Jonah-Zimmer-Resume.pdf"
-  }, "Download resume")));
+  }, "Download resume"))));
 }
 
 },{"react":16}],23:[function(require,module,exports){
@@ -43437,6 +43579,7 @@ function _arrayLikeToArray(r, a) {
 function ScrollFadeAnimation() {
   (0, _react.useEffect)(function () {
     var homePageElement = document.getElementsByClassName('homePageElement');
+    var dots = document.getElementsByClassName("homeDot");
     window.addEventListener('scroll', function () {
       var op = 1.5 - window.scrollY / window.innerHeight / 2;
       var _iterator = _createForOfIteratorHelper(homePageElement),
@@ -43453,6 +43596,27 @@ function ScrollFadeAnimation() {
       }
       if (window.innerWidth <= 950 && window.scrollY > window.innerHeight) {
         document.getElementById("homeLeftColumn").style.opacity = 0;
+      }
+      var _iterator2 = _createForOfIteratorHelper(dots),
+        _step2;
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var _i = _step2.value;
+          if (window.scrollY > window.innerHeight * 1.5) {
+            var scale = window.scrollY - window.innerHeight * 1.5;
+            var trX = (_i.style.left.slice(0, -2) - 20) * scale / 20;
+            var trY = -0.1 * scale;
+            _i.style.transform = "translate(" + trX + "px, " + trY + "px)";
+          } else if (window.scrollY > window.innerHeight * 3) {
+            _i.style.transform = "translateY(0)";
+          } else {
+            _i.style.transform = "translateY(0)";
+          }
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
       }
     });
   }, []);
@@ -43487,26 +43651,13 @@ function SiteLoadAnimation() {
         duration: 1500
       });
       bioText.animate([{
-        opacity: 0,
-        transform: 'translateX(-200px)'
+        marginRight: '200px'
       }, {
-        offset: 0.2,
-        opacity: 0,
-        transform: 'translateX(-200px)'
-      }, {
-        opacity: 0.5,
-        transform: 'translateX(-100px)'
-      }, {
-        opacity: 1,
-        transform: 'translateX(0)'
+        marginRight: '40px'
       }], {
         duration: 2000
       });
       name.animate([{
-        opacity: 0,
-        transform: 'translateX(-200px)'
-      }, {
-        offset: 0.3,
         opacity: 0,
         transform: 'translateX(-200px)'
       }, {
@@ -43636,11 +43787,46 @@ function OtherLinks() {
     className: "otherLink"
   }, "Github"));
 }
+function Dots() {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "dot homeDot leftHomeDot",
+    style: {
+      top: '6vw',
+      left: '2vw',
+      width: '30vw',
+      height: '30vw'
+    }
+  }, " "), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "dot homeDot leftHomeDot",
+    style: {
+      top: '0.5vw',
+      left: '3vw',
+      width: '15vw',
+      height: '15vw'
+    }
+  }, " "), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "dot homeDot rightHomeDot",
+    style: {
+      top: '60vh',
+      left: '30vw',
+      width: '40vw',
+      height: '40vw'
+    }
+  }, " "), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "dot homeDot rightHomeDot",
+    style: {
+      top: '5vh',
+      left: '40vw',
+      width: '20vw',
+      height: '20vw'
+    }
+  }, " "));
+}
 function HomePageLeft() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Animate, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "homeLeftColumn",
     className: "homePageElement"
-  }, /*#__PURE__*/_react["default"].createElement("div", {
+  }, /*#__PURE__*/_react["default"].createElement(Dots, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "bioTextContainer"
   }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "homePagePlaceHolder"
@@ -43681,7 +43867,7 @@ function IdImg() {
     id: "imgRow"
   }, /*#__PURE__*/_react["default"].createElement("img", {
     id: "imgFrame",
-    src: "../content/bioImg1.jpeg",
+    src: "../content/bioImg1.png",
     alt: "Headshot of Jonah"
   }));
 }

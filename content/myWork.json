@@ -1,6 +1,6 @@
 {
     "bestTree": {
-        "id": "9",
+        "id": "10",
         "name": "Tree Balancing Interactive Simulation",
         "date": "December 2024",
         "description": "This project is a binary tree simulation where the user can make rotations and see how it impacts the balance of the tree. It was the final project for the class Data Structures.",
@@ -9,7 +9,7 @@
         "github": "https://github.com/jzim4/BeST-Tree"
     },
     "publicSafety": {
-        "id": "8",
+        "id": "9",
         "name": "Data Visualizations of Macalester College Public Safety",
         "date": "December 2024",
         "description": "This project displays several visualizations of the publically available Crime and Fire Log at Mac and a survey for community members in order to see two different perspectives on Public Safety's impact on the campus community. It was the final project for the class Critical Race and Digital Studies.",
@@ -19,7 +19,7 @@
         "siteLink": "https://public-safety-data-at-macalester.vercel.app/"
     },
     "portfolio": {
-        "id": "7",
+        "id": "8",
         "name": "My Portfolio Site",
         "date": "December 2024",
         "description": "That is this site here! I am continuing to update it, and I used this project to learning more about scroll-based animation.",
@@ -28,7 +28,7 @@
         "github": "https://github.com/jzim4.github.io"
     },
     "chemBox": {
-        "id": "6",
+        "id": "7",
         "name": "ChemBox",
         "date": "Fall 2024",
         "description": "This project is made up of several chemistry study tools for intro chemistry students. I developed many soft skills during this semester long project including teamwork, communication, and user-feedback collection.",
@@ -38,7 +38,7 @@
         "siteLink": "https://jzim4.github.io/jbj/"
     },
     "restaurantRecommender": {
-        "id": "5",
+        "id": "6",
         "name": "Restaurant Recommender",
         "date": "Spring 2024",
         "description": "For this project, users input their cuisine preference, budget, and zip code in order to provide a recommendation for users in the Twin Cities. Though it currently has 30 restaurants, by paying for an API with more data it would be scalable. This was my final project for the class Object Oriented Programming.",
@@ -47,7 +47,7 @@
         "github": "https://github.com/jzim4/Restaurant-Recommender"
     },
     "loreesPortolio": {
-        "id": "4",
+        "id": "5",
         "name": "Loree's Portfolio",
         "date": "Fall 2023",
         "description": "This site displays a friend’s art collection. I used the CMS Contentful in order to allow Loree to dynamically update the site without programming experience.",
@@ -57,7 +57,7 @@
         "siteLink": "https://jzim4.github.io/Lorees-Portfolio/"
     },
     "DannysDolls": {
-        "id": "3",
+        "id": "4",
         "name": "Danny's Dolls",
         "date": "Summer 2022",
         "description": "My first project using Javascript, this site displays a friend's doll collection. I used the CMS Contentful in order to allow Daniel to dynamically update the site without programming experience.",

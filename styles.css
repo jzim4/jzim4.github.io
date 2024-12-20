@@ -6,6 +6,7 @@ Dark green: #006400
 body {
     margin: 0;
     color: #680246ff;
+    font-family: 'Open sans';
 }
 
 html {
@@ -43,6 +44,7 @@ html {
 }
 /* left */
 #homeLeftColumn {
+    position: relative;
     z-index: 1;
     background-color: #fcebff;
     height: 100vh;
@@ -55,8 +57,27 @@ html {
     justify-content: center;
     align-items: end;
 }
+.dot {
+    position: absolute;
+    border-radius: 50%;   
+    z-index: 1;
+}
+.leftHomeDot {
+    background-color: #c28db5;
+    mix-blend-mode:multiply;
+}
+.rightHomeDot {
+    background-color: #c082b5ff;
+    mix-blend-mode:normal;
+}
+.contactDot {
+    background-color: #c082b5ff;
+    mix-blend-mode:overlay;
+    z-index: 0;
+}
 #bioTextContainer {
-    background-color: #fcebff;
+    position: relative;
+    z-index: 4;
     display: flex;
     flex-direction: column;
     width: fit-content;
@@ -64,6 +85,7 @@ html {
     margin-right: 40px;
 }
 h1 {
+    font-family: 'Limelight';
     margin: 0 0 0 auto;
     text-align: right;
     margin-bottom: 10px;
@@ -79,6 +101,8 @@ h1 {
     text-wrap: balance;
 }
 .buttonsContainer {
+    position: relative;
+    z-index: 5;
     width: fit-content;
     display: flex;
     flex-wrap: nowrap;
@@ -122,25 +146,22 @@ button, button:visited {
 #imgRow {
     height: 100vh;
     width: 50vw;
-    z-index: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     position: fixed;
     top: 0;
     right: 0;
-    background-attachment: fixed;
 }
 #imgFrame {
+    position: absolute;
+    z-index: 0;
     margin: 0 auto;
     width: 40vw;
     height: 40vw;
     max-width: 600px;
     max-height: 600px;
-    overflow: hidden;
-    background-image: url('content/bioImg1.jpeg');
-    background-position: center;
-    background-size: cover;
 }
 .placeHolder {
     height: 100vh;
@@ -149,7 +170,6 @@ button, button:visited {
 #fadePlaceHolder {
     height: 100vh;
     width: 50vw;
-    background-color: white;
     position: relative;
     z-index: 0;
 }
@@ -163,14 +183,16 @@ button, button:visited {
     padding: 30px;
     width: calc(50vw - 60px);
     height: calc(100vh - 60px);
-    z-index: 1;
+    z-index: 3;
     background-color: #660268;
     color: #fcebff;
 }
 #aboutRow>h2 {
+    font-family: 'Oswald';
     margin-top: 15px;
 }
 h3 {
+    font-family: 'Oswald';
     width: 100%;
 }
 .aboutBio {
@@ -207,6 +229,7 @@ li {
     align-items: center;
 }
 #navHeader>h2 {
+    font-family: 'Limelight';
     margin: 0;
 }
 
@@ -214,7 +237,7 @@ li {
     background-color: white;
     padding: 0 20px;
     position: relative;
-    z-index: 2;
+    z-index: 4;
     padding-bottom: 20vh;
 }
 #myWorkTitle {
@@ -341,12 +364,18 @@ a.workExternalLink:hover, a.workExternalLink:focus {
 
 /* CONTACT */
 #contactPage {
+    position: relative;
     z-index: 1;
     color:#fcebff;
     background-color: #660268;
     padding: 30px;
     height: calc(100vh - 73px - 60px);
     width: calc(50vw - 60px);
+    overflow-y: hidden;
+}
+#contactContent {
+    position: relative;
+    z-index: 5;
 }
 .contactContainer {
     display: flex;
@@ -390,9 +419,12 @@ a.workExternalLink:hover, a.workExternalLink:focus {
         height: 300px;
         width: 80%;
         max-width: 300px;
-        background-image: url('content/bioImg1.jpeg');
+        background-image: url('content/bioImg1.png');
         background-position: center;
         background-size: cover;
+    }
+    #bioTextContainer {
+        margin: 0;
     }
     #bioText {
         padding: 10px 0;
@@ -409,10 +441,11 @@ a.workExternalLink:hover, a.workExternalLink:focus {
     }
     #homeLeftColumn {
         height: 100vh;
-        z-index: 0;
+        z-index: 3;
         animation: none;
         width: 100vw;
         align-items: center;
+        overflow-x: hidden;
     }
     .buttonsContainer {
         margin: 0 auto;
@@ -430,6 +463,9 @@ a.workExternalLink:hover, a.workExternalLink:focus {
     }
     #bigWorkImg {
         width: 80vw;
+    }
+    #myWorkTitle {
+        top: 63px;
     }
     #contactPage {
         font-size: 0.8rem;
