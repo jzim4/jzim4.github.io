@@ -43325,114 +43325,28 @@ function _interopRequireWildcard(e, r) {
   }
   return n["default"] = e, t && t.set(e, n), n;
 }
-function _createForOfIteratorHelper(r, e) {
-  var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
-  if (!t) {
-    if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) {
-      t && (r = t);
-      var _n = 0,
-        F = function F() {};
-      return {
-        s: F,
-        n: function n() {
-          return _n >= r.length ? {
-            done: !0
-          } : {
-            done: !1,
-            value: r[_n++]
-          };
-        },
-        e: function e(r) {
-          throw r;
-        },
-        f: F
-      };
-    }
-    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-  }
-  var o,
-    a = !0,
-    u = !1;
-  return {
-    s: function s() {
-      t = t.call(r);
-    },
-    n: function n() {
-      var r = t.next();
-      return a = r.done, r;
-    },
-    e: function e(r) {
-      u = !0, o = r;
-    },
-    f: function f() {
-      try {
-        a || null == t["return"] || t["return"]();
-      } finally {
-        if (u) throw o;
-      }
-    }
-  };
-}
-function _unsupportedIterableToArray(r, a) {
-  if (r) {
-    if ("string" == typeof r) return _arrayLikeToArray(r, a);
-    var t = {}.toString.call(r).slice(8, -1);
-    return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0;
-  }
-}
-function _arrayLikeToArray(r, a) {
-  (null == a || a > r.length) && (a = r.length);
-  for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
-  return n;
-}
 function AnimateDots() {
   (0, _react.useEffect)(function () {
-    var dots = document.getElementsByClassName("contactDot");
+    var dot = document.getElementById("contactDot");
     var offset = document.getElementById("navHeader").clientHeight;
     window.addEventListener('scroll', function () {
       var rect = document.getElementById("contactPage").getBoundingClientRect();
-      var _iterator = _createForOfIteratorHelper(dots),
-        _step;
-      try {
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var i = _step.value;
-          var x = (parseInt(i.style.left.slice(0, -2)) - 20) * (rect.top - offset) / 30;
-          var tr = "translate(" + x + "px, " + x + "px)";
-          i.style.transform = tr;
-          console.log(rect.top);
-        }
-      } catch (err) {
-        _iterator.e(err);
-      } finally {
-        _iterator.f();
-      }
+      var x = (parseInt(dot.style.left.slice(0, -2)) - 20) * (rect.top - offset) / 30;
+      var tr = "translate(" + x + "px, " + x + "px)";
+      dot.style.transform = tr;
+      console.log(rect.top);
     });
   }, []);
 }
 function Dots() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(AnimateDots, null), /*#__PURE__*/_react["default"].createElement("div", {
-    className: "dot contactDot",
+    className: "dot",
+    id: "contactDot",
     style: {
-      top: '0.5vw',
-      left: '3vw',
-      width: '15vw',
-      height: '15vw'
-    }
-  }, " "), /*#__PURE__*/_react["default"].createElement("div", {
-    className: "dot contactDot",
-    style: {
-      top: '60vh',
-      left: '30vw',
-      width: '40vw',
-      height: '40vw'
-    }
-  }, " "), /*#__PURE__*/_react["default"].createElement("div", {
-    className: "dot contactDot",
-    style: {
-      top: '5vh',
-      left: '40vw',
-      width: '20vw',
-      height: '20vw'
+      top: '14vw',
+      left: '10vw',
+      width: '95vh',
+      height: '95vh'
     }
   }, " "));
 }
@@ -43605,7 +43519,7 @@ function ScrollFadeAnimation() {
           if (window.scrollY > window.innerHeight * 1.5) {
             var scale = window.scrollY - window.innerHeight * 1.5;
             var trX = (_i.style.left.slice(0, -2) - 20) * scale / 20;
-            var trY = -0.1 * scale;
+            var trY = -0.3 * scale;
             _i.style.transform = "translate(" + trX + "px, " + trY + "px)";
           } else if (window.scrollY > window.innerHeight * 3) {
             _i.style.transform = "translateY(0)";
@@ -43806,9 +43720,10 @@ function Dots() {
     }
   }, " "), /*#__PURE__*/_react["default"].createElement("div", {
     className: "dot homeDot rightHomeDot",
+    id: "rightBottomHomeDot",
     style: {
       top: '60vh',
-      left: '30vw',
+      left: '35vw',
       width: '40vw',
       height: '40vw'
     }
@@ -43828,8 +43743,9 @@ function HomePageLeft() {
     className: "homePageElement"
   }, /*#__PURE__*/_react["default"].createElement(Dots, null), /*#__PURE__*/_react["default"].createElement("div", {
     id: "bioTextContainer"
-  }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement("div", {
-    id: "homePagePlaceHolder"
+  }, /*#__PURE__*/_react["default"].createElement(Title, null), /*#__PURE__*/_react["default"].createElement("img", {
+    id: "homePageSmallImg",
+    src: "../content/bioImg1.png"
   }), /*#__PURE__*/_react["default"].createElement(Bio, null), /*#__PURE__*/_react["default"].createElement(Buttons, null), /*#__PURE__*/_react["default"].createElement(OtherLinks, null))));
 }
 

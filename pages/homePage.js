@@ -20,7 +20,7 @@ function ScrollFadeAnimation() {
                 if (window.scrollY > window.innerHeight * 1.5) {
                     let scale = (window.scrollY - window.innerHeight * 1.5);
                     const trX = (i.style.left.slice(0, -2) - 20) * scale/20;
-                    let trY = -0.1 * scale;
+                    let trY = -0.3 * scale;
                     i.style.transform = "translate(" + trX + "px, " + trY + "px)";
                 }
                 else if ((window.scrollY > window.innerHeight * 3)) {

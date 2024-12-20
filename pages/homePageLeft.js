@@ -83,9 +83,9 @@ function Dots() {
         width: '15vw',
         height: '15vw'
     }}> </div>
-    <div className="dot homeDot rightHomeDot" style={{
+    <div className="dot homeDot rightHomeDot" id="rightBottomHomeDot" style={{
         top: '60vh',
-        left: '30vw',
+        left: '35vw',
         width: '40vw',
         height: '40vw'
     }}> </div>
@@ -105,7 +105,7 @@ export default function HomePageLeft() {
             <Dots/>
             <div id="bioTextContainer">
                 <Title />
-                <div id="homePagePlaceHolder"></div>
+                <img id="homePageSmallImg" src="../content/bioImg1.png"></img>
                 <Bio />
                 <Buttons />
                 <OtherLinks/>
