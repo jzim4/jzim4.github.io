@@ -26,7 +26,7 @@ module.exports={
         "description": "That is this site here! I am continuing to update it, and I used this project to learning more about scroll-based animation.",
         "skills": ["React", "HTML", "CSS", "Javascript"],
         "img": "../content/workImg/mySite.png",
-        "github": "https://github.com/jzim4.github.io"
+        "github": "https://github.com/jzim4/jzim4.github.io"
     },
     "chemBox": {
         "id": "7",
