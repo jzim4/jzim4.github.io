@@ -43363,7 +43363,7 @@ function Contact() {
     href: "tel:484-347-7297",
     className: "contactInfo"
   }, "484-347-7297"), /*#__PURE__*/_react["default"].createElement("a", {
-    href: "mailto:jszimmer545@email.com",
+    href: "mailto:jszimmer545@gmail.com",
     className: "contactInfo"
   }, "jszimmer545@gmail.com")), /*#__PURE__*/_react["default"].createElement("h3", {
     className: "contactHeader"

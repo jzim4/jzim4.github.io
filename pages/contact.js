@@ -33,7 +33,7 @@ export default function Contact() {
             <h3 className="contactHeader">Get in touch!</h3>
             <div className="contactContainer">
                 <a href="tel:484-347-7297" className="contactInfo">484-347-7297</a>
-                <a href="mailto:jszimmer545@email.com" className="contactInfo">jszimmer545@gmail.com</a>
+                <a href="mailto:jszimmer545@gmail.com" className="contactInfo">jszimmer545@gmail.com</a>
             </div>
 
             <h3 className="contactHeader">See More!</h3>
