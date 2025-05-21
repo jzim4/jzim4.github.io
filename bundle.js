@@ -1,5 +1,25 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 module.exports={
+    "rondoPlaza": {
+        "id": "12",
+        "name": "Rondo Commemorative Plaza Site",
+        "date": "Fall 2025",
+        "description": "This site displays the brick path located at the Rondo Commemorative Plaza. You are able to explore the path, filter by categories and puchaser name, and see the path in two view options.",
+        "skills": ["React", "HTML", "CSS", "Javascript"],
+        "img": "../content/workImg/rondoPlaza.png",
+        "github": "https://github.com/jzim4/Brick-Road",
+        "siteLink": "https://jzim4.github.io/Brick-Road"
+    },
+    "codeForUs": {
+        "id": "11",
+        "name": "Code for Us Workshop Site",
+        "date": "Fall 2025",
+        "description": "Professor Joslenne Peña runs a free workshop for folks in St. Paul to learn about web development. I built this site with the guidance of Prof. Peña so that prospective, current, and past students can find relevant information for the workshop.",
+        "skills": ["Next.js", "HTML", "CSS", "Javascript"],
+        "img": "../content/workImg/codeForUs.png",
+        "github": "https://github.com/jzim4/CodeForUs",
+        "siteLink": "https://codeforus.site"
+    },
     "bestTree": {
         "id": "10",
         "name": "Tree Balancing Interactive Simulation",
@@ -32,7 +52,7 @@ module.exports={
         "id": "7",
         "name": "ChemBox",
         "date": "Fall 2024",
-        "description": "This project is made up of several chemistry study tools for intro chemistry students. In addition to being the lead developer, I improved upon many soft skills during this semester long project including teamwork, communication, and user-feedback collection.",
+        "description": "This project is made up of several chemistry study tools for intro chemistry students. In addition to being the lead developer, I improved upon many soft skills during this semester-long project including teamwork, communication, and user-feedback collection.",
         "skills": ["React", "HTML", "CSS", "Javascript", "OOP", "Teamwork"],
         "img": "../content/workImg/chemBox.png",
         "github": "https://github.com/jzim4/jbj",
