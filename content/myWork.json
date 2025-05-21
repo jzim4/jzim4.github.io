@@ -1,7 +1,7 @@
 {
     "rondoPlaza": {
         "id": "12",
-        "name": "Rondo Commemorative Plaza Site",
+        "name": "Rondo Commemorative Plaza Brick Path",
         "date": "Fall 2025",
         "description": "This site displays the brick path located at the Rondo Commemorative Plaza. You are able to explore the path, filter by categories and puchaser name, and see the path in two view options.",
         "skills": ["React", "HTML", "CSS", "Javascript"],
@@ -11,7 +11,7 @@
     },
     "codeForUs": {
         "id": "11",
-        "name": "Code for Us Workshop Site",
+        "name": "Code for Us Workshop",
         "date": "Fall 2025",
         "description": "Professor Joslenne Peña runs a free workshop for folks in St. Paul to learn about web development. I built this site with the guidance of Prof. Peña for prospective, current, and past students to find relevant information for the workshop.",
         "skills": ["Next.js", "HTML", "CSS", "Javascript"],
