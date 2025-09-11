@@ -1,9 +1,20 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 module.exports={
+
+    "goodThings": {
+        "id": "13",
+        "name": "So Many Good Things",
+        "date": "Fall 2025",
+        "description": "So Many Good Things is a gratitude journaling app designed to help you notice and remember the positive aspects of your life. Inspired by 1 Second Everyday and traditional gratitude journaling, it combines the joy of recording daily highlights with the reflection of journaling — giving you a space to track and revisit life’s small but meaningful moments.",
+        "skills": ["React", "Tailwind", "Javascript", "Supbabase"],
+        "img": "../content/workImg/goodThings.png",
+        "github": "https://github.com/jzim4/gratitude",
+        "siteLink": "https://good-things-nu.vercel.app/"
+    },
     "rondoPlaza": {
         "id": "12",
-        "name": "Rondo Commemorative Plaza Site",
-        "date": "Fall 2025",
+        "name": "Rondo Commemorative Plaza Brick Path",
+        "date": "Spring 2025",
         "description": "This site displays the brick path located at the Rondo Commemorative Plaza. You are able to explore the path, filter by categories and puchaser name, and see the path in two view options.",
         "skills": ["React", "HTML", "CSS", "Javascript"],
         "img": "../content/workImg/rondoPlaza.png",
@@ -12,9 +23,9 @@ module.exports={
     },
     "codeForUs": {
         "id": "11",
-        "name": "Code for Us Workshop Site",
-        "date": "Fall 2025",
-        "description": "Professor Joslenne Peña runs a free workshop for folks in St. Paul to learn about web development. I built this site with the guidance of Prof. Peña so that prospective, current, and past students can find relevant information for the workshop.",
+        "name": "Code for Us Workshop",
+        "date": "Spring 2025",
+        "description": "Professor Joslenne Peña runs a free workshop for folks in St. Paul to learn about web development. I built this site with the guidance of Prof. Peña for prospective, current, and past students to find relevant information for the workshop.",
         "skills": ["Next.js", "HTML", "CSS", "Javascript"],
         "img": "../content/workImg/codeForUs.png",
         "github": "https://github.com/jzim4/CodeForUs",
