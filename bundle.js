@@ -1,6 +1,14 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 module.exports={
 
+    "bellyOfTheBudget": {
+        "id": "14",
+        "name": "Belly of the Budget",
+        "date": "Spring 2026",
+        "description": "Belly of the Budget is a simple locally-hosted budgeting app built specifically for my own use. It allows me to track my income and visualize it in several different charts. I did not make it publically available, because it has private information, and I built it to practice working with databases and backend development.",
+        "skills": ["React", "Tailwind", "Django", "Sqlite"],
+        "img": "../content/workImg/bellyOfTheBudget.png"
+    },
     "goodThings": {
         "id": "13",
         "name": "So Many Good Things",

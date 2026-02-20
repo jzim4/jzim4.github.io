@@ -1,5 +1,13 @@
 {
 
+    "bellyOfTheBudget": {
+        "id": "14",
+        "name": "Belly of the Budget",
+        "date": "Spring 2026",
+        "description": "Belly of the Budget is a simple locally-hosted budgeting app built specifically for my own use. It allows me to track my income and visualize it in several different charts. I did not make it publically available, because it has private information, and I built it to practice working with databases and backend development.",
+        "skills": ["React", "Tailwind", "Django", "Sqlite"],
+        "img": "../content/workImg/bellyOfTheBudget.png"
+    },
     "goodThings": {
         "id": "13",
         "name": "So Many Good Things",
