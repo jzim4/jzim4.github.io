@@ -43728,7 +43728,7 @@ function OtherLinks() {
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: "buttonsContainer"
   }, /*#__PURE__*/_react["default"].createElement("a", {
-    href: "resume.pdf",
+    href: "Jonah Zimmer Resume.pdf",
     target: "_blank",
     rel: "noopener noreferrer",
     download: true,

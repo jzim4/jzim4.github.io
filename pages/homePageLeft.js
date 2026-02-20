@@ -64,7 +64,7 @@ export function Buttons() {
 
 function OtherLinks() {
     return <div className="buttonsContainer">
-        <a href="resume.pdf" target="_blank" rel="noopener noreferrer" download className="otherLink">Download Resume</a>
+        <a href="Jonah Zimmer Resume.pdf" target="_blank" rel="noopener noreferrer" download className="otherLink">Download Resume</a>
         <a href="https://github.com/jzim4" target="_blank" rel="noopener noreferrer" className="otherLink">Github</a>
     </div>
 }
